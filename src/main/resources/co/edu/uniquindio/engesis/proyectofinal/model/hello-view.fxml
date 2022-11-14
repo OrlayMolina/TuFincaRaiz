@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<GridPane prefHeight="329.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.engesis.proyectofinal.model.AppController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="333.0" minWidth="10.0" prefWidth="74.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="579.0" minWidth="10.0" prefWidth="167.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="403.0" minWidth="10.0" prefWidth="48.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="403.0" minWidth="10.0" prefWidth="222.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="315.0" minWidth="10.0" prefWidth="107.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <ImageView fitHeight="390.0" fitWidth="643.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="5">
+         <image>
+            <Image url="@../../../../../../background.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="265.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="313.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+         <effect>
+            <Bloom />
+         </effect>
+      </Rectangle>
+      <GridPane GridPane.columnIndex="3" GridPane.rowIndex="9">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#onCancelarClick" style="-fx-color: 000000; -fx-background-color: CCCCCC;" text="Cancelar" GridPane.halignment="CENTER" />
+            <Button fx:id="btnIngresar" mnemonicParsing="false" onAction="#onIngresarClick" style="-fx-background-color: D1BB83; -fx-color: 000000;" text="Ingresar" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+         </children>
+      </GridPane>
+      <Label text="Nombre de usuario" GridPane.columnIndex="3" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" />
+      <TextField id="txtNombreUsuario" fx:id="txtNombreUsuario" promptText="ingrese su usuario" GridPane.columnIndex="3" GridPane.rowIndex="5">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor></TextField>
+      <PasswordField fx:id="txtContrasenia" promptText="*****" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+      <Label text="Contraseña" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="BOTTOM" />
+      <Label id="lblIniciarSesion" fx:id="lblIniciarSesion" alignment="CENTER" text="Iniciar sesión" textAlignment="CENTER" textFill="#0f3d3e" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnRecuperarAcceso" mnemonicParsing="false" onAction="#onClicAcceso" prefHeight="25.0" prefWidth="223.0" text="Recuperar Acceso" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+   </children>
+</GridPane>
