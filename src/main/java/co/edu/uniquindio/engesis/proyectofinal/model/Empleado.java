@@ -1,6 +1,4 @@
-package co.edu.uniquindio.engesis.proyectofinal.model.personas;
-
-import co.edu.uniquindio.engesis.proyectofinal.model.Usuario;
+package co.edu.uniquindio.engesis.proyectofinal.model;
 
 public class Empleado extends Usuario {
 
