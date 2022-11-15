@@ -94,8 +94,8 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cbTipoUsuario" layoutX="719.0" layoutY="213.0" prefHeight="25.0" prefWidth="206.0" />
-      <ComboBox fx:id="cbTipoDocumento" layoutX="719.0" layoutY="118.0" prefHeight="25.0" prefWidth="206.0" />
+      <ComboBox fx:id="cbTipoUsuario" layoutX="719.0" layoutY="213.0" onAction="#onComboBoxTipoUsuario" prefHeight="25.0" prefWidth="206.0" />
+      <ComboBox fx:id="cbTipoDocumento" layoutX="719.0" layoutY="118.0" onAction="#onComboBox" prefHeight="25.0" prefWidth="206.0" />
       <Label layoutX="470.0" layoutY="256.0" text="Teléfono:" textFill="#c6c373">
          <font>
             <Font size="22.0" />

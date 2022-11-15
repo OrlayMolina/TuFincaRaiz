@@ -28,10 +28,25 @@ public class RecuperarAcceso {
     private Button btnEnviar;
 
     @FXML
+    private Button btnSalir;
+
+    @FXML
     private TextField txCapturarCorreo;
 
     @FXML
     private Label lblPrincipal;
+
+    @FXML
+    void onSalirClic(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("hello-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Tu Finca Raíz | Iniciar sesión");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.show();
+    }
 
     @FXML
     void onEnviarCorreo(ActionEvent event) throws UnsupportedEncodingException {

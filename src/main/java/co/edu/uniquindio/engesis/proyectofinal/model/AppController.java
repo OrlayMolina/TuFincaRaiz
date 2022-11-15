@@ -177,10 +177,10 @@ public class AppController {
         Parent root = loader.load();
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.centerOnScreen();
         stage.setTitle("Tu Finca Raíz | Recuperar Acceso");
         stage.setScene(scene);
         stage.setResizable(false);
+        stage.centerOnScreen();
         stage.show();
     }
 
