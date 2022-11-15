@@ -6,12 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,6 +20,9 @@ public class CrearUsuarios {
     private Button btnBuscar;
 
     @FXML
+    private Button btnCancelar;
+
+    @FXML
     private Button btnEliminar;
 
     @FXML
@@ -34,10 +32,10 @@ public class CrearUsuarios {
     private Button btnSalir;
 
     @FXML
-    private ComboBox<?> cbTipoDocumento;
+    private ComboBox<TipoDocumento> cbTipoDocumento;
 
     @FXML
-    private ComboBox<?> cbTipoUsuario;
+    private ComboBox<TipoUsuario> cbTipoUsuario;
 
     @FXML
     private Label lblHeaderName;
@@ -46,28 +44,28 @@ public class CrearUsuarios {
     private Label lblPrincipal;
 
     @FXML
-    private TableColumn<?, ?> tblConsecutivo;
+    private TableColumn<Persona, Integer> tblConsecutivo;
 
     @FXML
-    private TableColumn<?, ?> tblCorreo;
+    private TableColumn<Persona, String> tblCorreo;
 
     @FXML
-    private TableColumn<?, ?> tblDocumento;
+    private TableColumn<Persona, TipoDocumento> tblDocumento;
 
     @FXML
-    private TableColumn<?, ?> tblPrimerApellido;
+    private TableColumn<Persona, String> tblPrimerApellido;
 
     @FXML
-    private TableColumn<?, ?> tblPrimerNombre;
+    private TableColumn<Persona, String> tblPrimerNombre;
 
     @FXML
-    private TableColumn<?, ?> tblSegundoApellido;
+    private TableColumn<Persona, String> tblSegundoApellido;
 
     @FXML
-    private TableColumn<?, ?> tblSegundoNombre;
+    private TableColumn<Persona, String> tblSegundoNombre;
 
     @FXML
-    private TableColumn<?, ?> tblTipoDocumento;
+    private TableColumn<Persona, TipoDocumento> tblTipoDocumento;
 
     @FXML
     private PasswordField txtContrasenia;
@@ -126,9 +124,39 @@ public class CrearUsuarios {
         stage.show();
     }
 
+
     @FXML
     void onguardar(ActionEvent event) {
+        Usuario usuario = new Usuario();
+        int tipoUsuario = 3;
+        int tipoDocumento = 2;
+        String numeroDocumento = txtNumeroDocumento.getText();
+        String primerNombre = txtPrimerNombre.getText().toUpperCase();
+        String segundoNombre = txtSegundoNombre.getText().toUpperCase();
+        String primerApellido = txtPrimerApellido.getText().toUpperCase();
+        String segundoApellido = txtSegundoApellido.getText().toUpperCase();
+        String telefono = txtTelefono.getText();
+        String correo = txtCorreo.getText().toLowerCase();
+        String nombreUsuario = txtNombreUsuario.getText();
+        String contrasenia = txtContrasenia.getText();
+        usuario = new Usuario(tipoUsuario, tipoDocumento, numeroDocumento, primerNombre, segundoNombre,
+                primerApellido, segundoApellido, telefono, correo, nombreUsuario, contrasenia);
+        UsuarioBD.crearUsuarios(usuario);
+        AppController.showAlert(Alert.AlertType.WARNING, "Error", "Usuario creado correctamente.");
+        onCancelarRegistro(event);
+    }
 
+    @FXML
+    void onCancelarRegistro(ActionEvent event) {
+        txtContrasenia.setText("");
+        txtCorreo.setText("");
+        txtNombreUsuario.setText("");
+        txtNumeroDocumento.setText("");
+        txtPrimerApellido.setText("");
+        txtPrimerNombre.setText("");
+        txtSegundoApellido.setText("");
+        txtSegundoNombre.setText("");
+        txtTelefono.setText("");
     }
 
 }

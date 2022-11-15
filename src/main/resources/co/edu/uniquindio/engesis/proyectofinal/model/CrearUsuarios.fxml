@@ -119,7 +119,7 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Button fx:id="btnGuardarUsuario" layoutX="660.0" layoutY="368.0" mnemonicParsing="false" onAction="#onguardar" text="Guardar" />
+      <Button fx:id="btnGuardarUsuario" layoutX="584.0" layoutY="368.0" mnemonicParsing="false" onAction="#onguardar" text="Guardar" />
       <Label layoutX="394.0" layoutY="61.0" text="Registro de Usuarios" textFill="#c6c373">
          <font>
             <Font size="24.0" />
@@ -137,10 +137,11 @@
             <TableColumn fx:id="tblCorreo" prefWidth="180.0" text="Correo" />
         </columns>
       </TableView>
-      <Button fx:id="btnAcuatlizar" layoutX="728.0" layoutY="368.0" mnemonicParsing="false" onAction="#onActualizar" text="Actualizar" />
+      <Button fx:id="btnAcuatlizar" layoutX="651.0" layoutY="368.0" mnemonicParsing="false" onAction="#onActualizar" text="Actualizar" />
       <Button fx:id="btnBuscar" layoutX="805.0" layoutY="368.0" mnemonicParsing="false" onAction="#onBuscar" text="Buscar" />
       <Button fx:id="btnEliminar" layoutX="866.0" layoutY="368.0" mnemonicParsing="false" onAction="#onEliminar" text="Eliminar" />
       <PasswordField fx:id="txtContrasenia" layoutX="227.0" layoutY="355.0" prefHeight="25.0" prefWidth="206.0" promptText="******" />
+      <Button fx:id="btnCancelar" layoutX="731.0" layoutY="368.0" mnemonicParsing="false" onAction="#onCancelarRegistro" text="Cancelar" />
     </children>
 
 </AnchorPane>
