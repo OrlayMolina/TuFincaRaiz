@@ -1,5 +1,6 @@
 package co.edu.uniquindio.engesis.proyectofinal.model;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +11,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
 
 public class CrearUsuarios {
 
@@ -95,6 +97,18 @@ public class CrearUsuarios {
     private TextField txtTelefono;
 
     @FXML
+    void onComboBox(ActionEvent event) {
+        //cbTipoDocumento.setValue(cbTipoDocumento.getValue());
+        cbTipoDocumento.setItems(FXCollections.observableArrayList(TipoDocumento.values()));
+    }
+
+    @FXML
+    void onComboBoxTipoUsuario(ActionEvent event) {
+        //cbTipoUsuario.setValue(cbTipoUsuario.getValue());
+        cbTipoUsuario.setItems(FXCollections.observableArrayList(TipoUsuario.values()));
+    }
+
+    @FXML
     void onActualizar(ActionEvent event) {
 
     }
@@ -142,7 +156,7 @@ public class CrearUsuarios {
         usuario = new Usuario(tipoUsuario, tipoDocumento, numeroDocumento, primerNombre, segundoNombre,
                 primerApellido, segundoApellido, telefono, correo, nombreUsuario, contrasenia);
         UsuarioBD.crearUsuarios(usuario);
-        AppController.showAlert(Alert.AlertType.WARNING, "Error", "Usuario creado correctamente.");
+        //AppController.showAlert(Alert.AlertType.WARNING, "Error", "Tercero creado correctamente.");
         onCancelarRegistro(event);
     }
 

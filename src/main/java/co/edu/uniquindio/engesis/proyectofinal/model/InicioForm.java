@@ -18,6 +18,9 @@ public class InicioForm {
     private Button btnSalir;
 
     @FXML
+    private Button btnTerceros;
+
+    @FXML
     private Button btnUsuarios;
 
     @FXML
@@ -32,11 +35,24 @@ public class InicioForm {
     }
 
     @FXML
+    void onClicTerceros(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("CrearTerceros.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Tu Finca Raíz | Crear Terceros");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.show();
+    }
+
+    @FXML
     void onSalirClic(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        //name = user;
         stage.setTitle("Tu Finca Raíz | Iniciar sesión");
         stage.setScene(scene);
         stage.setResizable(false);
