@@ -1,5 +1,7 @@
 package co.edu.uniquindio.engesis.proyectofinal.model;
 
+import co.edu.uniquindio.engesis.proyectofinal.model.personas.Usuario;
+
 public class Empleado extends Usuario {
 
     private String primerNombre;

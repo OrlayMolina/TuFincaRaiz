@@ -1,5 +1,7 @@
 package co.edu.uniquindio.engesis.proyectofinal.model;
 
+import co.edu.uniquindio.engesis.proyectofinal.model.personas.Persona;
+import co.edu.uniquindio.engesis.proyectofinal.model.personas.Usuario;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -73,7 +75,7 @@ public class CrearUsuarios {
     private PasswordField txtContrasenia;
 
     @FXML
-    private TextField txtCorreo;
+    private TextField txtCorreo;// String Correo = txtCorreo.getText();
 
     @FXML
     private TextField txtNombreUsuario;
@@ -97,9 +99,13 @@ public class CrearUsuarios {
     private TextField txtTelefono;
 
     @FXML
+    public void initialize(){
+        cbTipoDocumento.setItems(FXCollections.observableArrayList(TipoDocumento.values()));
+    }
+    @FXML
     void onComboBox(ActionEvent event) {
         //cbTipoDocumento.setValue(cbTipoDocumento.getValue());
-        cbTipoDocumento.setItems(FXCollections.observableArrayList(TipoDocumento.values()));
+
     }
 
     @FXML

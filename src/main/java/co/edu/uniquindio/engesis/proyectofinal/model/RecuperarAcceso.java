@@ -37,7 +37,7 @@ public class RecuperarAcceso {
     private Label lblPrincipal;
 
     @FXML
-    void onSalirClic(ActionEvent event) throws IOException {
+    void onSalirClick(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

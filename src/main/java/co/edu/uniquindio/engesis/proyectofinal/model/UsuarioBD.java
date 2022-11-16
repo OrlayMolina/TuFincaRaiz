@@ -1,6 +1,7 @@
 package co.edu.uniquindio.engesis.proyectofinal.model;
 
 import co.edu.uniquindio.engesis.proyectofinal.model.base.datos.Conexion;
+import co.edu.uniquindio.engesis.proyectofinal.model.personas.Usuario;
 import javafx.scene.control.Alert;
 
 import java.sql.Connection;

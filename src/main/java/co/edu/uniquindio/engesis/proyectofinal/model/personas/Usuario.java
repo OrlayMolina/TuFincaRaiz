@@ -1,6 +1,6 @@
-package co.edu.uniquindio.engesis.proyectofinal.model;
+package co.edu.uniquindio.engesis.proyectofinal.model.personas;
 
-public class Usuario extends Persona{
+public class Usuario extends Persona {
 
     private static String userName;
     private static String password;
