@@ -109,12 +109,12 @@
                 <Image url="@../../../../../../logob.png" />
             </image>
         </ImageView>
-      <Label layoutX="371.0" layoutY="72.0" text="REGISTRO DE PROPIEDAD">
+      <Label layoutX="371.0" layoutY="72.0" text="REGISTRO DE PROPIEDAD" textFill="#c6c373">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="354.0" layoutY="131.0" text="¿QUÉ PROPIEDAD DESEA INGRESAR?">
+      <Label layoutX="354.0" layoutY="131.0" text="¿QUÉ PROPIEDAD DESEA INGRESAR?" textFill="#c6c373">
          <font>
             <Font size="18.0" />
          </font>
@@ -136,20 +136,20 @@
             <Font size="10.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="76.0" fitWidth="80.0">
+            <ImageView fitHeight="76.0" fitWidth="90.0">
                <image>
-                  <Image url="@../../../../../../../../../../../../../Downloads/kisspng-performance-car-sports-car-model-car-motor-vehicle-srt-5b387497ab9ac8.6471105215304265197029.png" />
+                  <Image url="@../../../../../../../../../../../../../Downloads/pngegg.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Label layoutX="171.0" layoutY="393.0" text="CASA" />
-      <Label layoutX="269.0" layoutY="393.0" text="CHALET" />
-      <Label layoutX="349.0" layoutY="393.0" text="APARTAMENTO" />
-      <Label layoutX="470.0" layoutY="393.0" text="EDIFICIO" />
-      <Label layoutX="589.0" layoutY="393.0" text="BODEGA" />
-      <Label layoutX="682.0" layoutY="393.0" text="PARQUEADERO" />
-      <Label layoutX="818.0" layoutY="393.0" text="LOTE" />
+      <Label layoutX="171.0" layoutY="393.0" text="CASA" textFill="#c6c373" />
+      <Label layoutX="269.0" layoutY="393.0" text="CHALET" textFill="#c6c373" />
+      <Label layoutX="349.0" layoutY="393.0" text="APARTAMENTO" textFill="#c6c373" />
+      <Label layoutX="470.0" layoutY="393.0" text="EDIFICIO" textFill="#c6c373" />
+      <Label layoutX="589.0" layoutY="393.0" text="BODEGA" textFill="#c6c373" />
+      <Label layoutX="682.0" layoutY="393.0" text="PARQUEADERO" textFill="#c6c373" />
+      <Label layoutX="818.0" layoutY="393.0" text="LOTE" textFill="#c6c373" />
     </children>
 
 </AnchorPane>
