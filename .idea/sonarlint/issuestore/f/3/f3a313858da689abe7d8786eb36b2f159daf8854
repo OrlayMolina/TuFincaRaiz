@@ -1,0 +1,7 @@
+
+b	java:S112L"FDefine and throw a dedicated exception instead of using a generic one.(¿ÄĞ÷8ÕÁÑ¿Ç0
+g	java:S112O"FDefine and throw a dedicated exception instead of using a generic one.(·¿åúÿÿÿÿ8ÖÁÑ¿Ç0
+g	java:S112J"FDefine and throw a dedicated exception instead of using a generic one.(áóıÕÿÿÿÿÿ8×ÁÑ¿Ç0
+b	java:S107"AConstructor has 9 parameters, which is greater than 7 authorized.(Ñ²ØÏıÿÿÿÿ8ÎÚé¿Ç0
+Y
+java:S6353K"<Use concise character class syntax '\\d' instead of '[0-9]'.(…ñˆÕ8úÁÑ¿Ç0
