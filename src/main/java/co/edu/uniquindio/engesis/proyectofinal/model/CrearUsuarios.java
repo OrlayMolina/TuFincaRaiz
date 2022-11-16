@@ -101,17 +101,17 @@ public class CrearUsuarios {
     @FXML
     public void initialize(){
         cbTipoDocumento.setItems(FXCollections.observableArrayList(TipoDocumento.values()));
+        cbTipoUsuario.setItems(FXCollections.observableArrayList(TipoUsuario.ADMINISTRADOR,TipoUsuario.EMPLEADO));
     }
     @FXML
     void onComboBox(ActionEvent event) {
-        //cbTipoDocumento.setValue(cbTipoDocumento.getValue());
 
     }
 
     @FXML
     void onComboBoxTipoUsuario(ActionEvent event) {
-        //cbTipoUsuario.setValue(cbTipoUsuario.getValue());
-        cbTipoUsuario.setItems(FXCollections.observableArrayList(TipoUsuario.values()));
+
+
     }
 
     @FXML
