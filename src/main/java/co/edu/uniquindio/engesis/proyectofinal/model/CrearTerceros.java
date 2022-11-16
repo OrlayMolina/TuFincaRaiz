@@ -1,5 +1,6 @@
 package co.edu.uniquindio.engesis.proyectofinal.model;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -38,10 +39,10 @@ public class CrearTerceros {
     private Button btnSalir;
 
     @FXML
-    private ComboBox<?> cbTipoDocumento;
+    private ComboBox<TipoDocumento> cbTipoDocumento;
 
     @FXML
-    private ComboBox<?> cbTipoUsuario;
+    private ComboBox<TipoUsuario> cbTipoUsuario;
 
     @FXML
     private Label lblHeaderName;
@@ -93,6 +94,12 @@ public class CrearTerceros {
 
     @FXML
     private TextField txtTelefono;
+
+    @FXML
+    public void initialize() {
+        cbTipoDocumento.setItems(FXCollections.observableArrayList(TipoDocumento.values()));
+        cbTipoUsuario.setItems(FXCollections.observableArrayList(TipoUsuario.CLIENTE,TipoUsuario.PROPIETARIO));
+    }
 
     @FXML
     void onActualizar(ActionEvent event) {
