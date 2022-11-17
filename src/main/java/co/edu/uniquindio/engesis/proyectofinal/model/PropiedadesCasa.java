@@ -56,34 +56,33 @@ public class PropiedadesCasa {
     @FXML
     private TextField txtMaterialConstruccionCasa;
 
-
-
-
+    @FXML
+    private TableView <PropiedadesCasa> tblCasa;
 
     @FXML
-    private TableColumn<Persona, Integer> tblConsecutivo;
+    private TableColumn<PropiedadesCasa, TipoOferta> tblTipoOfertaCasa;
 
     @FXML
-    private TableColumn<Persona, String> tblCorreo;
+    private TableColumn<PropiedadesCasa, Integer> tblvalorCasa;
 
     @FXML
-    private TableColumn<Persona, TipoDocumento> tblDocumento;
+    private TableColumn<PropiedadesCasa, String> tblDireccionCasa;
 
     @FXML
-    private TableColumn<Persona, String> tblPrimerApellido;
+        private TableColumn<PropiedadesCasa, Integer> tblAreaCasa;
 
     @FXML
-    private TableColumn<Persona, String> tblPrimerNombre;
+    private TableColumn<PropiedadesCasa, Integer> tblNumeroPisosCasa;
 
     @FXML
-    private TableColumn<Persona, String> tblSegundoApellido;
+    private TableColumn<PropiedadesCasa, Integer> tblNumeroCuartosCasa;
 
     @FXML
-    private TableColumn<Persona, String> tblSegundoNombre;
+    private TableColumn<PropiedadesCasa, Integer> tblNumeroBañosCasa;
 
     @FXML
-    private TableColumn<Persona, TipoDocumento> tblTipoDocumento;
-    
+    private TableColumn<PropiedadesCasa, String> tblMaterialConstruccionCasa;
+
 
     @FXML
     void onComboBox(ActionEvent event) {
