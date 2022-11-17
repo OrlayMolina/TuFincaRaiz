@@ -53,37 +53,37 @@
                 <Image url="@../../../../../../logob.png" />
             </image>
         </ImageView>
-        <Label layoutX="34.0" layoutY="144.0" text="Tipo de oferta:" textFill="#c6c373">
+        <Label layoutX="69.0" layoutY="144.0" text="Tipo de oferta:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txValorParqueadero" layoutX="227.0" layoutY="200.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el valor del parqueadero" />
-        <Label layoutX="472.0" layoutY="196.0" text="Dirección:" textFill="#c6c373">
+        <TextField fx:id="txValorParqueadero" layoutX="265.0" layoutY="200.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el valor del parqueadero" />
+        <Label layoutX="536.0" layoutY="197.0" text="Dirección:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txtDireccionParqueadero" layoutX="605.0" layoutY="200.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese la dirección del parqueadero" />
-        <Label layoutX="471.0" layoutY="144.0" text="Área:" textFill="#c6c373">
+        <TextField fx:id="txtDireccionParqueadero" layoutX="665.0" layoutY="200.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese la dirección del parqueadero" />
+        <Label layoutX="543.0" layoutY="144.0" text="Área:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txtAreaParqueadero" layoutX="605.0" layoutY="152.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el área del parqueadero" />
-        <Label layoutX="37.0" layoutY="197.0" text="Valor:" textFill="#c6c373">
+        <TextField fx:id="txtAreaParqueadero" layoutX="665.0" layoutY="148.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el área del parqueadero" />
+        <Label layoutX="69.0" layoutY="197.0" text="Valor:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <ComboBox fx:id="cbTipoOfertaParqueadero" layoutX="227.0" layoutY="148.0" onAction="#onComboBoxTipoOfertaParqueadero" prefHeight="25.0" prefWidth="206.0" />
+        <ComboBox fx:id="cbTipoOfertaParqueadero" layoutX="265.0" layoutY="148.0" onAction="#onComboBoxTipoOfertaParqueadero" prefHeight="25.0" prefWidth="206.0" />
         <Button fx:id="btnGuardarUsuario" layoutX="451.0" layoutY="368.0" mnemonicParsing="false" onAction="#onguardar" text="Guardar" />
         <Label layoutX="379.0" layoutY="61.0" text="Registro de Parqueadero" textFill="#c6c373">
             <font>
                 <Font size="24.0" />
             </font>
         </Label>
-        <TableView fx:id="tblParqueadero" layoutX="258.0" layoutY="403.0" prefHeight="179.0" prefWidth="525.0">
+        <TableView fx:id="tblParqueadero" layoutX="152.0" layoutY="403.0" prefHeight="179.0" prefWidth="662.0">
             <columns>
                 <TableColumn fx:id="tblTipoOfertaLote" prefWidth="108.0" text="Tipo de oferta" />
                 <TableColumn fx:id="tblValorParqueadero" prefWidth="129.0" text="Valor" />
