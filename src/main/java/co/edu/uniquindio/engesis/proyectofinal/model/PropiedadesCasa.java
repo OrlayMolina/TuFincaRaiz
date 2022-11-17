@@ -33,16 +33,32 @@ public class PropiedadesCasa {
     private Button btnSalir;
 
     @FXML
-    private ComboBox<TipoDocumento> cbTipoDocumento;
+    private ComboBox<TipoOferta> cbTipoOfertaCasa;
 
     @FXML
-    private ComboBox<TipoUsuario> cbTipoUsuario;
+    private TextField txtValorCasa;
 
     @FXML
-    private Label lblHeaderName;
+    private TextField txtDireccionCasa;
 
     @FXML
-    private Label lblPrincipal;
+    private TextField txtAreaCasa;
+
+    @FXML
+    private TextField txtNumeroPisosCasa;
+
+    @FXML
+    private TextField txtNumeroCuartosCasa;
+
+    @FXML
+    private TextField txtNumeroBañosCasa;
+
+    @FXML
+    private TextField txtMaterialConstruccionCasa;
+
+
+
+
 
     @FXML
     private TableColumn<Persona, Integer> tblConsecutivo;
@@ -67,33 +83,7 @@ public class PropiedadesCasa {
 
     @FXML
     private TableColumn<Persona, TipoDocumento> tblTipoDocumento;
-
-    @FXML
-    private PasswordField txtContrasenia;
-
-    @FXML
-    private TextField txtCorreo;
-
-    @FXML
-    private TextField txtNombreUsuario;
-
-    @FXML
-    private TextField txtNumeroDocumento;
-
-    @FXML
-    private TextField txtPrimerApellido;
-
-    @FXML
-    private TextField txtPrimerNombre;
-
-    @FXML
-    private TextField txtSegundoApellido;
-
-    @FXML
-    private TextField txtSegundoNombre;
-
-    @FXML
-    private TextField txtTelefono;
+    
 
     @FXML
     void onComboBox(ActionEvent event) {
