@@ -58,34 +58,34 @@
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txtPrimerNombre" layoutX="227.0" layoutY="164.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el valor de la casa" />
+        <TextField fx:id="txtValorChalet" layoutX="227.0" layoutY="164.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el valor de la casa" />
         <Label layoutX="37.0" layoutY="209.0" text="Dirección:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txtPrimerApellido" layoutX="227.0" layoutY="212.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese la dirección de la casa" />
+        <TextField fx:id="txtDireccionChalet" layoutX="227.0" layoutY="212.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese la dirección de la casa" />
         <Label layoutX="475.0" layoutY="209.0" text="Número de pisos:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txtNumeroDocumento" layoutX="735.0" layoutY="213.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el número de pisos " />
+        <TextField fx:id="txtNumeroPisosChalet" layoutX="735.0" layoutY="213.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el número de pisos " />
         <Label layoutX="36.0" layoutY="160.0" text="Valor:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txtSegundoNombre" layoutX="735.0" layoutY="260.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el número de cuartos" />
+        <TextField fx:id="txtNumeroCuartosChalet" layoutX="735.0" layoutY="260.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el número de cuartos" />
         <Label layoutX="37.0" layoutY="256.0" text="Área:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txtSegundoApellido" layoutX="227.0" layoutY="260.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el área de la casa" />
-        <ComboBox fx:id="cbTipoUsuario" layoutX="227.0" layoutY="118.0" onAction="#onComboBoxTipoUsuario" prefHeight="25.0" prefWidth="206.0" />
-        <TextField fx:id="txtTelefono" layoutX="735.0" layoutY="309.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese su teléfono" />
-        <TextField fx:id="txtCorreo" layoutX="735.0" layoutY="359.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el material de construcción" />
+        <TextField fx:id="txtAreaChalet" layoutX="227.0" layoutY="260.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el área de la casa" />
+        <ComboBox fx:id="cbTipoOfertaChalet" layoutX="227.0" layoutY="118.0" onAction="#onComboBoxTipoOfertaChalet" prefHeight="25.0" prefWidth="206.0" />
+        <TextField fx:id="txtNumeroBañosChalet" layoutX="735.0" layoutY="309.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese su teléfono" />
+        <TextField fx:id="txtMaterialConstruccionChalet" layoutX="735.0" layoutY="359.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el material de construcción" />
         <Label layoutX="475.0" layoutY="256.0" text="Número de cuartos:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
@@ -102,20 +102,20 @@
                 <Font size="24.0" />
             </font>
         </Label>
-        <TableView layoutX="7.0" layoutY="454.0" prefHeight="179.0" prefWidth="1115.0">
+        <TableView fx:id="tblChalet" layoutX="7.0" layoutY="454.0" prefHeight="179.0" prefWidth="1115.0">
             <columns>
-                <TableColumn fx:id="tblConsecutivo" prefWidth="92.0" text="Tipo de oferta" />
-                <TableColumn fx:id="tblTipoDocumento" prefWidth="92.0" text="Valor" />
-                <TableColumn fx:id="tblDocumento" prefWidth="102.0" text="Dirección" />
-                <TableColumn fx:id="tblPrimerNombre" prefWidth="65.0" text="Área" />
-            <TableColumn prefWidth="94.0" text="Agua potable" />
-            <TableColumn prefWidth="103.0" text="Energía electrica" />
-            <TableColumn prefWidth="52.0" text="Internet" />
-                <TableColumn fx:id="tblSegundoNombre" prefWidth="90.0" text="Alcantarillado" />
-            <TableColumn prefWidth="83.0" text="Número pisos" />
-            <TableColumn prefWidth="99.0" text="Número cuartos" />
-                <TableColumn fx:id="tblPrimerApellido" prefWidth="95.0" text="Número baños" />
-                <TableColumn fx:id="tblSegundoApellido" prefWidth="148.0" text="Material de construcción" />
+                <TableColumn fx:id="tblTipoOfertaChalet" prefWidth="92.0" text="Tipo de oferta" />
+                <TableColumn fx:id="tblValorChalet" prefWidth="92.0" text="Valor" />
+                <TableColumn fx:id="tblDireccionChalet" prefWidth="102.0" text="Dirección" />
+                <TableColumn fx:id="tblAreaChalet" prefWidth="65.0" text="Área" />
+            <TableColumn fx:id="tblAguaChalet" prefWidth="94.0" text="Agua potable" />
+            <TableColumn fx:id="tblEnergiaChalet" prefWidth="103.0" text="Energía electrica" />
+            <TableColumn fx:id="tblInternetChalet" prefWidth="52.0" text="Internet" />
+                <TableColumn fx:id="tblAlcantarilladoChalet" prefWidth="90.0" text="Alcantarillado" />
+            <TableColumn fx:id="tblNumeroPisosChalet" prefWidth="83.0" text="Número pisos" />
+            <TableColumn fx:id="tblNumeroCuartosChalet" prefWidth="99.0" text="Número cuartos" />
+                <TableColumn fx:id="tblNumeroBañosChalet" prefWidth="95.0" text="Número baños" />
+                <TableColumn fx:id="tblMaterialConstruccionChalet" prefWidth="148.0" text="Material de construcción" />
                 <TableColumn fx:id="tblCorreo" prefWidth="152.0" text="Internet" />
             </columns>
         </TableView>
@@ -133,19 +133,19 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cbTipoUsuario1" layoutX="227.0" layoutY="308.0" onAction="#onComboBoxTipoUsuario" prefHeight="25.0" prefWidth="206.0" />
+      <ComboBox fx:id="cbAguaPotableChalet" layoutX="227.0" layoutY="308.0" onAction="#onComboBoxAguaPotableChalet" prefHeight="25.0" prefWidth="206.0" />
       <Label layoutX="37.0" layoutY="355.0" text="Energía eléctrica:" textFill="#c6c373">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cbTipoUsuario11" layoutX="227.0" layoutY="359.0" onAction="#onComboBoxTipoUsuario" prefHeight="25.0" prefWidth="206.0" />
+      <ComboBox fx:id="cbEnergiaChalet" layoutX="227.0" layoutY="359.0" onAction="#onComboBoxEnergiaChalet" prefHeight="25.0" prefWidth="206.0" />
       <Label layoutX="37.0" layoutY="401.0" text="Gas domiciliario:" textFill="#c6c373">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cbTipoUsuario111" layoutX="227.0" layoutY="405.0" onAction="#onComboBoxTipoUsuario" prefHeight="25.0" prefWidth="206.0" />
+      <ComboBox fx:id="cbGasChalet" layoutX="227.0" layoutY="405.0" onAction="#onComboBoxGasChalet" prefHeight="25.0" prefWidth="206.0" />
       <Label layoutX="475.0" layoutY="115.0" text="Internet:" textFill="#c6c373">
          <font>
             <Font size="22.0" />
@@ -156,8 +156,8 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cbTipoUsuario12" layoutX="735.0" layoutY="118.0" onAction="#onComboBoxTipoUsuario" prefHeight="25.0" prefWidth="206.0" />
-      <ComboBox fx:id="cbTipoUsuario13" layoutX="735.0" layoutY="165.0" onAction="#onComboBoxTipoUsuario" prefHeight="25.0" prefWidth="206.0" />
+      <ComboBox fx:id="cbInternetChalet" layoutX="735.0" layoutY="118.0" onAction="#onComboBoxInternetChalet" prefHeight="25.0" prefWidth="206.0" />
+      <ComboBox fx:id="cbAlcantarilladoChalet" layoutX="735.0" layoutY="165.0" onAction="#onComboBoxAlcantarilladoChalet" prefHeight="25.0" prefWidth="206.0" />
     </children>
 
 </AnchorPane>
