@@ -32,67 +32,55 @@ public class PropiedadesChalet {
     private Button btnSalir;
 
     @FXML
-    private ComboBox<TipoDocumento> cbTipoDocumento;
+    private ComboBox<TipoOferta> cbTipoOfertaChalet;
 
     @FXML
-    private ComboBox<TipoUsuario> cbTipoUsuario;
+    private TextField txtValorCasa;
 
     @FXML
-    private Label lblHeaderName;
+    private TextField txtDireccionCasa;
 
     @FXML
-    private Label lblPrincipal;
+    private TextField txtAreaCasa;
 
     @FXML
-    private TableColumn<Persona, Integer> tblConsecutivo;
+    private TextField txtNumeroPisosCasa;
 
     @FXML
-    private TableColumn<Persona, String> tblCorreo;
+    private TextField txtNumeroCuartosCasa;
 
     @FXML
-    private TableColumn<Persona, TipoDocumento> tblDocumento;
+    private TextField txtNumeroBañosCasa;
 
     @FXML
-    private TableColumn<Persona, String> tblPrimerApellido;
+    private TextField txtMaterialConstruccionCasa;
 
     @FXML
-    private TableColumn<Persona, String> tblPrimerNombre;
+    private TableView <PropiedadesCasa> tblCasa;
 
     @FXML
-    private TableColumn<Persona, String> tblSegundoApellido;
+    private TableColumn<PropiedadesCasa, TipoOferta> tblTipoOfertaCasa;
 
     @FXML
-    private TableColumn<Persona, String> tblSegundoNombre;
+    private TableColumn<PropiedadesCasa, Integer> tblvalorCasa;
 
     @FXML
-    private TableColumn<Persona, TipoDocumento> tblTipoDocumento;
+    private TableColumn<PropiedadesCasa, String> tblDireccionCasa;
 
     @FXML
-    private PasswordField txtContrasenia;
+    private TableColumn<PropiedadesCasa, Integer> tblAreaCasa;
 
     @FXML
-    private TextField txtCorreo;
+    private TableColumn<PropiedadesCasa, Integer> tblNumeroPisosCasa;
 
     @FXML
-    private TextField txtNombreUsuario;
+    private TableColumn<PropiedadesCasa, Integer> tblNumeroCuartosCasa;
 
     @FXML
-    private TextField txtNumeroDocumento;
+    private TableColumn<PropiedadesCasa, Integer> tblNumeroBañosCasa;
 
     @FXML
-    private TextField txtPrimerApellido;
-
-    @FXML
-    private TextField txtPrimerNombre;
-
-    @FXML
-    private TextField txtSegundoApellido;
-
-    @FXML
-    private TextField txtSegundoNombre;
-
-    @FXML
-    private TextField txtTelefono;
+    private TableColumn<PropiedadesCasa, String> tblMaterialConstruccionCasa;
 
     @FXML
     void onComboBox(ActionEvent event) {
