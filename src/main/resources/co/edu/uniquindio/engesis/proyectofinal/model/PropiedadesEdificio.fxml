@@ -25,9 +25,9 @@
                 <Image url="@../../../../../../background_general.jpeg" />
             </image>
         </ImageView>
-        <Rectangle id="btnSalir" arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="641.0" layoutX="-1.0" layoutY="-48.0" onDragDetected="#onSalirClic" opacity="0.85" stroke="BLACK" strokeType="INSIDE" width="994.0" />
+        <Rectangle id="btnSalir" arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="687.0" layoutX="-1.0" layoutY="-48.0" onDragDetected="#onSalirClic" opacity="0.85" stroke="BLACK" strokeType="INSIDE" width="994.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="44.0" layoutX="-8.0" stroke="BLACK" strokeType="INSIDE" width="995.0" />
-        <Button fx:id="btnSalir" layoutX="886.0" layoutY="590.0" mnemonicParsing="false" onAction="#onSalirClic" text="Salir" textOverrun="LEADING_WORD_ELLIPSIS">
+        <Button fx:id="btnSalir" layoutX="781.0" layoutY="591.0" mnemonicParsing="false" onAction="#onSalirClic" text="Salir" textOverrun="LEADING_WORD_ELLIPSIS">
             <effect>
                 <Blend />
             </effect>
@@ -58,65 +58,50 @@
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txValorEficio" layoutX="227.0" layoutY="164.0" onAction="#onValorEdificio" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el valor del edificio" />
+        <TextField fx:id="txValorEficio" layoutX="227.0" layoutY="164.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el valor del edificio" />
         <Label layoutX="37.0" layoutY="209.0" text="Dirección:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txtDireccionEdificio" layoutX="227.0" layoutY="212.0" onAction="#onDireccionEdificio" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese la dirección de la casa" />
-        <Label layoutX="470.0" layoutY="114.0" text="Número de pisos:" textFill="#c6c373">
+        <TextField fx:id="txtDireccionEdificio" layoutX="227.0" layoutY="212.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese la dirección del edificio" />
+        <Label layoutX="470.0" layoutY="114.0" text="Área:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txtNumeroPisosEdificio" layoutX="728.0" layoutY="118.0" onAction="#onPisosEdificio" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el número de pisos " />
+        <TextField fx:id="txtAreaEdificio" layoutX="690.0" layoutY="118.0" prefHeight="25.0" prefWidth="220.0" promptText="Ingrese el área del edificio " />
         <Label layoutX="36.0" layoutY="160.0" text="Valor:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txtNumeroApartamentos" layoutX="728.0" layoutY="164.0" onAction="#onNumeroApartamentos" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el número de cuartos" />
-        <Label layoutX="37.0" layoutY="256.0" text="Área:" textFill="#c6c373">
-            <font>
-                <Font size="22.0" />
-            </font>
-        </Label>
-        <TextField fx:id="txAreaEdificio" layoutX="227.0" layoutY="260.0" onAction="#onAreaEdificio" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el área de la casa" />
+        <TextField fx:id="txtNumeroPisosEdificio" layoutX="690.0" layoutY="164.0" prefHeight="25.0" prefWidth="220.0" promptText="Ingrese el número de pisos del edificio" />
         <ComboBox fx:id="cbTipoOfertaEdificio" layoutX="227.0" layoutY="118.0" onAction="#onComboBoxTipoOfertaEdificio" prefHeight="25.0" prefWidth="206.0" />
-        <TextField fx:id="txtCorreo" layoutX="735.0" layoutY="212.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el material de construcción" />
-        <Label layoutX="470.0" layoutY="160.0" text="Número de apartamentos:" textFill="#c6c373">
+        <Label layoutX="470.0" layoutY="160.0" text="Número de pisos:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <Button fx:id="btnGuardarUsuario" layoutX="584.0" layoutY="368.0" mnemonicParsing="false" onAction="#onguardar" text="Guardar" />
+        <Button fx:id="btnGuardarUsuario" layoutX="476.0" layoutY="368.0" mnemonicParsing="false" onAction="#onguardar" text="Guardar" />
         <Label layoutX="394.0" layoutY="61.0" text="Registro de Edificio" textFill="#c6c373">
             <font>
                 <Font size="24.0" />
             </font>
         </Label>
-        <TableView layoutX="35.0" layoutY="402.0" prefHeight="179.0" prefWidth="893.0">
+        <TableView fx:id="tblEdificio" layoutX="294.0" layoutY="402.0" prefHeight="179.0" prefWidth="524.0">
             <columns>
-                <TableColumn fx:id="tblConsecutivo" prefWidth="100.0" text="Tipo de oferta" />
-                <TableColumn fx:id="tblTipoDocumento" prefWidth="104.0" text="Valor" />
-                <TableColumn fx:id="tblDocumento" prefWidth="75.0" text="Dirección" />
-                <TableColumn fx:id="tblPrimerNombre" prefWidth="103.0" text="Área" />
-                <TableColumn fx:id="tblSegundoNombre" prefWidth="110.0" text="Número de pisos" />
-                <TableColumn fx:id="tblPrimerApellido" prefWidth="128.0" text="Número de cuartos" />
-                <TableColumn fx:id="tblSegundoApellido" prefWidth="127.0" text="Número de baños" />
-                <TableColumn fx:id="tblCorreo" prefWidth="145.0" text="Material de construcción" />
+                <TableColumn fx:id="tblTipoOfertaEdificio" prefWidth="108.0" text="Tipo de oferta" />
+                <TableColumn fx:id="tblValorEdificio" prefWidth="106.0" text="Valor" />
+                <TableColumn fx:id="tblDireccionEdificio" prefWidth="100.0" text="Dirección" />
+                <TableColumn fx:id="tblAreaEdificio" prefWidth="95.0" text="Área" />
+                <TableColumn fx:id="tblNumeroPisosEdificio" prefWidth="115.0" text="Número de pisos" />
             </columns>
         </TableView>
-        <Button fx:id="btnAcuatlizar" layoutX="651.0" layoutY="368.0" mnemonicParsing="false" onAction="#onActualizar" text="Actualizar" />
-        <Button fx:id="btnBuscar" layoutX="805.0" layoutY="368.0" mnemonicParsing="false" onAction="#onBuscar" text="Buscar" />
-        <Button fx:id="btnEliminar" layoutX="866.0" layoutY="368.0" mnemonicParsing="false" onAction="#onEliminar" text="Eliminar" />
-        <Button fx:id="btnCancelar" layoutX="731.0" layoutY="368.0" mnemonicParsing="false" onAction="#onCancelarRegistro" text="Cancelar" />
-        <Label layoutX="470.0" layoutY="209.0" prefHeight="32.0" prefWidth="257.0" text="Material de construcción:" textFill="#c6c373">
-            <font>
-                <Font size="22.0" />
-            </font>
-        </Label>
+        <Button fx:id="btnAcuatlizar" layoutX="544.0" layoutY="368.0" mnemonicParsing="false" onAction="#onActualizar" text="Actualizar" />
+        <Button fx:id="btnBuscar" layoutX="690.0" layoutY="368.0" mnemonicParsing="false" onAction="#onBuscar" text="Buscar" />
+        <Button fx:id="btnEliminar" layoutX="747.0" layoutY="368.0" mnemonicParsing="false" onAction="#onEliminar" text="Eliminar" />
+        <Button fx:id="btnCancelar" layoutX="619.0" layoutY="368.0" mnemonicParsing="false" onAction="#onCancelarRegistro" text="Cancelar" />
     </children>
 
 </AnchorPane>
