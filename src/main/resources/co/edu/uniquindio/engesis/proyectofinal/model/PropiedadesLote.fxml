@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.engesis.proyectofinal.model.PropiedadesLote">
+    <children>
+        <ImageView fitHeight="480.0" fitWidth="708.0">
+            <image>
+                <Image url="@../../../../../../background_general.jpeg" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="639.0" fitWidth="992.0" layoutX="-8.0">
+            <image>
+                <Image url="@../../../../../../background_general.jpeg" />
+            </image>
+        </ImageView>
+        <Rectangle id="btnSalir" arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="687.0" layoutX="-1.0" layoutY="-48.0" onDragDetected="#onSalirClic" opacity="0.85" stroke="BLACK" strokeType="INSIDE" width="994.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="44.0" layoutX="-8.0" stroke="BLACK" strokeType="INSIDE" width="995.0" />
+        <Button fx:id="btnSalir" layoutX="743.0" layoutY="590.0" mnemonicParsing="false" onAction="#onSalirClic" text="Salir" textOverrun="LEADING_WORD_ELLIPSIS">
+            <effect>
+                <Blend />
+            </effect>
+        </Button>
+        <Label id="lblPrincipal" fx:id="lblPrincipal" alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="96.0" prefHeight="35.0" prefWidth="698.0" text=" " textAlignment="CENTER" textFill="#c6c373">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblHeaderName" alignment="CENTER_RIGHT" layoutX="584.0" layoutY="13.0" prefHeight="18.0" prefWidth="356.0" textFill="#d3c85e" />
+        <ImageView fitHeight="30.0" fitWidth="28.0" layoutX="947.0" layoutY="7.0">
+            <image>
+                <Image url="@../../../../../../icons8-user-48.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="30.0" fitWidth="54.0" layoutY="7.0">
+            <image>
+                <Image url="@../../../../../../logoa.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="18.0" fitWidth="111.0" layoutX="49.0" layoutY="12.0">
+            <image>
+                <Image url="@../../../../../../logob.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="37.0" layoutY="114.0" text="Tipo de oferta:" textFill="#c6c373">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txValorLote" layoutX="227.0" layoutY="164.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el valor del lote" />
+        <Label layoutX="37.0" layoutY="209.0" text="Dirección:" textFill="#c6c373">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtDireccionLote" layoutX="227.0" layoutY="212.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese la dirección del lote" />
+        <Label layoutX="470.0" layoutY="114.0" text="Área:" textFill="#c6c373">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtAreaLote" layoutX="690.0" layoutY="118.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el área del lote" />
+        <Label layoutX="36.0" layoutY="160.0" text="Valor:" textFill="#c6c373">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+        <ComboBox fx:id="cbTipoOfertaLote" layoutX="227.0" layoutY="118.0" onAction="#onComboBoxTipoOfertaLote" prefHeight="25.0" prefWidth="206.0" />
+        <Label layoutX="470.0" layoutY="160.0" text="Perímetro:" textFill="#c6c373">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnGuardarUsuario" layoutX="451.0" layoutY="368.0" mnemonicParsing="false" onAction="#onguardar" text="Guardar" />
+        <Label layoutX="394.0" layoutY="61.0" text="Registro de Lote " textFill="#c6c373">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <TableView fx:id="tblEdificio" layoutX="258.0" layoutY="403.0" prefHeight="179.0" prefWidth="524.0">
+            <columns>
+                <TableColumn fx:id="tblTipoOfertaLote" prefWidth="108.0" text="Tipo de oferta" />
+                <TableColumn fx:id="tblValorLote" prefWidth="106.0" text="Valor" />
+                <TableColumn fx:id="tblDireccionLote" prefWidth="100.0" text="Dirección" />
+                <TableColumn fx:id="tblAreaLote" prefWidth="95.0" text="Área" />
+                <TableColumn fx:id="tblPerimetroLote" prefWidth="115.0" text="Perímetro" />
+            </columns>
+        </TableView>
+        <Button fx:id="btnAcuatlizar" layoutX="521.0" layoutY="368.0" mnemonicParsing="false" onAction="#onActualizar" text="Actualizar" />
+        <Button fx:id="btnBuscar" layoutX="665.0" layoutY="368.0" mnemonicParsing="false" onAction="#onBuscar" text="Buscar" />
+        <Button fx:id="btnEliminar" layoutX="722.0" layoutY="368.0" mnemonicParsing="false" onAction="#onEliminar" text="Eliminar" />
+        <Button fx:id="btnCancelar" layoutX="598.0" layoutY="368.0" mnemonicParsing="false" onAction="#onCancelarRegistro" text="Cancelar" />
+        <ComboBox fx:id="cbPerimetroLote" layoutX="690.0" layoutY="164.0" onAction="#onComboBoxPerimetroLote" prefHeight="25.0" prefWidth="206.0" />
+    </children>
+
+</AnchorPane>
