@@ -58,34 +58,34 @@
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txtPrimerNombre" layoutX="227.0" layoutY="164.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el valor de la casa" />
+        <TextField fx:id="txtValorCasa" layoutX="227.0" layoutY="164.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el valor de la casa" />
         <Label layoutX="37.0" layoutY="209.0" text="Dirección:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txtPrimerApellido" layoutX="227.0" layoutY="212.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese la dirección de la casa" />
+        <TextField fx:id="txtDireccionCasa" layoutX="227.0" layoutY="212.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese la dirección de la casa" />
         <Label layoutX="470.0" layoutY="114.0" text="Número de pisos:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txtNumeroDocumento" layoutX="728.0" layoutY="118.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el número de pisos " />
+        <TextField fx:id="txtNumeroPisosCasa" layoutX="728.0" layoutY="118.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el número de pisos " />
         <Label layoutX="36.0" layoutY="160.0" text="Valor:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txtSegundoNombre" layoutX="728.0" layoutY="164.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el número de cuartos" />
+        <TextField fx:id="txtNumeroCuartosCasa" layoutX="728.0" layoutY="164.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el número de cuartos" />
         <Label layoutX="37.0" layoutY="256.0" text="Área:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txtSegundoApellido" layoutX="227.0" layoutY="260.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el área de la casa" />
-        <ComboBox fx:id="cbTipoUsuario" layoutX="227.0" layoutY="118.0" onAction="#onComboBoxTipoUsuario" prefHeight="25.0" prefWidth="206.0" />
-        <TextField fx:id="txtTelefono" layoutX="728.0" layoutY="212.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese su teléfono" />
-        <TextField fx:id="txtCorreo" layoutX="728.0" layoutY="260.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el material de construcción" />
+        <TextField fx:id="txtAreaCasa" layoutX="227.0" layoutY="260.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el área de la casa" />
+        <ComboBox fx:id="cbTipoOfertaCasa" layoutX="227.0" layoutY="118.0" onAction="#onComboBoxTipoOfertaCasa" prefHeight="25.0" prefWidth="206.0" />
+        <TextField fx:id="txtNumeroBañosCasa" layoutX="728.0" layoutY="212.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese su teléfono" />
+        <TextField fx:id="txtMaterialConstruccionCasa" layoutX="728.0" layoutY="260.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el material de construcción" />
         <Label layoutX="470.0" layoutY="160.0" text="Número de cuartos:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
@@ -102,16 +102,16 @@
                 <Font size="24.0" />
             </font>
         </Label>
-        <TableView layoutX="35.0" layoutY="402.0" prefHeight="179.0" prefWidth="893.0">
+        <TableView fx:id="tblCasa" layoutX="35.0" layoutY="402.0" prefHeight="179.0" prefWidth="893.0">
             <columns>
-                <TableColumn fx:id="tblConsecutivo" prefWidth="100.0" text="Tipo de oferta" />
-                <TableColumn fx:id="tblTipoDocumento" prefWidth="104.0" text="Valor" />
-                <TableColumn fx:id="tblDocumento" prefWidth="75.0" text="Dirección" />
-                <TableColumn fx:id="tblPrimerNombre" prefWidth="103.0" text="Área" />
-                <TableColumn fx:id="tblSegundoNombre" prefWidth="110.0" text="Número de pisos" />
-                <TableColumn fx:id="tblPrimerApellido" prefWidth="128.0" text="Número de cuartos" />
-                <TableColumn fx:id="tblSegundoApellido" prefWidth="127.0" text="Número de baños" />
-                <TableColumn fx:id="tblCorreo" prefWidth="145.0" text="Material de construcción" />
+                <TableColumn fx:id="tblTipoOfertaCasa" prefWidth="100.0" text="Tipo de oferta" />
+                <TableColumn fx:id="tblValorCasa" prefWidth="104.0" text="Valor" />
+                <TableColumn fx:id="tblDireccionCasa" prefWidth="75.0" text="Dirección" />
+                <TableColumn fx:id="tblAreaCasa" prefWidth="103.0" text="Área" />
+                <TableColumn fx:id="tblNumeroPisosCasa" prefWidth="110.0" text="Número de pisos" />
+                <TableColumn fx:id="tblNumeroCuartosCasa" prefWidth="128.0" text="Número de cuartos" />
+                <TableColumn fx:id="tblNumeroBañosCasa" prefWidth="127.0" text="Número de baños" />
+                <TableColumn fx:id="tblMaterialConstruccionCasa" prefWidth="145.0" text="Material de construcción" />
             </columns>
         </TableView>
         <Button fx:id="btnAcuatlizar" layoutX="651.0" layoutY="368.0" mnemonicParsing="false" onAction="#onActualizar" text="Actualizar" />
