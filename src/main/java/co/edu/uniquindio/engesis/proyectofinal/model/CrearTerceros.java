@@ -1,5 +1,7 @@
 package co.edu.uniquindio.engesis.proyectofinal.model;
 
+import co.edu.uniquindio.engesis.proyectofinal.model.personas.TipoDocumento;
+import co.edu.uniquindio.engesis.proyectofinal.model.personas.TipoUsuario;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,7 +14,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;

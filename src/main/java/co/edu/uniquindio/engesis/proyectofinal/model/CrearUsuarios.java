@@ -1,7 +1,11 @@
 package co.edu.uniquindio.engesis.proyectofinal.model;
 
+import co.edu.uniquindio.engesis.proyectofinal.model.base.datos.UsuarioBD;
 import co.edu.uniquindio.engesis.proyectofinal.model.personas.Persona;
+import co.edu.uniquindio.engesis.proyectofinal.model.personas.TipoDocumento;
+import co.edu.uniquindio.engesis.proyectofinal.model.personas.TipoUsuario;
 import co.edu.uniquindio.engesis.proyectofinal.model.personas.Usuario;
+import co.edu.uniquindio.engesis.proyectofinal.model.util.TextFormatterUtil;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,9 +14,13 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.List;
+
+import static co.edu.uniquindio.engesis.proyectofinal.model.InmobiliariaController.INSTANCIA;
 
 
 public class CrearUsuarios {
@@ -46,6 +54,9 @@ public class CrearUsuarios {
 
     @FXML
     private Label lblPrincipal;
+
+    @FXML
+    private TableView<Persona> tblUsuarios;
 
     @FXML
     private TableColumn<Persona, Integer> tblConsecutivo;
@@ -100,6 +111,15 @@ public class CrearUsuarios {
 
     @FXML
     public void initialize(){
+        llenarTabla(INSTANCIA.getInmobiliaria().buscar(null, null, null));
+        tblDocumento.setCellValueFactory(new PropertyValueFactory<>("numeroDocumento"));
+        tblPrimerNombre.setCellValueFactory(new PropertyValueFactory<>("primerNombre"));
+        tblPrimerApellido.setCellValueFactory(new PropertyValueFactory<>("primerApellido"));
+        tblUsuarios.getSelectionModel().selectedItemProperty()
+                .addListener((observable, oldValue, newValue) -> llenarCampos(newValue));
+        txtNumeroDocumento.setTextFormatter(new TextFormatter<>(TextFormatterUtil::integerFormat));
+        txtPrimerNombre.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
+        txtPrimerApellido.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
         cbTipoDocumento.setItems(FXCollections.observableArrayList(TipoDocumento.values()));
         cbTipoUsuario.setItems(FXCollections.observableArrayList(TipoUsuario.ADMINISTRADOR,TipoUsuario.EMPLEADO));
     }
@@ -120,8 +140,10 @@ public class CrearUsuarios {
     }
 
     @FXML
-    void onBuscar(ActionEvent event) {
-
+    void onBuscar() {
+        llenarTabla(
+                INSTANCIA.getInmobiliaria().buscar(txtNumeroDocumento.getText(), txtPrimerNombre.getText(), txtPrimerApellido.getText())
+        );
     }
 
     @FXML
@@ -162,7 +184,7 @@ public class CrearUsuarios {
         usuario = new Usuario(tipoUsuario, tipoDocumento, numeroDocumento, primerNombre, segundoNombre,
                 primerApellido, segundoApellido, telefono, correo, nombreUsuario, contrasenia);
         UsuarioBD.crearUsuarios(usuario);
-        //AppController.showAlert(Alert.AlertType.WARNING, "Error", "Tercero creado correctamente.");
+        AppController.showAlert(Alert.AlertType.WARNING, "Error", "Tercero creado correctamente.");
         onCancelarRegistro(event);
     }
 
@@ -179,4 +201,17 @@ public class CrearUsuarios {
         txtTelefono.setText("");
     }
 
+    private void llenarTabla(List<Persona> persona) {
+        tblUsuarios.setItems(FXCollections.observableArrayList(persona));
+        tblUsuarios.refresh();
+    }
+
+    private void llenarCampos(Persona persona) {
+        if (persona != null) {
+            tblDocumento.setText(persona.getNumeroDocumento());
+            tblPrimerNombre.setText(persona.getPrimerNombre());
+            tblSegundoNombre.setText(persona.getSegundoNombre());
+
+        }
+    }
 }
