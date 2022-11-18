@@ -21,7 +21,7 @@
                 <Image url="@../../../../../../background_general.jpeg" />
             </image>
         </ImageView>
-        <Rectangle id="btnSalir" arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="641.0" layoutX="-9.0" layoutY="45.0" onDragDetected="#onSalirClic" opacity="0.85" stroke="BLACK" strokeType="INSIDE" width="994.0" />
+        <Rectangle id="btnSalir" arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="595.0" layoutX="-9.0" layoutY="45.0" onDragDetected="#onSalirClickPropiedades" opacity="0.85" stroke="BLACK" strokeType="INSIDE" width="994.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="44.0" layoutX="-8.0" stroke="BLACK" strokeType="INSIDE" width="995.0" />
         <Button fx:id="btnCasa" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="275.0" mnemonicParsing="false" onAction="#onCasaClick" prefHeight="90.0" prefWidth="90.0" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
             <font>
@@ -30,7 +30,7 @@
          <graphic>
             <ImageView fitHeight="78.0" fitWidth="76.0">
                <image>
-                  <Image url="@../../../../../../../../../../../../Imágenes/Tu%20finca%20raiz/house_PNG11.png" />
+                  <Image url="@../../../../../../house_PNG11.png" />
                </image>
             </ImageView>
          </graphic>
@@ -75,15 +75,8 @@
             <font>
                 <Font size="10.0" />
             </font>
-         <graphic>
-            <ImageView fitHeight="70.0" fitWidth="74.0">
-               <image>
-                  <Image url="@../../../../../../../../../../../../../Downloads/kisspng-tea-terrain-icon-tea-field-terrain-ups-and-downs-5a8bc480decff5.9806182615191092489127.png" />
-               </image>
-            </ImageView>
-         </graphic>
         </Button>
-        <Button fx:id="btnSalir" layoutX="470.0" layoutY="549.0" mnemonicParsing="false" onAction="#onSalirClic" text="Salir" textOverrun="LEADING_WORD_ELLIPSIS">
+        <Button fx:id="btnSalir" layoutX="470.0" layoutY="549.0" mnemonicParsing="false" onAction="#onSalirClickPropiedades" text="Salir" textOverrun="LEADING_WORD_ELLIPSIS">
             <effect>
                 <Blend />
             </effect>
@@ -123,25 +116,11 @@
          <font>
             <Font size="10.0" />
          </font>
-         <graphic>
-            <ImageView fitHeight="77.0" fitWidth="90.0">
-               <image>
-                  <Image url="@../../../../../../../../../../../../../Downloads/kisspng-warehouse-computer-icons-clip-art-warehouse-5b176fcf68c435.7985720515282626074291.png" />
-               </image>
-            </ImageView>
-         </graphic>
       </Button>
       <Button fx:id="btnParqueadero" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="677.0" layoutY="275.0" mnemonicParsing="false" onAction="#onParqueaderoClick" prefHeight="90.0" prefWidth="90.0" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
          <font>
             <Font size="10.0" />
          </font>
-         <graphic>
-            <ImageView fitHeight="76.0" fitWidth="90.0">
-               <image>
-                  <Image url="@../../../../../../../../../../../../../Downloads/pngegg.png" />
-               </image>
-            </ImageView>
-         </graphic>
       </Button>
       <Label layoutX="171.0" layoutY="393.0" text="CASA" textFill="#c6c373" />
       <Label layoutX="269.0" layoutY="393.0" text="CHALET" textFill="#c6c373" />
