@@ -2,7 +2,11 @@
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+Å
+Qsrc/main/java/co/edu/uniquindio/engesis/proyectofinal/model/personas/Persona.java,c\2\c22c2b81e2b90ae2ea574ff61b7d127d0818106f
 ~
-Nsrc/main/java/co/edu/uniquindio/engesis/proyectofinal/model/TipoDocumento.java,7\4\74ae0265ff6ee026e46fbb58599bb1ed02a30a28
-|
-Lsrc/main/java/co/edu/uniquindio/engesis/proyectofinal/model/TipoUsuario.java,9\1\9127652a838de8237207781f2eb49b9e852ffd70
+Nsrc/main/java/co/edu/uniquindio/engesis/proyectofinal/model/AppController.java,a\5\a5ad9d55f5bd0c05c16f4107319a9bc1d4f746ea
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+á
+Wsrc/main/java/co/edu/uniquindio/engesis/proyectofinal/model/InmobiliariaController.java,6\c\6ce128b2cc6c4884d7eb102d73ff824a33b54009

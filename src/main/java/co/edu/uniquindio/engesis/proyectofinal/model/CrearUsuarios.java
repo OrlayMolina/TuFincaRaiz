@@ -219,12 +219,13 @@ public class CrearUsuarios {
     private void llenarCampos(Persona persona) {
         if (persona != null) {
             cbTipoDocumento.setValue(cbTipoDocumento.getValue());
-            tblPrimerNombre.setText(persona.getPrimerNombre());
-            tblSegundoNombre.setText(persona.getSegundoNombre());
-            tblPrimerApellido.setText(persona.getPrimerApellido());
-            tblSegundoApellido.setText(persona.getSegundoApellido());
-            tblTelefono.setText(persona.getTelefono());
-            tblCorreo.setText(persona.getCorreo());
+            txtNumeroDocumento.setText(persona.getNumeroDocumento());
+            txtPrimerNombre.setText(persona.getPrimerNombre());
+            txtSegundoNombre.setText(persona.getSegundoNombre());
+            txtPrimerApellido.setText(persona.getPrimerApellido());
+            txtSegundoApellido.setText(persona.getSegundoApellido());
+            txtTelefono.setText(persona.getTelefono());
+            txtCorreo.setText(persona.getCorreo());
         }
     }
 }
