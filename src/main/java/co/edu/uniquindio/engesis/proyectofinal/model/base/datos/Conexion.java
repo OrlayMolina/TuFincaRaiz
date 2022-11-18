@@ -9,10 +9,10 @@ import java.sql.SQLException;
 
 public class Conexion {
 
-    public Connection getConnection() throws SQLException {
+    public static Connection getConnection() throws SQLException {
         Connection connection = null;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/inmobiliaria?serverTimezone=UTC", "root", "Lechevarsinodioxogen56");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Inmobiliaria?serverTimezone=UTC", "root", "Lechevarsinodioxogen56");
         } catch (SQLException e) {
             AppController.showAlert(Alert.AlertType.WARNING, "Error", "No fue posible conectar con la base de datos");
             AppController.showAlert(Alert.AlertType.ERROR, "Error", e.getMessage());

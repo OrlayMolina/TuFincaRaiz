@@ -1,0 +1,20 @@
+
+a
+java:S1192Z"FDefine a constant instead of duplicating this literal "Error" 3 times.(ú‹®şüÿÿÿÿ
+k	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿ“íÔşÿÿÿÿ
+q
+java:S2095C"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(²İÚûÿÿÿÿ8ÚºÊ½È0
+l
+java:S2095R"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ôıáÁ8ÛºÊ½È0
+P
+java:S1481:"3Remove this unused "consultaNombre" local variable.(ô›Éª8»Ê½È0
+Q
+java:S1481;"4Remove this unused "consultaUsuario" local variable.(ë¶¤”8»Ê½È0
+Z
+java:S1481<"8Remove this unused "consultaContrasenia" local variable.(ÊüŞ°üÿÿÿÿ8»Ê½È0
+I
+java:S1125Y"'Remove the unnecessary boolean literal.(…«Ş¾üÿÿÿÿ8˜»Ê½È0
+[
+java:S4719t"9Replace charset name argument with StandardCharsets.UTF_8(ŞÂ£÷şÿÿÿÿ8£»Ê½È0
+`
+java:S4719t">Replace charset name argument with StandardCharsets.ISO_8859_1(ŞÂ£÷şÿÿÿÿ8¥»Ê½È0

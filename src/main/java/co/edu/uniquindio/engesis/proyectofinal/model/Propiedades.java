@@ -1,25 +1,16 @@
 package co.edu.uniquindio.engesis.proyectofinal.model;
 
-import co.edu.uniquindio.engesis.proyectofinal.model.personas.TipoDocumento;
-import co.edu.uniquindio.engesis.proyectofinal.model.personas.TipoUsuario;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+import javafx.scene.input.MouseEvent;
 
-import java.io.IOException;
-
-
-public class CrearTerceros {
+public class Propiedades {
 
     @FXML
     private Button btnAcuatlizar;
@@ -40,10 +31,10 @@ public class CrearTerceros {
     private Button btnSalir;
 
     @FXML
-    private ComboBox<TipoDocumento> cbTipoDocumento;
+    private ComboBox<?> cbTipoDocumento;
 
     @FXML
-    private ComboBox<TipoUsuario> cbTipoUsuario;
+    private ComboBox<?> cbTipoUsuario;
 
     @FXML
     private Label lblHeaderName;
@@ -76,7 +67,13 @@ public class CrearTerceros {
     private TableColumn<?, ?> tblTipoDocumento;
 
     @FXML
+    private PasswordField txtContrasenia;
+
+    @FXML
     private TextField txtCorreo;
+
+    @FXML
+    private TextField txtNombreUsuario;
 
     @FXML
     private TextField txtNumeroDocumento;
@@ -97,12 +94,6 @@ public class CrearTerceros {
     private TextField txtTelefono;
 
     @FXML
-    public void initialize() {
-        cbTipoDocumento.setItems(FXCollections.observableArrayList(TipoDocumento.values()));
-        cbTipoUsuario.setItems(FXCollections.observableArrayList(TipoUsuario.CLIENTE,TipoUsuario.PROPIETARIO));
-    }
-
-    @FXML
     void onActualizar(ActionEvent event) {
 
     }
@@ -118,23 +109,23 @@ public class CrearTerceros {
     }
 
     @FXML
+    void onComboBox(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onComboBoxTipoUsuario(ActionEvent event) {
+
+    }
+
+    @FXML
     void onEliminar(ActionEvent event) {
 
     }
 
     @FXML
-    void onSalirClic(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("InicioForm.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.centerOnScreen();
-        stage.setTitle("Tu Finca Raíz | Inicio");
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.centerOnScreen();
-        stage.show();
+    void onSalirClic(ActionEvent event) {
+
     }
 
     @FXML
