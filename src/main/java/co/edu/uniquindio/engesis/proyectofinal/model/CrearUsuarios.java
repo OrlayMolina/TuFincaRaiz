@@ -1,5 +1,6 @@
 package co.edu.uniquindio.engesis.proyectofinal.model;
 
+import co.edu.uniquindio.engesis.proyectofinal.model.base.datos.ConversionBD;
 import co.edu.uniquindio.engesis.proyectofinal.model.base.datos.UsuarioBD;
 import co.edu.uniquindio.engesis.proyectofinal.model.personas.Persona;
 import co.edu.uniquindio.engesis.proyectofinal.model.personas.TipoDocumento;
@@ -18,6 +19,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 import static co.edu.uniquindio.engesis.proyectofinal.model.InmobiliariaController.INSTANCIA;
@@ -59,10 +61,10 @@ public class CrearUsuarios {
     private TableView<Persona> tblUsuarios;
 
     @FXML
-    private TableColumn<Persona, Integer> tblConsecutivo;
+    private TableColumn<Persona, String> tblCorreo;
 
     @FXML
-    private TableColumn<Persona, String> tblCorreo;
+    private TableColumn<Persona, String> tblTelefono;
 
     @FXML
     private TableColumn<Persona, TipoDocumento> tblDocumento;
@@ -86,7 +88,7 @@ public class CrearUsuarios {
     private PasswordField txtContrasenia;
 
     @FXML
-    private TextField txtCorreo;// String Correo = txtCorreo.getText();
+    private TextField txtCorreo;
 
     @FXML
     private TextField txtNombreUsuario;
@@ -110,16 +112,22 @@ public class CrearUsuarios {
     private TextField txtTelefono;
 
     @FXML
-    public void initialize(){
-        llenarTabla(INSTANCIA.getInmobiliaria().buscar(null, null, null));
+    public void initialize() throws SQLException {
+        llenarTabla(INSTANCIA.getInmobiliaria().buscar(null, null, null, null, null, null, null));
         tblDocumento.setCellValueFactory(new PropertyValueFactory<>("numeroDocumento"));
         tblPrimerNombre.setCellValueFactory(new PropertyValueFactory<>("primerNombre"));
+        tblSegundoNombre.setCellValueFactory(new PropertyValueFactory<>("segundoNombre"));
         tblPrimerApellido.setCellValueFactory(new PropertyValueFactory<>("primerApellido"));
+        tblSegundoApellido.setCellValueFactory(new PropertyValueFactory<>("segundoApellido"));
+        tblTelefono.setCellValueFactory(new PropertyValueFactory<>("telefono"));
+        tblCorreo.setCellValueFactory(new PropertyValueFactory<>("correo"));
         tblUsuarios.getSelectionModel().selectedItemProperty()
                 .addListener((observable, oldValue, newValue) -> llenarCampos(newValue));
         txtNumeroDocumento.setTextFormatter(new TextFormatter<>(TextFormatterUtil::integerFormat));
         txtPrimerNombre.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
+        txtSegundoNombre.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
         txtPrimerApellido.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
+        txtSegundoApellido.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
         cbTipoDocumento.setItems(FXCollections.observableArrayList(TipoDocumento.values()));
         cbTipoUsuario.setItems(FXCollections.observableArrayList(TipoUsuario.ADMINISTRADOR,TipoUsuario.EMPLEADO));
     }
@@ -140,9 +148,10 @@ public class CrearUsuarios {
     }
 
     @FXML
-    void onBuscar() {
+    void onBuscar() throws SQLException {
         llenarTabla(
-                INSTANCIA.getInmobiliaria().buscar(txtNumeroDocumento.getText(), txtPrimerNombre.getText(), txtPrimerApellido.getText())
+                INSTANCIA.getInmobiliaria().buscar(txtNumeroDocumento.getText(), txtPrimerNombre.getText(),
+                        txtSegundoNombre.getText(), txtPrimerApellido.getText(), txtSegundoApellido.getText(), txtTelefono.getText(), txtCorreo.getText())
         );
     }
 
@@ -201,17 +210,21 @@ public class CrearUsuarios {
         txtTelefono.setText("");
     }
 
-    private void llenarTabla(List<Persona> persona) {
+    private void llenarTabla(List<Persona> persona) throws SQLException {
+        persona = ConversionBD.getAdministradoresBD();
         tblUsuarios.setItems(FXCollections.observableArrayList(persona));
         tblUsuarios.refresh();
     }
 
     private void llenarCampos(Persona persona) {
         if (persona != null) {
-            tblDocumento.setText(persona.getNumeroDocumento());
+            cbTipoDocumento.setValue(cbTipoDocumento.getValue());
             tblPrimerNombre.setText(persona.getPrimerNombre());
             tblSegundoNombre.setText(persona.getSegundoNombre());
-
+            tblPrimerApellido.setText(persona.getPrimerApellido());
+            tblSegundoApellido.setText(persona.getSegundoApellido());
+            tblTelefono.setText(persona.getTelefono());
+            tblCorreo.setText(persona.getCorreo());
         }
     }
 }

@@ -49,9 +49,10 @@ public class Inmobiliaria {
                 .findFirst();
     }
 
-    public  List<Persona> buscar(String numeroIdentificacion, String nombre, String apellido){
+    public  List<Persona> buscar(String numeroIdentificacion, String primerNombre, String segundoNombre, String primerApellido, String segundoApellido,
+                                 String telefono, String correo){
         return personas.stream()
-                .filter(PersonaUtil.buscarPorTodo(numeroIdentificacion, nombre, apellido))
+                .filter(PersonaUtil.buscarPorTodo(numeroIdentificacion, primerNombre, segundoNombre, primerApellido, segundoApellido, telefono, correo))
                 .collect(Collectors.toUnmodifiableList());
     }
 
