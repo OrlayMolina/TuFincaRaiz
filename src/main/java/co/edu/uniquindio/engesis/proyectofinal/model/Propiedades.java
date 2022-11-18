@@ -3,38 +3,34 @@ package co.edu.uniquindio.engesis.proyectofinal.model;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 public class Propiedades {
 
     @FXML
-    private Button btnAcuatlizar;
+    private Button btnApartamento;
 
     @FXML
-    private Button btnBuscar;
+    private Button btnBodega;
 
     @FXML
-    private Button btnCancelar;
+    private Button btnCasa;
 
     @FXML
-    private Button btnEliminar;
+    private Button btnChalet;
 
     @FXML
-    private Button btnGuardarUsuario;
+    private Button btnEdificio;
+
+    @FXML
+    private Button btnLote;
+
+    @FXML
+    private Button btnParqueadero;
 
     @FXML
     private Button btnSalir;
-
-    @FXML
-    private ComboBox<?> cbTipoDocumento;
-
-    @FXML
-    private ComboBox<?> cbTipoUsuario;
 
     @FXML
     private Label lblHeaderName;
@@ -43,83 +39,37 @@ public class Propiedades {
     private Label lblPrincipal;
 
     @FXML
-    private TableColumn<?, ?> tblConsecutivo;
-
-    @FXML
-    private TableColumn<?, ?> tblCorreo;
-
-    @FXML
-    private TableColumn<?, ?> tblDocumento;
-
-    @FXML
-    private TableColumn<?, ?> tblPrimerApellido;
-
-    @FXML
-    private TableColumn<?, ?> tblPrimerNombre;
-
-    @FXML
-    private TableColumn<?, ?> tblSegundoApellido;
-
-    @FXML
-    private TableColumn<?, ?> tblSegundoNombre;
-
-    @FXML
-    private TableColumn<?, ?> tblTipoDocumento;
-
-    @FXML
-    private PasswordField txtContrasenia;
-
-    @FXML
-    private TextField txtCorreo;
-
-    @FXML
-    private TextField txtNombreUsuario;
-
-    @FXML
-    private TextField txtNumeroDocumento;
-
-    @FXML
-    private TextField txtPrimerApellido;
-
-    @FXML
-    private TextField txtPrimerNombre;
-
-    @FXML
-    private TextField txtSegundoApellido;
-
-    @FXML
-    private TextField txtSegundoNombre;
-
-    @FXML
-    private TextField txtTelefono;
-
-    @FXML
-    void onActualizar(ActionEvent event) {
+    void onApartamentoClick(ActionEvent event) {
 
     }
 
     @FXML
-    void onBuscar(ActionEvent event) {
+    void onBodegaClick(ActionEvent event) {
 
     }
 
     @FXML
-    void onCancelarRegistro(ActionEvent event) {
+    void onCasaClick(ActionEvent event) {
 
     }
 
     @FXML
-    void onComboBox(ActionEvent event) {
+    void onChaletClick(ActionEvent event) {
 
     }
 
     @FXML
-    void onComboBoxTipoUsuario(ActionEvent event) {
+    void onEdificioClick(ActionEvent event) {
 
     }
 
     @FXML
-    void onEliminar(ActionEvent event) {
+    void onLoteClick(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onParqueaderoClick(ActionEvent event) {
 
     }
 
@@ -128,9 +78,5 @@ public class Propiedades {
 
     }
 
-    @FXML
-    void onguardar(ActionEvent event) {
-
-    }
 
 }
