@@ -21,7 +21,7 @@
                 <Image url="@../../../../../../background_general.jpeg" />
             </image>
         </ImageView>
-        <Rectangle id="btnSalir" arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="641.0" layoutX="-9.0" layoutY="45.0" onDragDetected="#onSalirClic" opacity="0.85" stroke="BLACK" strokeType="INSIDE" width="994.0" />
+        <Rectangle id="btnSalir" arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="641.0" layoutX="-9.0" layoutY="45.0" onDragDetected="#onSalirClickPropiedades" opacity="0.85" stroke="BLACK" strokeType="INSIDE" width="994.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="44.0" layoutX="-8.0" stroke="BLACK" strokeType="INSIDE" width="995.0" />
         <Button fx:id="btnCasa" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="275.0" mnemonicParsing="false" onAction="#onCasaClick" prefHeight="90.0" prefWidth="90.0" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
             <font>
