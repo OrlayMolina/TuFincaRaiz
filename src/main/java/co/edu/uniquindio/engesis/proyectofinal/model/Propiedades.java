@@ -74,7 +74,7 @@ public class Propiedades {
     }
 
     @FXML
-    void onSalirClic(ActionEvent event) {
+    void onSalirClickPropiedades(ActionEvent event) {
 
     }
 
