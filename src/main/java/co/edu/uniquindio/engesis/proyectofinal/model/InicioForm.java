@@ -18,6 +18,9 @@ public class InicioForm {
     private Button btnSalir;
 
     @FXML
+    private Button btnPropiedades;
+
+    @FXML
     private Button btnTerceros;
 
     @FXML
@@ -72,6 +75,21 @@ public class InicioForm {
         stage.setResizable(false);
         stage.centerOnScreen();
         stage.show();
+    }
+
+    @FXML
+    void onIngresarPropiedades(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("Propiedades.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Tu Finca Raíz |  Propiedades");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.show();
+
     }
 
 }
