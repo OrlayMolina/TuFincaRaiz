@@ -92,6 +92,7 @@ public class Propiedades {
         stage.setResizable(false);
         stage.centerOnScreen();
         stage.show();
+        //Prueba
 
     }
 
