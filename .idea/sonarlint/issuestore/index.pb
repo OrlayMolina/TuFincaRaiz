@@ -8,5 +8,3 @@ Qsrc/main/java/co/edu/uniquindio/engesis/proyectofinal/model/personas/Persona.ja
 Nsrc/main/java/co/edu/uniquindio/engesis/proyectofinal/model/AppController.java,a\5\a5ad9d55f5bd0c05c16f4107319a9bc1d4f746ea
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-‡
-Wsrc/main/java/co/edu/uniquindio/engesis/proyectofinal/model/InmobiliariaController.java,6\c\6ce128b2cc6c4884d7eb102d73ff824a33b54009

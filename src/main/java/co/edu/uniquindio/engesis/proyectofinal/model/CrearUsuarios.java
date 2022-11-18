@@ -211,15 +211,34 @@ public class CrearUsuarios {
     }
 
     private void llenarTabla(List<Persona> persona) throws SQLException {
-        persona = ConversionBD.getAdministradoresBD();
+        List<Persona> admin = ConversionBD.getAdministradoresBD();
+        List<Persona> empleados = ConversionBD.getEmpleadosBD();
+        persona = ConversionBD.sumarListas( admin, empleados);
         tblUsuarios.setItems(FXCollections.observableArrayList(persona));
         tblUsuarios.refresh();
     }
 
     private void llenarCampos(Persona persona) {
         if (persona != null) {
-            cbTipoDocumento.setValue(cbTipoDocumento.getValue());
+            if(persona.getTipoDocumento() ==1){
+                cbTipoDocumento.setValue(TipoDocumento.NIT);
+            }
+            if(persona.getTipoDocumento() ==2){
+                cbTipoDocumento.setValue(TipoDocumento.CC);
+            }
+            if(persona.getTipoDocumento() ==3){
+                cbTipoDocumento.setValue(TipoDocumento.CE);
+            }
+            if(persona.getTipoDocumento() ==4){
+                cbTipoDocumento.setValue(TipoDocumento.PE);
+            }
             txtNumeroDocumento.setText(persona.getNumeroDocumento());
+            if(persona.getTipoUsuario() == 3){
+                cbTipoUsuario.setValue(TipoUsuario.ADMINISTRADOR);
+            }
+            if(persona.getTipoUsuario() == 4){
+                cbTipoUsuario.setValue(TipoUsuario.EMPLEADO);
+            }
             txtPrimerNombre.setText(persona.getPrimerNombre());
             txtSegundoNombre.setText(persona.getSegundoNombre());
             txtPrimerApellido.setText(persona.getPrimerApellido());
