@@ -1,5 +1,9 @@
 package co.edu.uniquindio.engesis.proyectofinal.model.personas;
 
+import co.edu.uniquindio.engesis.proyectofinal.model.exceptiones.valorRequeridoException;
+
+import java.util.Objects;
+
 public class Persona {
     private int tipoUsuario;
     private int tipoDocumento;
@@ -25,6 +29,39 @@ public class Persona {
         this.segundoApellido = segundoApellido;
         this.telefono = telefono;
         this.correo = correo;
+    }
+
+    public static Persona of(int tipoUsuario, int tipodocumento, String numeroIdentificacion, String primerNombre, String segundoNombre, String primerApellido,
+                             String segundoApellido, String telefono, String correo) throws valorRequeridoException {
+        if(Objects.requireNonNull(primerNombre,"El primer nombre es requerido").isEmpty()){
+            throw new valorRequeridoException(" primer nombre");
+        }
+        if (Objects.requireNonNull(tipodocumento, "El tipo de documento es requerido") == null){
+            throw new valorRequeridoException(" tipo de documento");
+        }
+        if(Objects.requireNonNull(segundoNombre,"El segundo nombre es requerido").isEmpty()){
+            throw new valorRequeridoException("segundo nombre");
+        }
+        if(Objects.requireNonNull(numeroIdentificacion,"El número de identificación es requerido").isEmpty()){
+            throw new valorRequeridoException("número de identificación");
+        }
+        if(Objects.requireNonNull(primerApellido,"El apellido es requerido").isEmpty()){
+            throw new valorRequeridoException("primer apellido");
+        }
+        if(Objects.requireNonNull(tipoUsuario, "El tipo de usuario es requerido") == null){
+            throw new valorRequeridoException(" tipo de usuario");
+        }
+        if(Objects.requireNonNull(segundoApellido,"El segundo apellido es requerido").isEmpty()){
+            throw new valorRequeridoException("segundo apellido");
+        }
+        if(Objects.requireNonNull(telefono,"El teléfono es requerido").isEmpty()){
+            throw new valorRequeridoException("teléfono");
+        }
+        if(Objects.requireNonNull(correo,"El correo es requerido").isEmpty()){
+            throw new valorRequeridoException("correo");
+        }
+        return new Persona(tipoUsuario, tipodocumento, numeroIdentificacion,
+                primerNombre, segundoNombre, primerApellido, segundoApellido, telefono, correo);
     }
 
     public int getTipoUsuario() {
