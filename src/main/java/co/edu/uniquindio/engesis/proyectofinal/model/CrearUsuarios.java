@@ -222,6 +222,8 @@ public class CrearUsuarios {
         txtSegundoApellido.setText("");
         txtSegundoNombre.setText("");
         txtTelefono.setText("");
+        cbTipoDocumento.setValue(null);
+        cbTipoUsuario.setValue(null);
     }
 
     private void llenarTabla(List<Persona> persona) throws SQLException {
