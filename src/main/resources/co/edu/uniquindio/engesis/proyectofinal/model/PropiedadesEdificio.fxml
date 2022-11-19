@@ -27,7 +27,7 @@
         </ImageView>
         <Rectangle id="btnSalir" arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="687.0" layoutX="-1.0" layoutY="-48.0" onDragDetected="#onSalirClic" opacity="0.85" stroke="BLACK" strokeType="INSIDE" width="994.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="44.0" layoutX="-8.0" stroke="BLACK" strokeType="INSIDE" width="995.0" />
-        <Button fx:id="btnSalir" layoutX="781.0" layoutY="591.0" mnemonicParsing="false" onAction="#onSalirClic" text="Salir" textOverrun="LEADING_WORD_ELLIPSIS">
+        <Button fx:id="btnSalir" layoutX="801.0" layoutY="590.0" mnemonicParsing="false" onAction="#onSalirEdificioClick" text="Salir" textOverrun="LEADING_WORD_ELLIPSIS">
             <effect>
                 <Blend />
             </effect>
@@ -83,25 +83,25 @@
                 <Font size="22.0" />
             </font>
         </Label>
-        <Button fx:id="btnGuardarUsuario" layoutX="476.0" layoutY="368.0" mnemonicParsing="false" onAction="#onguardar" text="Guardar" />
+        <Button fx:id="btnGuardarUsuario" layoutX="514.0" layoutY="368.0" mnemonicParsing="false" onAction="#onguardar" text="Guardar" />
         <Label layoutX="394.0" layoutY="61.0" text="Registro de Edificio" textFill="#c6c373">
             <font>
                 <Font size="24.0" />
             </font>
         </Label>
-        <TableView fx:id="tblEdificio" layoutX="294.0" layoutY="402.0" prefHeight="179.0" prefWidth="524.0">
+        <TableView fx:id="tblEdificio" layoutX="108.0" layoutY="402.0" prefHeight="179.0" prefWidth="740.0">
             <columns>
                 <TableColumn fx:id="tblTipoOfertaEdificio" prefWidth="108.0" text="Tipo de oferta" />
-                <TableColumn fx:id="tblValorEdificio" prefWidth="106.0" text="Valor" />
-                <TableColumn fx:id="tblDireccionEdificio" prefWidth="100.0" text="Dirección" />
-                <TableColumn fx:id="tblAreaEdificio" prefWidth="95.0" text="Área" />
-                <TableColumn fx:id="tblNumeroPisosEdificio" prefWidth="115.0" text="Número de pisos" />
+                <TableColumn fx:id="tblValorEdificio" prefWidth="146.0" text="Valor" />
+                <TableColumn fx:id="tblDireccionEdificio" prefWidth="210.0" text="Dirección" />
+                <TableColumn fx:id="tblAreaEdificio" prefWidth="119.0" text="Área" />
+                <TableColumn fx:id="tblNumeroPisosEdificio" prefWidth="156.0" text="Número de pisos" />
             </columns>
         </TableView>
-        <Button fx:id="btnAcuatlizar" layoutX="544.0" layoutY="368.0" mnemonicParsing="false" onAction="#onActualizar" text="Actualizar" />
-        <Button fx:id="btnBuscar" layoutX="690.0" layoutY="368.0" mnemonicParsing="false" onAction="#onBuscar" text="Buscar" />
-        <Button fx:id="btnEliminar" layoutX="747.0" layoutY="368.0" mnemonicParsing="false" onAction="#onEliminar" text="Eliminar" />
-        <Button fx:id="btnCancelar" layoutX="619.0" layoutY="368.0" mnemonicParsing="false" onAction="#onCancelarRegistro" text="Cancelar" />
+        <Button fx:id="btnAcuatlizar" layoutX="584.0" layoutY="368.0" mnemonicParsing="false" onAction="#onActualizar" text="Actualizar" />
+        <Button fx:id="btnBuscar" layoutX="730.0" layoutY="368.0" mnemonicParsing="false" onAction="#onBuscar" text="Buscar" />
+        <Button fx:id="btnEliminar" layoutX="791.0" layoutY="368.0" mnemonicParsing="false" onAction="#onEliminar" text="Eliminar" />
+        <Button fx:id="btnCancelar" layoutX="659.0" layoutY="368.0" mnemonicParsing="false" onAction="#onCancelarRegistro" text="Cancelar" />
     </children>
 
 </AnchorPane>

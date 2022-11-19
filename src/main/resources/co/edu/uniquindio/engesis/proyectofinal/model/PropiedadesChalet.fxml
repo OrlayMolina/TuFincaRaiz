@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.engesis.proyectofinal.model.PropiedadesChalet">
+<AnchorPane prefHeight="400.0" prefWidth="1132.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.engesis.proyectofinal.model.PropiedadesChalet">
     <children>
         <ImageView fitHeight="480.0" fitWidth="708.0">
             <image>
@@ -25,9 +25,9 @@
                 <Image url="@../../../../../../background_general.jpeg" />
             </image>
         </ImageView>
-        <Rectangle id="btnSalir" arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="641.0" layoutX="-3.0" layoutY="-1.0" onDragDetected="#onSalirClic" opacity="0.85" stroke="BLACK" strokeType="INSIDE" width="1135.0" />
+        <Rectangle id="btnSalir" arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="670.0" layoutX="-3.0" layoutY="-1.0" onDragDetected="#onSalirClic" opacity="0.85" stroke="BLACK" strokeType="INSIDE" width="1144.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="44.0" layoutX="-8.0" stroke="BLACK" strokeType="INSIDE" width="1135.0" />
-        <Button fx:id="btnSalir" layoutX="886.0" layoutY="590.0" mnemonicParsing="false" onAction="#onSalirClic" text="Salir" textOverrun="LEADING_WORD_ELLIPSIS">
+        <Button fx:id="btnSalir" layoutX="1078.0" layoutY="637.0" mnemonicParsing="false" onAction="#onSalirChaletClick" text="Salir" textOverrun="LEADING_WORD_ELLIPSIS">
             <effect>
                 <Blend />
             </effect>
@@ -102,7 +102,7 @@
                 <Font size="24.0" />
             </font>
         </Label>
-        <TableView fx:id="tblChalet" layoutX="7.0" layoutY="454.0" prefHeight="179.0" prefWidth="1115.0">
+        <TableView fx:id="tblChalet" layoutX="14.0" layoutY="453.0" prefHeight="179.0" prefWidth="1115.0">
             <columns>
                 <TableColumn fx:id="tblTipoOfertaChalet" prefWidth="92.0" text="Tipo de oferta" />
                 <TableColumn fx:id="tblValorChalet" prefWidth="92.0" text="Valor" />
