@@ -130,6 +130,9 @@ public class CrearUsuarios {
         txtSegundoNombre.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
         txtPrimerApellido.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
         txtSegundoApellido.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
+        txtTelefono.setTextFormatter(new TextFormatter<>(TextFormatterUtil::integerFormat));
+        txtNombreUsuario.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
+        txtContrasenia.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
         cbTipoDocumento.setItems(FXCollections.observableArrayList(TipoDocumento.values()));
         cbTipoUsuario.setItems(FXCollections.observableArrayList(TipoUsuario.ADMINISTRADOR,TipoUsuario.EMPLEADO));
     }
@@ -150,7 +153,7 @@ public class CrearUsuarios {
     }
 
     @FXML
-    void onBuscar() throws SQLException {
+    void onBuscarUsuario() throws SQLException {
         llenarTabla(
                 INSTANCIA.getInmobiliaria().buscar(txtNumeroDocumento.getText(), txtPrimerNombre.getText(),
                         txtSegundoNombre.getText(), txtPrimerApellido.getText(), txtSegundoApellido.getText(),
@@ -196,8 +199,8 @@ public class CrearUsuarios {
             String contrasenia = txtContrasenia.getText();
             usuario = new Usuario(tipoUsuario, tipoDocumento, numeroDocumento, primerNombre, segundoNombre,
                     primerApellido, segundoApellido, telefono, correo, nombreUsuario, contrasenia);
-            Persona persona = Persona.of(tipoUsuario, tipoDocumento, txtNumeroDocumento.getText(), txtPrimerNombre.getText(), txtSegundoNombre.getText(), txtPrimerApellido.getText(),
-                    txtSegundoApellido.getText(), txtTelefono.getText(), txtCorreo.getText());
+            Persona persona = Usuario.of(tipoUsuario, tipoDocumento, txtNumeroDocumento.getText(), txtPrimerNombre.getText(), txtSegundoNombre.getText(), txtPrimerApellido.getText(),
+                    txtSegundoApellido.getText(), txtTelefono.getText(), txtCorreo.getText(), txtNombreUsuario.getText(),txtContrasenia.getText());
             UsuarioBD.crearUsuarios(usuario);
             mostrarInformacion("Usuario creado correctamente");
             onCancelarRegistro(event);

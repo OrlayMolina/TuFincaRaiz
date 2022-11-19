@@ -128,7 +128,7 @@ public class PropiedadesCasa {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("Tu Finca Raíz |  Propiedades");
         stage.setScene(scene);
-        stage.setResizable(false);
+        stage.setResizable(false);//
         stage.centerOnScreen();
         stage.show();
 

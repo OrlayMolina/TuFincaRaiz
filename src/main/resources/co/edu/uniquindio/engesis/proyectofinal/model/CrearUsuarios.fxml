@@ -143,7 +143,7 @@
         </columns>
       </TableView>
       <Button fx:id="btnAcuatlizar" layoutX="651.0" layoutY="368.0" mnemonicParsing="false" onAction="#onActualizar" text="Actualizar" />
-      <Button fx:id="btnBuscar" layoutX="805.0" layoutY="368.0" mnemonicParsing="false" onAction="#onBuscar" text="Buscar" />
+      <Button fx:id="btnBuscar" layoutX="805.0" layoutY="368.0" mnemonicParsing="false" onAction="#onBuscarUsuario" text="Buscar" />
       <Button fx:id="btnEliminar" layoutX="866.0" layoutY="368.0" mnemonicParsing="false" onAction="#onEliminar" text="Eliminar" />
       <Button fx:id="btnCancelar" layoutX="731.0" layoutY="368.0" mnemonicParsing="false" onAction="#onCancelarRegistro" text="Cancelar" />
     </children>
