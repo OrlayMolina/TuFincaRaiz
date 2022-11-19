@@ -70,7 +70,7 @@ public class ConversionBD {
         } catch (Exception e) {
             Logger.getLogger(ConversionBD.class.getName()).log(Level.SEVERE,null,e);
         }
-        return listaEmpleados;
+        return listaEmpleados; //commit
     }
 
     public static ArrayList<Persona> sumarListas(List<Persona> admin, List<Persona> empleados) throws SQLException {
