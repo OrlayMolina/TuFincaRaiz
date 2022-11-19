@@ -13,16 +13,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -136,11 +126,17 @@ public class PropiedadesCasa {
         Parent root = loader.load();
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("Tu Finca Raíz | Propiedades");
+        stage.setTitle("Tu Finca Raíz |  Propiedades");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.centerOnScreen();
         stage.show();
+
+
+    }
+
+    @FXML
+    void onSalirClic(MouseEvent event) {
 
     }
 
@@ -149,6 +145,7 @@ public class PropiedadesCasa {
 
     }
 
-
-
 }
+
+
+
