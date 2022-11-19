@@ -2,6 +2,8 @@ package co.edu.uniquindio.engesis.proyectofinal.model;
 
 import co.edu.uniquindio.engesis.proyectofinal.model.base.datos.ConversionBD;
 import co.edu.uniquindio.engesis.proyectofinal.model.base.datos.UsuarioBD;
+import co.edu.uniquindio.engesis.proyectofinal.model.exceptiones.PersonaExisteException;
+import co.edu.uniquindio.engesis.proyectofinal.model.exceptiones.valorRequeridoException;
 import co.edu.uniquindio.engesis.proyectofinal.model.personas.Persona;
 import co.edu.uniquindio.engesis.proyectofinal.model.personas.TipoDocumento;
 import co.edu.uniquindio.engesis.proyectofinal.model.personas.TipoUsuario;
@@ -151,7 +153,8 @@ public class CrearUsuarios {
     void onBuscar() throws SQLException {
         llenarTabla(
                 INSTANCIA.getInmobiliaria().buscar(txtNumeroDocumento.getText(), txtPrimerNombre.getText(),
-                        txtSegundoNombre.getText(), txtPrimerApellido.getText(), txtSegundoApellido.getText(), txtTelefono.getText(), txtCorreo.getText())
+                        txtSegundoNombre.getText(), txtPrimerApellido.getText(), txtSegundoApellido.getText(),
+                        txtTelefono.getText(), txtCorreo.getText())
         );
     }
 
@@ -177,24 +180,32 @@ public class CrearUsuarios {
 
 
     @FXML
-    void onguardar(ActionEvent event) {
-        Usuario usuario = new Usuario();
-        int tipoUsuario = 3;
-        int tipoDocumento = 2;
-        String numeroDocumento = txtNumeroDocumento.getText();
-        String primerNombre = txtPrimerNombre.getText().toUpperCase();
-        String segundoNombre = txtSegundoNombre.getText().toUpperCase();
-        String primerApellido = txtPrimerApellido.getText().toUpperCase();
-        String segundoApellido = txtSegundoApellido.getText().toUpperCase();
-        String telefono = txtTelefono.getText();
-        String correo = txtCorreo.getText().toLowerCase();
-        String nombreUsuario = txtNombreUsuario.getText();
-        String contrasenia = txtContrasenia.getText();
-        usuario = new Usuario(tipoUsuario, tipoDocumento, numeroDocumento, primerNombre, segundoNombre,
-                primerApellido, segundoApellido, telefono, correo, nombreUsuario, contrasenia);
-        UsuarioBD.crearUsuarios(usuario);
-        AppController.showAlert(Alert.AlertType.WARNING, "Error", "Tercero creado correctamente.");
-        onCancelarRegistro(event);
+    void onguardar(ActionEvent event) throws PersonaExisteException, valorRequeridoException, SQLException {
+        try{
+            Usuario usuario = new Usuario();
+            int tipoUsuario = 3;
+            int tipoDocumento = 2;
+            String numeroDocumento = txtNumeroDocumento.getText();
+            String primerNombre = txtPrimerNombre.getText().toUpperCase();
+            String segundoNombre = txtSegundoNombre.getText().toUpperCase();
+            String primerApellido = txtPrimerApellido.getText().toUpperCase();
+            String segundoApellido = txtSegundoApellido.getText().toUpperCase();
+            String telefono = txtTelefono.getText();
+            String correo = txtCorreo.getText().toLowerCase();
+            String nombreUsuario = txtNombreUsuario.getText();
+            String contrasenia = txtContrasenia.getText();
+            usuario = new Usuario(tipoUsuario, tipoDocumento, numeroDocumento, primerNombre, segundoNombre,
+                    primerApellido, segundoApellido, telefono, correo, nombreUsuario, contrasenia);
+            Persona persona = Persona.of(tipoUsuario, tipoDocumento, txtNumeroDocumento.getText(), txtPrimerNombre.getText(), txtSegundoNombre.getText(), txtPrimerApellido.getText(),
+                    txtSegundoApellido.getText(), txtTelefono.getText(), txtCorreo.getText());
+            UsuarioBD.crearUsuarios(usuario);
+            mostrarInformacion("Usuario creado correctamente");
+            onCancelarRegistro(event);
+            INSTANCIA.getInmobiliaria().adicionarPersona(persona);
+            llenarTabla(INSTANCIA.getInmobiliaria().buscar(null, null, null, null, null, null, null));
+        } catch (Exception e) {
+            mostrarMensaje(e.getMessage());
+        }
     }
 
     @FXML
@@ -246,5 +257,19 @@ public class CrearUsuarios {
             txtTelefono.setText(persona.getTelefono());
             txtCorreo.setText(persona.getCorreo());
         }
+    }
+
+    private void mostrarMensaje(String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Error");
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
+
+    private void mostrarInformacion(String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Información");
+        alert.setContentText(mensaje);
+        alert.showAndWait();
     }
 }
