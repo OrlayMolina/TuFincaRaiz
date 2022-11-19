@@ -1,6 +1,7 @@
 package co.edu.uniquindio.engesis.proyectofinal.model;
 import co.edu.uniquindio.engesis.proyectofinal.model.base.datos.Conexion;
 
+import co.edu.uniquindio.engesis.proyectofinal.model.personas.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -68,7 +69,6 @@ public class AppController {
             InicioForm inicioForm = loader.getController();
             inicioForm.init(user,cargoUsuario(user, pass));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.centerOnScreen();
             stage.setTitle("Tu Finca Raíz | Inicio");
             stage.setScene(scene);
             stage.setResizable(false);

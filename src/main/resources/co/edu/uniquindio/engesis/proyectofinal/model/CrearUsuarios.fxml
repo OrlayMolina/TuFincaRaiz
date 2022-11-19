@@ -60,60 +60,66 @@
          </font>
       </Label>
       <TextField fx:id="txtPrimerNombre" layoutX="227.0" layoutY="119.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese su nombre" />
+        <ComboBox fx:id="cbTipoDocumento" layoutX="719.0" layoutY="118.0" onAction="#onComboBox" prefHeight="25.0" prefWidth="206.0" />
+        <Label layoutX="470.0" layoutY="114.0" text="Tipo de documento:" textFill="#c6c373">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtSegundoNombre" layoutX="227.0" layoutY="164.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese su segumdo nombre" />
+        <Label layoutX="36.0" layoutY="160.0" text="Segundo nombre:" textFill="#c6c373">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+
+        <TextField fx:id="txtNumeroDocumento" layoutX="719.0" layoutY="165.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese su número de documento" />
+        <Label layoutX="468.0" layoutY="161.0" text="Número de documento:" textFill="#c6c373">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtPrimerApellido" layoutX="227.0" layoutY="212.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese su apellido" />
       <Label layoutX="37.0" layoutY="209.0" text="Primer apellido:" textFill="#c6c373">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <TextField fx:id="txtPrimerApellido" layoutX="227.0" layoutY="212.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese su apellido" />
-      <Label layoutX="470.0" layoutY="114.0" text="Tipo de documento:" textFill="#c6c373">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
-      <Label layoutX="468.0" layoutY="161.0" text="Número de documento:" textFill="#c6c373">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtNumeroDocumento" layoutX="719.0" layoutY="165.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese su número de documento" />
-      <Label layoutX="36.0" layoutY="160.0" text="Segundo nombre:" textFill="#c6c373">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtSegundoNombre" layoutX="227.0" layoutY="164.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese su segumdo nombre" />
-      <Label layoutX="37.0" layoutY="256.0" text="Segundo apellido:" textFill="#c6c373">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
+        <ComboBox fx:id="cbTipoUsuario" layoutX="719.0" layoutY="213.0" onAction="#onComboBoxTipoUsuario" prefHeight="25.0" prefWidth="206.0" />
+        <Label layoutX="470.0" layoutY="209.0" text="Tipo usuario:" textFill="#c6c373">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+
+
       <TextField fx:id="txtSegundoApellido" layoutX="227.0" layoutY="260.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese su segundo apellido" />
-      <Label layoutX="470.0" layoutY="209.0" text="Tipo usuario:" textFill="#c6c373">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
-      <ComboBox fx:id="cbTipoUsuario" layoutX="719.0" layoutY="213.0" onAction="#onComboBoxTipoUsuario" prefHeight="25.0" prefWidth="206.0" />
-      <ComboBox fx:id="cbTipoDocumento" layoutX="719.0" layoutY="118.0" onAction="#onComboBox" prefHeight="25.0" prefWidth="206.0" />
+        <Label layoutX="37.0" layoutY="256.0" text="Segundo apellido:" textFill="#c6c373">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+
+        <TextField fx:id="txtTelefono" layoutX="719.0" layoutY="260.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese su teléfono" />
       <Label layoutX="470.0" layoutY="256.0" text="Teléfono:" textFill="#c6c373">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <TextField fx:id="txtTelefono" layoutX="719.0" layoutY="260.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese su teléfono" />
-      <Label layoutX="468.0" layoutY="304.0" text="Correo:" textFill="#c6c373">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtCorreo" layoutX="719.0" layoutY="307.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese su correo" />
+        <TextField fx:id="txtNombreUsuario" layoutX="227.0" layoutY="307.0" prefHeight="25.0" prefWidth="206.0" promptText="ingrese su nombre de usuario" />
       <Label layoutX="37.0" layoutY="304.0" text="Nombre usuario:" textFill="#c6c373">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <TextField fx:id="txtNombreUsuario" layoutX="227.0" layoutY="307.0" prefHeight="25.0" prefWidth="206.0" promptText="ingrese su nombre de usuario" />
+
+        <TextField fx:id="txtCorreo" layoutX="719.0" layoutY="307.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese su correo" />
+        <PasswordField fx:id="txtContrasenia" layoutX="227.0" layoutY="355.0" prefHeight="25.0" prefWidth="206.0" promptText="******" />
+        <Label layoutX="468.0" layoutY="304.0" text="Correo:" textFill="#c6c373">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
       <Label layoutX="37.0" layoutY="351.0" text="Contraseña:" textFill="#c6c373">
          <font>
             <Font size="22.0" />
@@ -125,22 +131,20 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TableView layoutX="35.0" layoutY="402.0" prefHeight="179.0" prefWidth="893.0">
+      <TableView fx:id="tblUsuarios" layoutX="39.0" layoutY="402.0" prefHeight="179.0" prefWidth="885.0">
         <columns>
-          <TableColumn fx:id="tblConsecutivo" prefWidth="75.0" text="Registro" />
-          <TableColumn fx:id="tblTipoDocumento" prefWidth="129.0" text="Tipo de documento" />
-            <TableColumn fx:id="tblDocumento" prefWidth="75.0" text="Documento" />
-            <TableColumn fx:id="tblPrimerNombre" prefWidth="103.0" text="Primer nombre" />
-            <TableColumn fx:id="tblSegundoNombre" prefWidth="110.0" text="Segundo nombre" />
-            <TableColumn fx:id="tblPrimerApellido" prefWidth="101.0" text="Primer apellido" />
-            <TableColumn fx:id="tblSegundoApellido" prefWidth="119.0" text="Segundo apellido" />
-            <TableColumn fx:id="tblCorreo" prefWidth="180.0" text="Correo" />
+            <TableColumn fx:id="tblDocumento" prefWidth="139.0" text="Número documento" />
+            <TableColumn fx:id="tblPrimerNombre" prefWidth="108.0" text="Primer nombre" />
+            <TableColumn fx:id="tblSegundoNombre" prefWidth="112.0" text="Segundo nombre" />
+            <TableColumn fx:id="tblPrimerApellido" prefWidth="105.0" text="Primer apellido" />
+            <TableColumn fx:id="tblSegundoApellido" prefWidth="114.0" text="Segundo apellido" />
+            <TableColumn fx:id="tblTelefono" prefWidth="104.0" text="Telefono" />
+            <TableColumn fx:id="tblCorreo" prefWidth="207.0" text="Correo" />
         </columns>
       </TableView>
       <Button fx:id="btnAcuatlizar" layoutX="651.0" layoutY="368.0" mnemonicParsing="false" onAction="#onActualizar" text="Actualizar" />
       <Button fx:id="btnBuscar" layoutX="805.0" layoutY="368.0" mnemonicParsing="false" onAction="#onBuscar" text="Buscar" />
       <Button fx:id="btnEliminar" layoutX="866.0" layoutY="368.0" mnemonicParsing="false" onAction="#onEliminar" text="Eliminar" />
-      <PasswordField fx:id="txtContrasenia" layoutX="227.0" layoutY="355.0" prefHeight="25.0" prefWidth="206.0" promptText="******" />
       <Button fx:id="btnCancelar" layoutX="731.0" layoutY="368.0" mnemonicParsing="false" onAction="#onCancelarRegistro" text="Cancelar" />
     </children>
 

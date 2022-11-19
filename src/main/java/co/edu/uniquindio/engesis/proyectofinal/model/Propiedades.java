@@ -2,39 +2,42 @@ package co.edu.uniquindio.engesis.proyectofinal.model;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class Propiedades {
 
     @FXML
-    private Button btnAcuatlizar;
+    private Button btnApartamento;
 
     @FXML
-    private Button btnBuscar;
+    private Button btnBodega;
 
     @FXML
-    private Button btnCancelar;
+    private Button btnCasa;
 
     @FXML
-    private Button btnEliminar;
+    private Button btnChalet;
 
     @FXML
-    private Button btnGuardarUsuario;
+    private Button btnEdificio;
+
+    @FXML
+    private Button btnLote;
+
+    @FXML
+    private Button btnParqueadero;
 
     @FXML
     private Button btnSalir;
-
-    @FXML
-    private ComboBox<?> cbTipoDocumento;
-
-    @FXML
-    private ComboBox<?> cbTipoUsuario;
 
     @FXML
     private Label lblHeaderName;
@@ -43,94 +46,125 @@ public class Propiedades {
     private Label lblPrincipal;
 
     @FXML
-    private TableColumn<?, ?> tblConsecutivo;
-
-    @FXML
-    private TableColumn<?, ?> tblCorreo;
-
-    @FXML
-    private TableColumn<?, ?> tblDocumento;
-
-    @FXML
-    private TableColumn<?, ?> tblPrimerApellido;
-
-    @FXML
-    private TableColumn<?, ?> tblPrimerNombre;
-
-    @FXML
-    private TableColumn<?, ?> tblSegundoApellido;
-
-    @FXML
-    private TableColumn<?, ?> tblSegundoNombre;
-
-    @FXML
-    private TableColumn<?, ?> tblTipoDocumento;
-
-    @FXML
-    private PasswordField txtContrasenia;
-
-    @FXML
-    private TextField txtCorreo;
-
-    @FXML
-    private TextField txtNombreUsuario;
-
-    @FXML
-    private TextField txtNumeroDocumento;
-
-    @FXML
-    private TextField txtPrimerApellido;
-
-    @FXML
-    private TextField txtPrimerNombre;
-
-    @FXML
-    private TextField txtSegundoApellido;
-
-    @FXML
-    private TextField txtSegundoNombre;
-
-    @FXML
-    private TextField txtTelefono;
-
-    @FXML
-    void onActualizar(ActionEvent event) {
+    void onApartamentoClick(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("PropiedadesApartamento.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Tu Finca Raíz |  PropiedadesApartamento");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.show();
 
     }
 
     @FXML
-    void onBuscar(ActionEvent event) {
+    void onBodegaClick(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("PropiedadesBodega.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Tu Finca Raíz |  PropiedadesBodega");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.show();
 
     }
 
     @FXML
-    void onCancelarRegistro(ActionEvent event) {
+    void onCasaClick(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("PropiedadesCasa.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Tu Finca Raíz |  PropiedadesCasa");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.show();
+    }
+
+    @FXML
+    void onChaletClick(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("PropiedadesChalet.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Tu Finca Raíz |  PropiedadesChalet");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.show();
 
     }
 
     @FXML
-    void onComboBox(ActionEvent event) {
+    void onEdificioClick(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("PropiedadesEdificio.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Tu Finca Raíz |  PropiedadesEdificio");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.show();
 
     }
 
     @FXML
-    void onComboBoxTipoUsuario(ActionEvent event) {
+    void onLoteClick(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("PropiedadesLote.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Tu Finca Raíz |  PropiedadesLote");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.show();
 
     }
 
     @FXML
-    void onEliminar(ActionEvent event) {
+    void onParqueaderoClick(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("PropiedadesParqueadero.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Tu Finca Raíz |  PropiedadesParqueadero");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.show();
 
     }
 
     @FXML
-    void onSalirClic(ActionEvent event) {
+    void onSalirClickPropiedades(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("InicioForm.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Tu Finca Raíz | Inicio");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.show();
+        //Prueba
 
     }
 
-    @FXML
-    void onguardar(ActionEvent event) {
 
-    }
 
 }

@@ -1,6 +1,6 @@
-package co.edu.uniquindio.engesis.proyectofinal.model;
+package co.edu.uniquindio.engesis.proyectofinal.model.personas;
 
-import co.edu.uniquindio.engesis.proyectofinal.model.Usuario;
+import co.edu.uniquindio.engesis.proyectofinal.model.personas.Usuario;
 
 public class Administrador extends Usuario {
 

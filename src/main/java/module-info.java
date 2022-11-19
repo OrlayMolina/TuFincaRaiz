@@ -14,5 +14,17 @@ module com.example.ejemplo {
 
     opens co.edu.uniquindio.engesis.proyectofinal.model to javafx.fxml;
     exports co.edu.uniquindio.engesis.proyectofinal.model;
+    opens co.edu.uniquindio.engesis.proyectofinal.model.personas to javafx.fxml;
+    exports co.edu.uniquindio.engesis.proyectofinal.model.personas;
+    opens co.edu.uniquindio.engesis.proyectofinal.model.propiedades to javafx.fxml;
+    exports co.edu.uniquindio.engesis.proyectofinal.model.propiedades;
+    opens co.edu.uniquindio.engesis.proyectofinal.model.util to javafx.fxml;
+    exports co.edu.uniquindio.engesis.proyectofinal.model.util;
+    exports co.edu.uniquindio.engesis.proyectofinal.model.exceptiones;
+    opens co.edu.uniquindio.engesis.proyectofinal.model.exceptiones to javafx.fxml;
+    exports co.edu.uniquindio.engesis.proyectofinal.model.base.datos;
+    opens co.edu.uniquindio.engesis.proyectofinal.model.base.datos to javafx.fxml;
+
+
 
 }

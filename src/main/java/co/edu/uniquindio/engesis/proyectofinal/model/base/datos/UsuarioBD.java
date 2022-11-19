@@ -1,6 +1,8 @@
-package co.edu.uniquindio.engesis.proyectofinal.model;
+package co.edu.uniquindio.engesis.proyectofinal.model.base.datos;
 
+import co.edu.uniquindio.engesis.proyectofinal.model.AppController;
 import co.edu.uniquindio.engesis.proyectofinal.model.base.datos.Conexion;
+import co.edu.uniquindio.engesis.proyectofinal.model.personas.Usuario;
 import javafx.scene.control.Alert;
 
 import java.sql.Connection;
@@ -12,7 +14,7 @@ public class UsuarioBD {
         Conexion bd_conexion = new Conexion();
         PreparedStatement ps = null;
         try (Connection conexion = bd_conexion.getConnection()) {
-            if(usuario.getTipoUsuario()==1){
+            if(usuario.getTipoUsuario()==3){
                 String query = "INSERT INTO `administradores`(`tipo_usuarios`, `tipo_documento`, `numero_documento`, `sede_admin`, " +
                         "`primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `telefono`, `correo`, `user_name`, `admin_password`, " +
                         "`estado_registro`, `estado_login`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?);";
@@ -34,7 +36,7 @@ public class UsuarioBD {
                 ps.executeUpdate();
             }
 
-            if(usuario.getTipoUsuario() == 2) {
+            if(usuario.getTipoUsuario() == 4) {
                 String query = "INSERT INTO `empleados`(`tipo_usuarios`, `tipo_documento`, `numero_documento`, `sede_empleado`, " +
                         "`primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `telefono`, `correo`, `user_name`, `empleado_password`, " +
                         "`estado_registro`, `estado_login`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?);";

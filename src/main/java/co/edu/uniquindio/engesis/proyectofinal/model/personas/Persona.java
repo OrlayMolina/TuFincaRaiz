@@ -1,4 +1,4 @@
-package co.edu.uniquindio.engesis.proyectofinal.model;
+package co.edu.uniquindio.engesis.proyectofinal.model.personas;
 
 public class Persona {
     private int tipoUsuario;
@@ -11,7 +11,7 @@ public class Persona {
     private String telefono;
     private String correo;
 
-    Persona() {
+    public Persona() {
     }
 
     public Persona(int tipoUsuario, int tipoDocumento, String numeroDocumento, String primerNombre, String segundoNombre,

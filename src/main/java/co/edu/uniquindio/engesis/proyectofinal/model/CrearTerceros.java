@@ -1,5 +1,8 @@
 package co.edu.uniquindio.engesis.proyectofinal.model;
 
+import co.edu.uniquindio.engesis.proyectofinal.model.personas.TipoDocumento;
+import co.edu.uniquindio.engesis.proyectofinal.model.personas.TipoUsuario;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +14,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -38,10 +40,10 @@ public class CrearTerceros {
     private Button btnSalir;
 
     @FXML
-    private ComboBox<?> cbTipoDocumento;
+    private ComboBox<TipoDocumento> cbTipoDocumento;
 
     @FXML
-    private ComboBox<?> cbTipoUsuario;
+    private ComboBox<TipoUsuario> cbTipoUsuario;
 
     @FXML
     private Label lblHeaderName;
@@ -93,6 +95,12 @@ public class CrearTerceros {
 
     @FXML
     private TextField txtTelefono;
+
+    @FXML
+    public void initialize() {
+        cbTipoDocumento.setItems(FXCollections.observableArrayList(TipoDocumento.values()));
+        cbTipoUsuario.setItems(FXCollections.observableArrayList(TipoUsuario.CLIENTE,TipoUsuario.PROPIETARIO));
+    }
 
     @FXML
     void onActualizar(ActionEvent event) {

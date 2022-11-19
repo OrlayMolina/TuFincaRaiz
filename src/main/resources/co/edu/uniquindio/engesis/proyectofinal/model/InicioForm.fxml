@@ -23,7 +23,7 @@
          </ImageView>
          <Rectangle id="btnSalir" arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="641.0" layoutX="-7.0" layoutY="-1.0" onDragDetected="#onSalirClic" opacity="0.85" stroke="BLACK" strokeType="INSIDE" width="994.0" />
          <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="44.0" layoutX="-8.0" stroke="BLACK" strokeType="INSIDE" width="995.0" />
-         <Button fx:id="btnUsuarios" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="274.0" mnemonicParsing="false" onAction="#onUsuariosClick" prefHeight="90.0" prefWidth="90.0" text="Usuarios" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+         <Button fx:id="btnUsuarios" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="274.0" mnemonicParsing="false" onAction="#onUsuariosClick" prefHeight="90.0" prefWidth="90.0" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
             <font>
                <Font size="10.0" />
             </font>
@@ -35,25 +35,46 @@
             </ImageView>
          </graphic>
          </Button>
-         <Button fx:id="btnTerceros" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="331.0" layoutY="274.0" mnemonicParsing="false" onAction="#onClicTerceros" prefHeight="90.0" prefWidth="90.0" text="Terceros" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+         <Button fx:id="btnTerceros" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="331.0" layoutY="274.0" mnemonicParsing="false" onAction="#onClicTerceros" prefHeight="90.0" prefWidth="90.0" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+            <font>
+               <Font size="10.0" />
+            </font>
+         <graphic>
+            <ImageView fitHeight="80.0" fitWidth="77.0">
+               <image>
+                  <Image url="@../../../../../../klipartz.com%20(1).png" />
+               </image>
+            </ImageView>
+         </graphic>
+         </Button>
+         <Button fx:id="btnPropiedades" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="443.0" layoutY="274.0" mnemonicParsing="false" onAction="#onIngresarPropiedades" prefHeight="90.0" prefWidth="90.0" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+            <font>
+               <Font size="10.0" />
+            </font>
+         <graphic>
+            <ImageView fitHeight="80.0" fitWidth="75.0">
+               <image>
+                  <Image url="@../../../../../../klipartz.com.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         </Button>
+         <Button alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="554.0" layoutY="274.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
             <font>
                <Font size="10.0" />
             </font>
          </Button>
-         <Button alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="443.0" layoutY="274.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" text="Propiedades" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+         <Button alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="665.0" layoutY="274.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
             <font>
                <Font size="10.0" />
             </font>
-         </Button>
-         <Button alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="554.0" layoutY="274.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" text="Operaciones" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
-            <font>
-               <Font size="10.0" />
-            </font>
-         </Button>
-         <Button alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="665.0" layoutY="274.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" text="Informes" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
-            <font>
-               <Font size="10.0" />
-            </font>
+         <graphic>
+            <ImageView fitHeight="74.0" fitWidth="77.0">
+               <image>
+                  <Image url="@../../../../../../klipartz.com%20(3).png" />
+               </image>
+            </ImageView>
+         </graphic>
          </Button>
          <Button fx:id="btnSalir" layoutX="470.0" layoutY="549.0" mnemonicParsing="false" onAction="#onSalirClic" text="Salir" textOverrun="LEADING_WORD_ELLIPSIS">
             <effect>
@@ -81,5 +102,35 @@
                <Image url="@../../../../../../logob.png" />
             </image>
          </ImageView>
+      <Label layoutX="452.0" layoutY="382.0" text="Propiedades" textFill="#c6c373">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="238.0" layoutY="382.0" text="Usuarios" textFill="#c6c373">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="349.0" layoutY="382.0" text="Terceros" textFill="#c6c373">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="74.0" fitWidth="77.0" layoutX="561.0" layoutY="282.0">
+         <image>
+            <Image url="@../../../../../../klipartz.com%20(2).png" />
+         </image>
+      </ImageView>
+      <Label layoutX="560.0" layoutY="382.0" text="Operaciones" textFill="#c6c373">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="681.0" layoutY="382.0" text="Informes" textFill="#c6c373">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
       </children>
    </AnchorPane>
