@@ -25,9 +25,9 @@
                 <Image url="@../../../../../../background_general.jpeg" />
             </image>
         </ImageView>
-        <Rectangle id="btnSalir" arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="641.0" layoutX="-3.0" layoutY="-1.0" onDragDetected="#onSalirClic" opacity="0.85" stroke="BLACK" strokeType="INSIDE" width="998.0" />
+        <Rectangle id="btnSalir" arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="673.0" layoutX="-3.0" layoutY="-1.0" onDragDetected="#onSalirClic" opacity="0.85" stroke="BLACK" strokeType="INSIDE" width="1004.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="44.0" layoutX="-8.0" stroke="BLACK" strokeType="INSIDE" width="979.0" />
-        <Button fx:id="btnSalir" layoutX="886.0" layoutY="590.0" mnemonicParsing="false" onAction="#onSalirClic" text="Salir" textOverrun="LEADING_WORD_ELLIPSIS">
+        <Button fx:id="btnSalir" layoutX="945.0" layoutY="637.0" mnemonicParsing="false" onAction="#onSalirAptoClick" text="Salir" textOverrun="LEADING_WORD_ELLIPSIS">
             <effect>
                 <Blend />
             </effect>
@@ -102,7 +102,7 @@
                 <Font size="24.0" />
             </font>
         </Label>
-        <TableView fx:id="tblApartamento" layoutX="7.0" layoutY="454.0" prefHeight="179.0" prefWidth="979.0">
+        <TableView fx:id="tblApartamento" layoutX="8.0" layoutY="454.0" prefHeight="179.0" prefWidth="979.0">
             <columns>
                 <TableColumn fx:id="tblTipoOfertaApto" prefWidth="92.0" text="Tipo de oferta" />
                 <TableColumn fx:id="tblValorApto" prefWidth="92.0" text="Valor" />
