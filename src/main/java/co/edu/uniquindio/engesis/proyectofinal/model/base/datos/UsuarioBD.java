@@ -72,9 +72,9 @@ public class UsuarioBD {
         PreparedStatement ps = null;
         try (Connection conexion = bd_conexion.getConnection()) {
             if(persona.getTipoUsuario()==1){
-                String query = "INSERT INTO `clientes`(`tipo_usuario`, `tipo_documento`, `numero_documento`, `sede_admin`, " +
+                String query = "INSERT INTO `clientes`(`tipo_usuario`, `tipo_documento`, `numero_documento`, `empleado`," +
                         "`primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `telefono`," +
-                        " `correo`, `estado_registro`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                        " `correo`, `sede_cliente`, `estado_registro`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
                 ps = conexion.prepareStatement(query);
                 ps.setInt(1, persona.getTipoUsuario());
                 ps.setInt(2, persona.getTipoDocumento());
@@ -87,25 +87,27 @@ public class UsuarioBD {
                 ps.setString(9, persona.getTelefono());
                 ps.setString(10, persona.getCorreo());
                 ps.setInt(11, 1);
+                ps.setInt(12, 1);
                 ps.executeUpdate();
             }
 
-            if(persona.getTipoUsuario() == 4) {
-                String query = "INSERT INTO `propietarios`(`tipo_usuario`, `tipo_documento`, `numero_documento`, `sede_empleado`, " +
-                        "`primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `telefono`, `correo`, `user_name`, `empleado_password`, " +
-                        "`estado_registro`, `estado_login`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+            if(persona.getTipoUsuario() == 2) {
+                String query = "INSERT INTO `propietarios`(`tipo_usuario`, `tipo_documento`, `numero_documento`, `empleado` , `sede_propietario`, " +
+                        "`primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `telefono`, `correo`, " +
+                        "`estado_registro`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
                 ps = conexion.prepareStatement(query);
                 ps.setInt(1, persona.getTipoUsuario());
                 ps.setInt(2, persona.getTipoDocumento());
                 ps.setString(3, persona.getNumeroDocumento());
                 ps.setInt(4, 1);
-                ps.setString(5, persona.getPrimerNombre());
-                ps.setString(6, persona.getSegundoNombre());
-                ps.setString(7, persona.getPrimerApellido());
-                ps.setString(8, persona.getSegundoApellido());
-                ps.setString(9, persona.getTelefono());
-                ps.setString(10, persona.getCorreo());
-                ps.setInt(11, 1);
+                ps.setInt(5, 1);
+                ps.setString(6, persona.getPrimerNombre());
+                ps.setString(7, persona.getSegundoNombre());
+                ps.setString(8, persona.getPrimerApellido());
+                ps.setString(9, persona.getSegundoApellido());
+                ps.setString(10, persona.getTelefono());
+                ps.setString(11, persona.getCorreo());
+                ps.setInt(12, 1);
                 ps.executeUpdate();
             }
 

@@ -121,7 +121,7 @@ public class CrearTerceros {
         txtSegundoApellido.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
         txtTelefono.setTextFormatter(new TextFormatter<>(TextFormatterUtil::integerFormat));
         cbTipoDocumento.setItems(FXCollections.observableArrayList(TipoDocumento.values()));
-        cbTipoUsuario.setItems(FXCollections.observableArrayList(TipoUsuario.CLIENTE,TipoUsuario.EMPLEADO));
+        cbTipoUsuario.setItems(FXCollections.observableArrayList(TipoUsuario.CLIENTE,TipoUsuario.PROPIETARIO));
 
     }
 
@@ -140,9 +140,10 @@ public class CrearTerceros {
     }
 
     @FXML
-    void onCancelarRegistro(ActionEvent event) {
+    void onCancelarRegistro(ActionEvent event) throws SQLException {
         limpiarCampos();
         tblTerceros.getSelectionModel().clearSelection();
+        initialize();
     }
 
     @FXML
