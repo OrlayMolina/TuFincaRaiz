@@ -68,6 +68,9 @@ public class PropiedadesCasa {
     private TableColumn<?, ?> tblNumeroPisosCasa;
 
     @FXML
+    private TableColumn<?, ?> tblPropietarioCasa;
+
+    @FXML
     private TableColumn<?, ?> tblTipoOfertaCasa;
 
     @FXML
@@ -78,6 +81,9 @@ public class PropiedadesCasa {
 
     @FXML
     private TextField txtDireccionCasa;
+
+    @FXML
+    private TextField txtPropietaroCasa;
 
     @FXML
     private TextField txtMaterialConstruccionCasa;
