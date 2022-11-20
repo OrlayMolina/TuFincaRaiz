@@ -1,7 +1,12 @@
 package co.edu.uniquindio.engesis.proyectofinal.model;
 
+import co.edu.uniquindio.engesis.proyectofinal.model.base.datos.ConversionBD;
+import co.edu.uniquindio.engesis.proyectofinal.model.base.datos.UsuarioBD;
+import co.edu.uniquindio.engesis.proyectofinal.model.personas.Persona;
 import co.edu.uniquindio.engesis.proyectofinal.model.personas.TipoDocumento;
 import co.edu.uniquindio.engesis.proyectofinal.model.personas.TipoUsuario;
+import co.edu.uniquindio.engesis.proyectofinal.model.personas.Usuario;
+import co.edu.uniquindio.engesis.proyectofinal.model.util.TextFormatterUtil;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,15 +14,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
 
+import static co.edu.uniquindio.engesis.proyectofinal.model.InmobiliariaController.INSTANCIA;
 
 public class CrearTerceros {
 
@@ -52,31 +58,31 @@ public class CrearTerceros {
     private Label lblPrincipal;
 
     @FXML
-    private TableColumn<?, ?> tblConsecutivo;
+    private TableView<Persona> tblTerceros;
 
     @FXML
-    private TableColumn<?, ?> tblCorreo;
+    private TableColumn<Persona, String> tblCorreo;
 
     @FXML
-    private TableColumn<?, ?> tblDocumento;
+    private TableColumn<Persona, TipoDocumento> tblDocumento;
 
     @FXML
-    private TableColumn<?, ?> tblPrimerApellido;
+    private TableColumn<Persona, String> tblPrimerApellido;
 
     @FXML
-    private TableColumn<?, ?> tblPrimerNombre;
+    private TableColumn<Persona, String> tblPrimerNombre;
 
     @FXML
-    private TableColumn<?, ?> tblSegundoApellido;
+    private TableColumn<Persona, String> tblSegundoApellido;
 
     @FXML
-    private TableColumn<?, ?> tblSegundoNombre;
-
-    @FXML
-    private TableColumn<?, ?> tblTipoDocumento;
+    private TableColumn<Persona, String> tblSegundoNombre;
 
     @FXML
     private TextField txtCorreo;
+
+    @FXML
+    private TextField txtTelefono;
 
     @FXML
     private TextField txtNumeroDocumento;
@@ -94,12 +100,29 @@ public class CrearTerceros {
     private TextField txtSegundoNombre;
 
     @FXML
-    private TextField txtTelefono;
+    private TableColumn<Persona, String> tblTelefono;
 
     @FXML
-    public void initialize() {
+    public void initialize() throws SQLException {
+        llenarTablaTerceros(INSTANCIA.getInmobiliaria().buscar(null, null, null, null, null, null, null));
+        tblDocumento.setCellValueFactory(new PropertyValueFactory<>("numeroDocumento"));
+        tblPrimerNombre.setCellValueFactory(new PropertyValueFactory<>("primerNombre"));
+        tblSegundoNombre.setCellValueFactory(new PropertyValueFactory<>("segundoNombre"));
+        tblPrimerApellido.setCellValueFactory(new PropertyValueFactory<>("primerApellido"));
+        tblSegundoApellido.setCellValueFactory(new PropertyValueFactory<>("segundoApellido"));
+        tblTelefono.setCellValueFactory(new PropertyValueFactory<>("telefono"));
+        tblCorreo.setCellValueFactory(new PropertyValueFactory<>("correo"));
+        tblTerceros.getSelectionModel().selectedItemProperty()
+                .addListener((observable, oldValue, newValue) -> llenarCampos(newValue));
+        txtNumeroDocumento.setTextFormatter(new TextFormatter<>(TextFormatterUtil::integerFormat));
+        txtPrimerNombre.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
+        txtSegundoNombre.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
+        txtPrimerApellido.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
+        txtSegundoApellido.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
+        txtTelefono.setTextFormatter(new TextFormatter<>(TextFormatterUtil::integerFormat));
         cbTipoDocumento.setItems(FXCollections.observableArrayList(TipoDocumento.values()));
-        cbTipoUsuario.setItems(FXCollections.observableArrayList(TipoUsuario.CLIENTE,TipoUsuario.PROPIETARIO));
+        cbTipoUsuario.setItems(FXCollections.observableArrayList(TipoUsuario.CLIENTE,TipoUsuario.EMPLEADO));
+
     }
 
     @FXML
@@ -108,17 +131,42 @@ public class CrearTerceros {
     }
 
     @FXML
-    void onBuscar(ActionEvent event) {
-
+    void onBuscar(ActionEvent event) throws SQLException {
+        llenarTablaTerceros(
+                INSTANCIA.getInmobiliaria().buscar(txtNumeroDocumento.getText(), txtPrimerNombre.getText(),
+                        txtSegundoNombre.getText(), txtPrimerApellido.getText(), txtSegundoApellido.getText(),
+                        txtTelefono.getText(), txtCorreo.getText())
+        );
     }
 
     @FXML
     void onCancelarRegistro(ActionEvent event) {
-
+        limpiarCampos();
+        tblTerceros.getSelectionModel().clearSelection();
     }
 
     @FXML
     void onEliminar(ActionEvent event) {
+
+        try{
+            INSTANCIA.getInmobiliaria().removerPersona(txtNumeroDocumento.getText());
+            llenarTablaTerceros(INSTANCIA.getInmobiliaria().buscar(null, null, null, null,null, null, null));
+            String documento = txtNumeroDocumento.getText();
+            int cargoUsuario = 0;
+            if (cbTipoUsuario.getValue() == TipoUsuario.CLIENTE){
+                cargoUsuario=1;
+            }
+            if (cbTipoUsuario.getValue() == TipoUsuario.PROPIETARIO){
+                cargoUsuario=2;
+            }
+            //UsuarioBD.eliminarUsuarios(documento, cargoUsuario);
+            limpiarCampos();
+            tblTerceros.refresh();
+            mostrarInformacion("Tercero eliminado correctamente");
+
+        } catch (Exception e) {
+            mostrarMensaje(e.getMessage());
+        }
 
     }
 
@@ -139,7 +187,98 @@ public class CrearTerceros {
 
     @FXML
     void onguardar(ActionEvent event) {
+        try{
+            Persona persona = new Persona();
+            int tipoUsuario = 3;
+            int tipoDocumento = 2;
+            String numeroDocumento = txtNumeroDocumento.getText();
+            String primerNombre = txtPrimerNombre.getText().toUpperCase();
+            String segundoNombre = txtSegundoNombre.getText().toUpperCase();
+            String primerApellido = txtPrimerApellido.getText().toUpperCase();
+            String segundoApellido = txtSegundoApellido.getText().toUpperCase();
+            String telefono = txtTelefono.getText();
+            String correo = txtCorreo.getText().toLowerCase();
 
+            persona = new Persona(tipoUsuario, tipoDocumento, numeroDocumento, primerNombre, segundoNombre,
+                    primerApellido, segundoApellido, telefono, correo);
+            persona = Persona.of(tipoUsuario, tipoDocumento, txtNumeroDocumento.getText(), txtPrimerNombre.getText(), txtSegundoNombre.getText(), txtPrimerApellido.getText(),
+                    txtSegundoApellido.getText(), txtTelefono.getText(), txtCorreo.getText());
+            UsuarioBD.crearPersona(persona);
+            mostrarInformacion("Persona creada correctamente");
+            onCancelarRegistro(event);
+            INSTANCIA.getInmobiliaria().adicionarPersona(persona);
+            llenarTablaTerceros(INSTANCIA.getInmobiliaria().buscar(null, null, null, null, null, null, null));
+        } catch (Exception e) {
+            mostrarMensaje(e.getMessage());
+        }
+
+    }
+
+    private void limpiarCampos(){
+        txtCorreo.setText("");
+        txtNumeroDocumento.setText("");
+        txtPrimerApellido.setText("");
+        txtPrimerNombre.setText("");
+        txtSegundoApellido.setText("");
+        txtSegundoNombre.setText("");
+        txtTelefono.setText("");
+        cbTipoDocumento.setValue(null);
+        cbTipoUsuario.setValue(null);
+
+    }
+
+    private void llenarTablaTerceros(List<Persona> persona) throws SQLException {
+        List<Persona> clientes = ConversionBD.getClientesBD();
+        List<Persona> propietarios = ConversionBD.getPropietariosBD();
+        persona = ConversionBD.sumarListas(clientes, propietarios);
+        tblTerceros.setItems(FXCollections.observableArrayList(persona));
+        tblTerceros.refresh();
+    }
+
+    private void llenarCampos(Persona persona) {
+        if (persona != null) {
+            if(persona.getTipoDocumento() ==1){
+                cbTipoDocumento.setValue(TipoDocumento.NIT);
+            }
+            if(persona.getTipoDocumento() ==2){
+                cbTipoDocumento.setValue(TipoDocumento.CC);
+            }
+            if(persona.getTipoDocumento() ==3){
+                cbTipoDocumento.setValue(TipoDocumento.CE);
+            }
+            if(persona.getTipoDocumento() ==4){
+                cbTipoDocumento.setValue(TipoDocumento.PE);
+            }
+            txtNumeroDocumento.setText(persona.getNumeroDocumento());
+            if(persona.getTipoUsuario() == 1){
+                cbTipoUsuario.setValue(TipoUsuario.CLIENTE);
+            }
+            if(persona.getTipoUsuario() == 2){
+                cbTipoUsuario.setValue(TipoUsuario.PROPIETARIO);
+            }
+            txtPrimerNombre.setText(persona.getPrimerNombre());
+            txtSegundoNombre.setText(persona.getSegundoNombre());
+            txtPrimerApellido.setText(persona.getPrimerApellido());
+            txtSegundoApellido.setText(persona.getSegundoApellido());
+            txtTelefono.setText(persona.getTelefono());
+            txtCorreo.setText(persona.getCorreo());
+        }
+    }
+
+
+
+    public static void mostrarMensaje(String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Error");
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
+
+    private void mostrarInformacion(String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Información");
+        alert.setContentText(mensaje);
+        alert.showAndWait();
     }
 
 }
