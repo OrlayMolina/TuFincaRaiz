@@ -80,6 +80,9 @@ public class PropiedadesChalet {
     private TableColumn<?, ?> tblDireccionChalet;
 
     @FXML
+    private TableColumn<?, ?> tblPropietarioChalet;
+
+    @FXML
     private TableColumn<?, ?> tblEnergiaChalet;
 
     @FXML
@@ -117,6 +120,9 @@ public class PropiedadesChalet {
 
     @FXML
     private TextField txtNumeroCuartosChalet;
+
+    @FXML
+    private TextField txtPropietarioChalet;
 
     @FXML
     private TextField txtNumeroPisosChalet;
