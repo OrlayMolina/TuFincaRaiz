@@ -59,6 +59,9 @@ public class PropiedadesBodega {
     private TableColumn<?, ?> tblDireccionBodega;
 
     @FXML
+    private TableColumn<?, ?> tblPropietarioBodega;
+
+    @FXML
     private TableColumn<?, ?> tblPerimetroBodega;
 
     @FXML
@@ -69,6 +72,9 @@ public class PropiedadesBodega {
 
     @FXML
     private TextField txValorBodega;
+
+    @FXML
+    private TextField txPropietarioBodega;
 
     @FXML
     private TextField txtAreaBodega;
