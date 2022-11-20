@@ -27,7 +27,7 @@
         </ImageView>
         <Rectangle id="btnSalir" arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="687.0" layoutX="-1.0" layoutY="-48.0" onDragDetected="#onSalirClic" opacity="0.85" stroke="BLACK" strokeType="INSIDE" width="994.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="44.0" layoutX="-8.0" stroke="BLACK" strokeType="INSIDE" width="995.0" />
-        <Button fx:id="btnSalir" layoutX="793.0" layoutY="591.0" mnemonicParsing="false" onAction="#onSalirLoteClick" text="Salir" textOverrun="LEADING_WORD_ELLIPSIS">
+        <Button fx:id="btnSalir" layoutX="884.0" layoutY="589.0" mnemonicParsing="false" onAction="#onSalirLoteClick" text="Salir" textOverrun="LEADING_WORD_ELLIPSIS">
             <effect>
                 <Blend />
             </effect>
@@ -53,55 +53,62 @@
                 <Image url="@../../../../../../logob.png" />
             </image>
         </ImageView>
-        <Label layoutX="37.0" layoutY="114.0" text="Tipo de oferta:" textFill="#c6c373">
+        <Label layoutX="34.0" layoutY="161.0" text="Tipo de oferta:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txValorLote" layoutX="227.0" layoutY="164.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el valor del lote" />
-        <Label layoutX="37.0" layoutY="209.0" text="Dirección:" textFill="#c6c373">
+        <TextField fx:id="txValorLote" layoutX="227.0" layoutY="212.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el valor del lote" />
+        <Label layoutX="473.0" layoutY="115.0" text="Dirección:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txtDireccionLote" layoutX="227.0" layoutY="212.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese la dirección del lote" />
-        <Label layoutX="470.0" layoutY="114.0" text="Área:" textFill="#c6c373">
+        <TextField fx:id="txtDireccionLote" layoutX="689.0" layoutY="118.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese la dirección del lote" />
+        <Label layoutX="472.0" layoutY="161.0" text="Área:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txtAreaLote" layoutX="690.0" layoutY="118.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el área del lote" />
-        <Label layoutX="36.0" layoutY="160.0" text="Valor:" textFill="#c6c373">
+        <TextField fx:id="txtAreaLote" layoutX="689.0" layoutY="165.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el área del lote" />
+        <Label layoutX="37.0" layoutY="209.0" text="Valor:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <ComboBox fx:id="cbTipoOfertaLote" layoutX="227.0" layoutY="118.0" onAction="#onComboBoxTipoOfertaLote" prefHeight="25.0" prefWidth="206.0" />
-        <Label layoutX="470.0" layoutY="160.0" text="Perímetro:" textFill="#c6c373">
+        <ComboBox fx:id="cbTipoOfertaLote" layoutX="227.0" layoutY="165.0" onAction="#onComboBoxTipoOfertaLote" prefHeight="25.0" prefWidth="206.0" />
+        <Label layoutX="470.0" layoutY="209.0" text="Perímetro:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <Button fx:id="btnGuardarUsuario" layoutX="491.0" layoutY="368.0" mnemonicParsing="false" onAction="#onguardar" text="Guardar" />
+        <Button fx:id="btnGuardarUsuario" layoutX="582.0" layoutY="368.0" mnemonicParsing="false" onAction="#onguardar" text="Guardar" />
         <Label layoutX="394.0" layoutY="61.0" text="Registro de Lote " textFill="#c6c373">
             <font>
                 <Font size="24.0" />
             </font>
         </Label>
-        <TableView fx:id="tblLote" layoutX="169.0" layoutY="403.0" prefHeight="179.0" prefWidth="668.0">
+        <TableView fx:id="tblLote" layoutX="76.0" layoutY="403.0" prefHeight="179.0" prefWidth="847.0">
             <columns>
-                <TableColumn fx:id="tblTipoOfertaLote" prefWidth="108.0" text="Tipo de oferta" />
-                <TableColumn fx:id="tblValorLote" prefWidth="106.0" text="Valor" />
-                <TableColumn fx:id="tblDireccionLote" prefWidth="178.0" text="Dirección" />
-                <TableColumn fx:id="tblAreaLote" prefWidth="115.0" text="Área" />
-                <TableColumn fx:id="tblPerimetroLote" prefWidth="160.0" text="Perímetro" />
+            <TableColumn fx:id="tblPropietarioLote" prefWidth="103.0" text="Propietario" />
+                <TableColumn fx:id="tblTipoOfertaLote" prefWidth="107.0" text="Tipo de oferta" />
+                <TableColumn fx:id="tblValorLote" prefWidth="145.0" text="Valor" />
+                <TableColumn fx:id="tblDireccionLote" prefWidth="187.0" text="Dirección" />
+                <TableColumn fx:id="tblAreaLote" prefWidth="158.0" text="Área" />
+                <TableColumn fx:id="tblPerimetroLote" prefWidth="146.0" text="Perímetro" />
             </columns>
         </TableView>
-        <Button fx:id="btnAcuatlizar" layoutX="564.0" layoutY="368.0" mnemonicParsing="false" onAction="#onActualizar" text="Actualizar" />
-        <Button fx:id="btnBuscar" layoutX="718.0" layoutY="368.0" mnemonicParsing="false" onAction="#onBuscar" text="Buscar" />
-        <Button fx:id="btnEliminar" layoutX="778.0" layoutY="368.0" mnemonicParsing="false" onAction="#onEliminar" text="Eliminar" />
-        <Button fx:id="btnCancelar" layoutX="646.0" layoutY="368.0" mnemonicParsing="false" onAction="#onCancelarRegistro" text="Cancelar" />
-        <ComboBox fx:id="cbPerimetroLote" layoutX="690.0" layoutY="164.0" onAction="#onComboBoxPerimetroLote" prefHeight="25.0" prefWidth="206.0" />
+        <Button fx:id="btnAcuatlizar" layoutX="651.0" layoutY="368.0" mnemonicParsing="false" onAction="#onActualizar" text="Actualizar" />
+        <Button fx:id="btnBuscar" layoutX="803.0" layoutY="368.0" mnemonicParsing="false" onAction="#onBuscar" text="Buscar" />
+        <Button fx:id="btnEliminar" layoutX="864.0" layoutY="368.0" mnemonicParsing="false" onAction="#onEliminar" text="Eliminar" />
+        <Button fx:id="btnCancelar" layoutX="730.0" layoutY="368.0" mnemonicParsing="false" onAction="#onCancelarRegistro" text="Cancelar" />
+        <ComboBox fx:id="cbPerimetroLote" layoutX="690.0" layoutY="212.0" onAction="#onComboBoxPerimetroLote" prefHeight="25.0" prefWidth="206.0" />
+      <Label layoutX="34.0" layoutY="115.0" text="Propietario ID:" textFill="#c6c373">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txPropietarioLote" layoutX="227.0" layoutY="118.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el valor del lote" />
     </children>
 
 </AnchorPane>

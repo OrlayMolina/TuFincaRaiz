@@ -62,6 +62,9 @@ public class PropiedadesLote {
     private TableColumn<?, ?> tblPerimetroLote;
 
     @FXML
+    private TableColumn<?, ?> tblPropietarioLote;
+
+    @FXML
     private TableColumn<?, ?> tblTipoOfertaLote;
 
     @FXML
@@ -72,6 +75,9 @@ public class PropiedadesLote {
 
     @FXML
     private TextField txtAreaLote;
+
+    @FXML
+    private TextField txPropietarioLote;
 
     @FXML
     private TextField txtDireccionLote;
