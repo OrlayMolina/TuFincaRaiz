@@ -81,6 +81,14 @@ public class ConversionBD {
         return (ArrayList<Persona>) lista1;
     }
 
+    public static ArrayList<Persona> sumarListasTerceros(List<Persona> lista1, List<Persona> lista2) throws SQLException {
+        lista1 = getClientesBD();
+        lista2 = getPropietariosBD();
+        lista1.addAll(lista2);
+
+        return (ArrayList<Persona>) lista1;
+    }
+
     public static ArrayList<Persona> getPropietariosBD() throws SQLException {
         Connection con = Conexion.getConnection();
         PreparedStatement ps = null;
