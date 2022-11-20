@@ -56,6 +56,9 @@ public class PropiedadesApartamento {
     private TableColumn<?, ?> tblAdminitracionApto;
 
     @FXML
+    private TableColumn<?, ?> tblPropietarioID;
+
+    @FXML
     private TableView<?> tblApartamento;
 
     @FXML
@@ -108,6 +111,9 @@ public class PropiedadesApartamento {
 
     @FXML
     private TextField txtValorAdministracionApto;
+
+    @FXML
+    private TextField txtPropietarioID;
 
     @FXML
     private TextField txtValorApto;
