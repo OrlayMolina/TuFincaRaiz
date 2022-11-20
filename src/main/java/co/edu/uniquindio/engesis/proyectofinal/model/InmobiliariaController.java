@@ -1,11 +1,17 @@
 package co.edu.uniquindio.engesis.proyectofinal.model;
 
+import java.sql.SQLException;
+
 public enum InmobiliariaController {
     INSTANCIA;
-    private final Inmobiliaria inmobiliaria;
+    private Inmobiliaria inmobiliaria;
 
     InmobiliariaController() {
-        inmobiliaria = new Inmobiliaria();
+        try {
+            inmobiliaria = new Inmobiliaria();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public Inmobiliaria getInmobiliaria() {

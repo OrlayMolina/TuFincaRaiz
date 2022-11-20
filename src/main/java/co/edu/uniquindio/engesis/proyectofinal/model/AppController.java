@@ -1,7 +1,6 @@
 package co.edu.uniquindio.engesis.proyectofinal.model;
 import co.edu.uniquindio.engesis.proyectofinal.model.base.datos.Conexion;
 
-import co.edu.uniquindio.engesis.proyectofinal.model.personas.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
