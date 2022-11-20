@@ -53,31 +53,31 @@
                 <Image url="@../../../../../../logob.png" />
             </image>
         </ImageView>
-        <Label layoutX="34.0" layoutY="144.0" text="Tipo de oferta:" textFill="#c6c373">
+        <Label layoutX="34.0" layoutY="190.0" text="Tipo de oferta:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txValorBodega" layoutX="227.0" layoutY="193.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el valor de la bodega" />
-        <Label layoutX="37.0" layoutY="237.0" text="Dirección:" textFill="#c6c373">
+        <TextField fx:id="txValorBodega" layoutX="227.0" layoutY="241.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el valor de la bodega" />
+        <Label layoutX="511.0" layoutY="146.0" text="Dirección:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txtDireccionBodega" layoutX="227.0" layoutY="241.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese la dirección de la bodega" />
-        <Label layoutX="511.0" layoutY="145.0" text="Área:" textFill="#c6c373">
+        <TextField fx:id="txtDireccionBodega" layoutX="690.0" layoutY="150.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese la dirección de la bodega" />
+        <Label layoutX="511.0" layoutY="189.0" text="Área:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txtAreaBodega" layoutX="690.0" layoutY="149.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el área de la bodega" />
-        <Label layoutX="37.0" layoutY="189.0" text="Valor:" textFill="#c6c373">
+        <TextField fx:id="txtAreaBodega" layoutX="690.0" layoutY="193.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el área de la bodega" />
+        <Label layoutX="34.0" layoutY="237.0" text="Valor:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <ComboBox fx:id="cbTipoOfertaBodega" layoutX="227.0" layoutY="148.0" onAction="#onComboBoxTipoOfertaBodega" prefHeight="25.0" prefWidth="206.0" />
-        <Label layoutX="511.0" layoutY="189.0" text="Perímetro:" textFill="#c6c373">
+        <ComboBox fx:id="cbTipoOfertaBodega" layoutX="227.0" layoutY="194.0" onAction="#onComboBoxTipoOfertaBodega" prefHeight="25.0" prefWidth="206.0" />
+        <Label layoutX="511.0" layoutY="237.0" text="Perímetro:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
@@ -88,8 +88,9 @@
                 <Font size="24.0" />
             </font>
         </Label>
-        <TableView fx:id="tblBodega" layoutX="137.0" layoutY="403.0" prefHeight="179.0" prefWidth="717.0">
+        <TableView fx:id="tblBodega" layoutX="119.0" layoutY="403.0" prefHeight="179.0" prefWidth="755.0">
             <columns>
+            <TableColumn fx:id="tblPropietarioBodega" prefWidth="75.0" text="Propietario" />
                 <TableColumn fx:id="tblTipoOfertaBodega" prefWidth="108.0" text="Tipo de oferta" />
                 <TableColumn fx:id="tblValorBodega" prefWidth="143.0" text="Valor" />
                 <TableColumn fx:id="tblDireccionBodega" prefWidth="200.0" text="Dirección" />
@@ -101,7 +102,13 @@
         <Button fx:id="btnBuscar" layoutX="730.0" layoutY="368.0" mnemonicParsing="false" onAction="#onBuscar" text="Buscar" />
         <Button fx:id="btnEliminar" layoutX="793.0" layoutY="368.0" mnemonicParsing="false" onAction="#onEliminar" text="Eliminar" />
         <Button fx:id="btnCancelar" layoutX="659.0" layoutY="368.0" mnemonicParsing="false" onAction="#onCancelarRegistro" text="Cancelar" />
-      <ComboBox fx:id="cbPerimetroBodega" layoutX="690.0" layoutY="193.0" onAction="#onComboBoxPerimetroBodega" prefHeight="25.0" prefWidth="206.0" />
+      <ComboBox fx:id="cbPerimetroBodega" layoutX="690.0" layoutY="241.0" onAction="#onComboBoxPerimetroBodega" prefHeight="25.0" prefWidth="206.0" />
+      <Label layoutX="34.0" layoutY="146.0" text="Propietario ID:" textFill="#c6c373">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txPropietarioBodega" layoutX="227.0" layoutY="150.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el ID del propietario" />
     </children>
 
 </AnchorPane>
