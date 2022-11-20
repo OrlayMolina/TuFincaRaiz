@@ -134,8 +134,6 @@ public class CrearUsuarios {
         txtPrimerApellido.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
         txtSegundoApellido.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
         txtTelefono.setTextFormatter(new TextFormatter<>(TextFormatterUtil::integerFormat));
-        txtNombreUsuario.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
-        txtContrasenia.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
         cbTipoDocumento.setItems(FXCollections.observableArrayList(TipoDocumento.values()));
         cbTipoUsuario.setItems(FXCollections.observableArrayList(TipoUsuario.ADMINISTRADOR,TipoUsuario.EMPLEADO));
     }
@@ -208,8 +206,26 @@ public class CrearUsuarios {
     void onguardar(ActionEvent event) throws PersonaExisteException, valorRequeridoException, SQLException {
         try{
             Usuario usuario = new Usuario();
-            int tipoUsuario = 3;
-            int tipoDocumento = 2;
+            int tipoUsuario = 0;
+            if (cbTipoUsuario.getValue() == TipoUsuario.ADMINISTRADOR){
+                tipoUsuario=3;
+            }
+            if (cbTipoUsuario.getValue() == TipoUsuario.EMPLEADO){
+                tipoUsuario=4;
+            }
+            int tipoDocumento = 0;
+            if (cbTipoDocumento.getValue() == TipoDocumento.NIT){
+                tipoDocumento=1;
+            }
+            if (cbTipoDocumento.getValue() == TipoDocumento.CC){
+                tipoDocumento=2;
+            }
+            if (cbTipoDocumento.getValue() == TipoDocumento.CE){
+                tipoDocumento=3;
+            }
+            if (cbTipoDocumento.getValue() == TipoDocumento.PE){
+                tipoDocumento=4;
+            }
             String numeroDocumento = txtNumeroDocumento.getText();
             String primerNombre = txtPrimerNombre.getText().toUpperCase();
             String segundoNombre = txtSegundoNombre.getText().toUpperCase();

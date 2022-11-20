@@ -119,6 +119,16 @@ public class UsuarioBD {
         Conexion bd_connect = new Conexion();
         try(Connection conexion = bd_connect.getConnection()){
             PreparedStatement ps = null;
+            if (cargo ==1){
+                String query = "UPDATE `clientes` SET `estado_registro` = 3 WHERE `numero_documento` ="+documento;
+                ps = conexion.prepareStatement(query);
+                ps.executeUpdate();
+            }
+            if(cargo ==2){
+                String query = "UPDATE `propietarios` SET `estado_registro` = 3 WHERE `numero_documento` ="+documento;
+                ps = conexion.prepareStatement(query);
+                ps.executeUpdate();
+            }
             if (cargo ==3){
                 String query = "UPDATE `administradores` SET `estado_registro` = 3 WHERE `numero_documento` ="+documento;
                 ps = conexion.prepareStatement(query);

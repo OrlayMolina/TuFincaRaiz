@@ -31,16 +31,13 @@ public class Persona {
         this.correo = correo;
     }
 
-    public static Persona of(int tipoUsuario, int tipodocumento, String numeroIdentificacion, String primerNombre, String segundoNombre, String primerApellido,
-                             String segundoApellido, String telefono, String correo) throws valorRequeridoException {
+    public static Persona of(int tipoUsuario, int tipodocumento, String numeroIdentificacion, String primerNombre, String primerApellido,
+                             String telefono, String correo) throws valorRequeridoException {
         if(Objects.requireNonNull(primerNombre,"El primer nombre es requerido").isEmpty()){
             throw new valorRequeridoException(" primer nombre");
         }
         if (Objects.requireNonNull(tipodocumento, "El tipo de documento es requerido") == null){
             throw new valorRequeridoException(" tipo de documento");
-        }
-        if(Objects.requireNonNull(segundoNombre,"El segundo nombre es requerido").isEmpty()){
-            throw new valorRequeridoException("segundo nombre");
         }
         if(Objects.requireNonNull(numeroIdentificacion,"El número de identificación es requerido").isEmpty()){
             throw new valorRequeridoException("número de identificación");
@@ -51,9 +48,6 @@ public class Persona {
         if(Objects.requireNonNull(tipoUsuario, "El tipo de usuario es requerido") == null){
             throw new valorRequeridoException(" tipo de usuario");
         }
-        if(Objects.requireNonNull(segundoApellido,"El segundo apellido es requerido").isEmpty()){
-            throw new valorRequeridoException("segundo apellido");
-        }
         if(Objects.requireNonNull(telefono,"El teléfono es requerido").isEmpty()){
             throw new valorRequeridoException("teléfono");
         }
@@ -61,7 +55,7 @@ public class Persona {
             throw new valorRequeridoException("correo");
         }
         return new Persona(tipoUsuario, tipodocumento, numeroIdentificacion,
-                primerNombre, segundoNombre, primerApellido, segundoApellido, telefono, correo);
+                primerNombre, null, primerApellido, null, telefono, correo);
     }
 
     public int getTipoUsuario() {

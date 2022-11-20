@@ -104,7 +104,7 @@ public class CrearTerceros {
 
     @FXML
     public void initialize() throws SQLException {
-        llenarTablaTerceros(INSTANCIA.getInmobiliaria().buscar(null, null, null, null, null, null, null));
+        llenarTablaTerceros(INSTANCIA.getInmobiliaria().buscarTercero(null, null, null, null, null, null, null));
         tblDocumento.setCellValueFactory(new PropertyValueFactory<>("numeroDocumento"));
         tblPrimerNombre.setCellValueFactory(new PropertyValueFactory<>("primerNombre"));
         tblSegundoNombre.setCellValueFactory(new PropertyValueFactory<>("segundoNombre"));
@@ -133,7 +133,7 @@ public class CrearTerceros {
     @FXML
     void onBuscar(ActionEvent event) throws SQLException {
         llenarTablaTerceros(
-                INSTANCIA.getInmobiliaria().buscar(txtNumeroDocumento.getText(), txtPrimerNombre.getText(),
+                INSTANCIA.getInmobiliaria().buscarTercero(txtNumeroDocumento.getText(), txtPrimerNombre.getText(),
                         txtSegundoNombre.getText(), txtPrimerApellido.getText(), txtSegundoApellido.getText(),
                         txtTelefono.getText(), txtCorreo.getText())
         );
@@ -149,8 +149,8 @@ public class CrearTerceros {
     void onEliminar(ActionEvent event) {
 
         try{
-            INSTANCIA.getInmobiliaria().removerPersona(txtNumeroDocumento.getText());
-            llenarTablaTerceros(INSTANCIA.getInmobiliaria().buscar(null, null, null, null,null, null, null));
+            INSTANCIA.getInmobiliaria().removerPersonaTerceros(txtNumeroDocumento.getText());
+            llenarTablaTerceros(INSTANCIA.getInmobiliaria().buscarTercero(null, null, null, null,null, null, null));
             String documento = txtNumeroDocumento.getText();
             int cargoUsuario = 0;
             if (cbTipoUsuario.getValue() == TipoUsuario.CLIENTE){
@@ -159,7 +159,7 @@ public class CrearTerceros {
             if (cbTipoUsuario.getValue() == TipoUsuario.PROPIETARIO){
                 cargoUsuario=2;
             }
-            //UsuarioBD.eliminarUsuarios(documento, cargoUsuario);
+            UsuarioBD.eliminarUsuarios(documento, cargoUsuario);
             limpiarCampos();
             tblTerceros.refresh();
             mostrarInformacion("Tercero eliminado correctamente");
@@ -189,8 +189,26 @@ public class CrearTerceros {
     void onguardar(ActionEvent event) {
         try{
             Persona persona = new Persona();
-            int tipoUsuario = 3;
-            int tipoDocumento = 2;
+            int tipoUsuario = 0;
+            if (cbTipoUsuario.getValue() == TipoUsuario.CLIENTE){
+                tipoUsuario=1;
+            }
+            if (cbTipoUsuario.getValue() == TipoUsuario.PROPIETARIO){
+                tipoUsuario=2;
+            }
+            int tipoDocumento = 0;
+            if (cbTipoDocumento.getValue() == TipoDocumento.NIT){
+                tipoDocumento=1;
+            }
+            if (cbTipoDocumento.getValue() == TipoDocumento.CC){
+                tipoDocumento=2;
+            }
+            if (cbTipoDocumento.getValue() == TipoDocumento.CE){
+                tipoDocumento=3;
+            }
+            if (cbTipoDocumento.getValue() == TipoDocumento.PE){
+                tipoDocumento=4;
+            }
             String numeroDocumento = txtNumeroDocumento.getText();
             String primerNombre = txtPrimerNombre.getText().toUpperCase();
             String segundoNombre = txtSegundoNombre.getText().toUpperCase();
@@ -201,13 +219,13 @@ public class CrearTerceros {
 
             persona = new Persona(tipoUsuario, tipoDocumento, numeroDocumento, primerNombre, segundoNombre,
                     primerApellido, segundoApellido, telefono, correo);
-            persona = Persona.of(tipoUsuario, tipoDocumento, txtNumeroDocumento.getText(), txtPrimerNombre.getText(), txtSegundoNombre.getText(), txtPrimerApellido.getText(),
-                    txtSegundoApellido.getText(), txtTelefono.getText(), txtCorreo.getText());
+            persona = Persona.of(tipoUsuario, tipoDocumento, txtNumeroDocumento.getText(), txtPrimerNombre.getText(), txtPrimerApellido.getText(),
+                    txtTelefono.getText(), txtCorreo.getText());
             UsuarioBD.crearPersona(persona);
             mostrarInformacion("Persona creada correctamente");
             onCancelarRegistro(event);
-            INSTANCIA.getInmobiliaria().adicionarPersona(persona);
-            llenarTablaTerceros(INSTANCIA.getInmobiliaria().buscar(null, null, null, null, null, null, null));
+            INSTANCIA.getInmobiliaria().adicionarPersonaTerceros(persona);
+            llenarTablaTerceros(INSTANCIA.getInmobiliaria().buscarTercero(null, null, null, null, null, null, null));
         } catch (Exception e) {
             mostrarMensaje(e.getMessage());
         }
@@ -227,11 +245,8 @@ public class CrearTerceros {
 
     }
 
-    private void llenarTablaTerceros(List<Persona> persona) throws SQLException {
-        List<Persona> clientes = ConversionBD.getClientesBD();
-        List<Persona> propietarios = ConversionBD.getPropietariosBD();
-        persona = ConversionBD.sumarListas(clientes, propietarios);
-        tblTerceros.setItems(FXCollections.observableArrayList(persona));
+    private void llenarTablaTerceros(List<Persona> terceros) throws SQLException {
+        tblTerceros.setItems(FXCollections.observableArrayList(terceros));
         tblTerceros.refresh();
     }
 
