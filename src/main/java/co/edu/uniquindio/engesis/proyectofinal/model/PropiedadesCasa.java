@@ -1,9 +1,6 @@
 package co.edu.uniquindio.engesis.proyectofinal.model;
 
 import co.edu.uniquindio.engesis.proyectofinal.model.base.datos.Conexion;
-import co.edu.uniquindio.engesis.proyectofinal.model.personas.Persona;
-import co.edu.uniquindio.engesis.proyectofinal.model.personas.TipoDocumento;
-import co.edu.uniquindio.engesis.proyectofinal.model.personas.TipoUsuario;
 import co.edu.uniquindio.engesis.proyectofinal.model.propiedades.Casa;
 import co.edu.uniquindio.engesis.proyectofinal.model.propiedades.Propiedad;
 import co.edu.uniquindio.engesis.proyectofinal.model.propiedades.TipoOferta;
@@ -21,6 +18,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -202,12 +200,19 @@ public class PropiedadesCasa {
 
     private void llenarCampos(Casa casa) {
         if (casa != null) {
-            try {
-                Conexion bd_connect = new Conexion();
+            Conexion bd_connect = new Conexion();
+            String documento ="";
+            try (Connection conexion = bd_connect.getConnection()){
                 PreparedStatement ps = null;
                 ResultSet rs = null;
-                String query = "SELECT * FROM `casa` WHERE estado_registro=1";
 
+                String query = "SELECT `numero_documento` FROM `propietarios` WHERE propietarios_id="+casa.getPropietario();
+                ps = conexion.prepareStatement(query);
+                rs = ps.executeQuery();
+                if (rs.next()) {
+                    documento = rs.getString("numero_documento");
+
+                }
             } catch (Exception ex) {
                 CrearUsuarios.mostrarMensaje(ex.getMessage());
             }
@@ -215,7 +220,7 @@ public class PropiedadesCasa {
                 cbTipoOfertaCasa.setValue(TipoOferta.VENTA);
             if(casa.getArriendo() ==1 && casa.getVenta() == 0)
                 cbTipoOfertaCasa.setValue(TipoOferta.ARRIENDO);
-            txtPropietaroCasa.setText(String.valueOf(casa.getPropietario()));
+            txtPropietaroCasa.setText(documento);
             txtNumeroPisosCasa.setText(String.valueOf(casa.getNumeroPisos()));
             txtNumeroCuartosCasa.setText(String.valueOf(casa.getNumeroCuartos()));
             txtNumeroBañosCasa.setText(String.valueOf(casa.getNumeroBanios()));
