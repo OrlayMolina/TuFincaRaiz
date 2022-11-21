@@ -56,13 +56,19 @@ public class PropiedadesParqueadero {
     private TableView<?> tblParqueadero;
 
     @FXML
-    private TableColumn<?, ?> tblTipoOfertaLote;
+    private TableColumn<?, ?> tblTipoOfertaParqueadero;
+
+    @FXML
+    private TableColumn<?, ?> tblPropietarioParqueadero;
 
     @FXML
     private TableColumn<?, ?> tblValorParqueadero;
 
     @FXML
     private TextField txValorParqueadero;
+
+    @FXML
+    private TextField txPropietarioParqueadero;
 
     @FXML
     private TextField txtAreaParqueadero;
