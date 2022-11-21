@@ -1,6 +1,7 @@
 package co.edu.uniquindio.engesis.proyectofinal.model.base.datos;
 
 import co.edu.uniquindio.engesis.proyectofinal.model.personas.Persona;
+import co.edu.uniquindio.engesis.proyectofinal.model.propiedades.Casa;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -148,4 +149,46 @@ public class ConversionBD {
         }
         return listaClientes;
     }
+
+    public static ArrayList<Casa> getCasasBD() throws SQLException {
+        Connection con = Conexion.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        PreparedStatement ps2 = null;
+        ResultSet rs2 = null;
+        ArrayList<Casa> listaCasas = new ArrayList<>();
+        try {
+            String query = "SELECT * FROM `casas` WHERE estado_registro=1";
+            ps = con.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Casa casa = new Casa();
+                String query2 = "SELECT * FROM `propiedades` WHERE `propiedades_id` = " + rs.getInt("propiedad");
+                ps2 = con.prepareStatement(query2);
+                rs2 = ps2.executeQuery();
+                if (rs2.next()) {
+                    casa.setPropietario(rs2.getInt("propietario"));
+                    casa.setDireccion(rs2.getString("direccion"));
+                    casa.setVenta(rs2.getInt("venta"));
+                    casa.setArriendo(rs2.getInt("alquiler"));
+                    casa.setValorTransaccion(rs2.getFloat("valor_transaccion"));
+                    casa.setArea(rs2.getString("area"));
+                }
+                casa.setNumeroCuartos(rs.getInt("numero_cuartos"));
+                casa.setNumeroBanios(rs.getInt("numero_banios"));
+                casa.setNumeroPisos(rs.getInt("numero_pisos"));
+                casa.setMaterialConstruccion(rs.getString("material_construccion"));
+
+
+                listaCasas.add(casa);
+            }
+
+
+        } catch (Exception e) {
+            Logger.getLogger(ConversionBD.class.getName()).log(Level.SEVERE,null,e);
+        }
+        return listaCasas;
+    }
+
+
 }

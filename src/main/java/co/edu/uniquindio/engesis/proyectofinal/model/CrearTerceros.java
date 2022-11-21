@@ -281,8 +281,6 @@ public class CrearTerceros {
         }
     }
 
-
-
     public static void mostrarMensaje(String mensaje) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Error");
