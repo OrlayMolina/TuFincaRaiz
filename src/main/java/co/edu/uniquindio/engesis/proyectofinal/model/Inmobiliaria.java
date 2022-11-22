@@ -111,11 +111,12 @@ public class Inmobiliaria {
                 .collect(Collectors.toUnmodifiableList());
     }
 
-    public  List<Casa> buscarCasa(String material, String area, String direccion) throws SQLException {
+    public  List<Casa> buscarCasa(String material, String area, String direccion, String numeroCuartos,
+                                  String numeroBanios, String numeroPisos) throws SQLException {
 
 
         return casas.stream()
-                .filter(CasaUtil.buscarPorTodoCasas(material, area, direccion))
+                .filter(CasaUtil.buscarPorTodoCasas(material, area, direccion, numeroCuartos, numeroBanios, numeroPisos))
                 .collect(Collectors.toUnmodifiableList());
     }
 

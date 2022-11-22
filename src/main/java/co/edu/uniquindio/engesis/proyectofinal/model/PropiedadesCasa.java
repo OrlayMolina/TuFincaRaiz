@@ -111,7 +111,7 @@ public class PropiedadesCasa {
 
     @FXML
     public void initialize() throws SQLException {
-        llenarTablaCasa(INSTANCIA.getInmobiliaria().buscarCasa(null, null, null));
+        llenarTablaCasa(INSTANCIA.getInmobiliaria().buscarCasa(null, null, null, null, null, null));
         tblPropietarioCasa.setCellValueFactory(new PropertyValueFactory<>("propietario"));
         tblDireccionCasa.setCellValueFactory(new PropertyValueFactory<>("direccion"));
         tblAreaCasa.setCellValueFactory(new PropertyValueFactory<>("area"));
@@ -138,7 +138,7 @@ public class PropiedadesCasa {
     void onBuscar(ActionEvent event) throws SQLException {
         llenarTablaCasa(
                 INSTANCIA.getInmobiliaria().buscarCasa(txtMaterialConstruccionCasa.getText(), txtAreaCasa.getText(),
-                        txtDireccionCasa.getText())
+                        txtDireccionCasa.getText(), txtNumeroCuartosCasa.getText(), txtNumeroPisosCasa.getText(), txtNumeroBañosCasa.getText())
         );
     }
 

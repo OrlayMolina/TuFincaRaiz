@@ -2,43 +2,43 @@ package co.edu.uniquindio.engesis.proyectofinal.model.propiedades;
 
 public class Mobiliario extends Edificacion{
 
-    private int numeroCuartos;
-    private int numeroBanios;
+    private String numeroCuartos;
+    private String numeroBanios;
 
     public Mobiliario(){
 
     }
 
-    public Mobiliario(int numeroCuartos, int numeroBanios) {
+    public Mobiliario(String numeroCuartos, String numeroBanios) {
         this.numeroCuartos = numeroCuartos;
         this.numeroBanios = numeroBanios;
     }
 
-    public Mobiliario(int numeroPisos, int numeroCuartos, int numeroBanios) {
+    public Mobiliario(String numeroPisos, String numeroCuartos, String numeroBanios) {
         super(numeroPisos);
         this.numeroCuartos = numeroCuartos;
         this.numeroBanios = numeroBanios;
     }
 
-    public Mobiliario(int propietario, String direccion, int venta, int arriendo, float valorTransaccion, String area, String descripcion, int numeroPisos, int numeroCuartos, int numeroBanios) {
+    public Mobiliario(int propietario, String direccion, int venta, int arriendo, float valorTransaccion, String area, String descripcion, String numeroPisos, String numeroCuartos, String numeroBanios) {
         super(propietario, direccion, venta, arriendo, valorTransaccion, area, descripcion, numeroPisos);
         this.numeroCuartos = numeroCuartos;
         this.numeroBanios = numeroBanios;
     }
 
-    public int getNumeroCuartos() {
+    public String getNumeroCuartos() {
         return numeroCuartos;
     }
 
-    public void setNumeroCuartos(int numeroCuartos) {
+    public void setNumeroCuartos(String numeroCuartos) {
         this.numeroCuartos = numeroCuartos;
     }
 
-    public int getNumeroBanios() {
+    public String getNumeroBanios() {
         return numeroBanios;
     }
 
-    public void setNumeroBanios(int numeroBanios) {
+    public void setNumeroBanios(String numeroBanios) {
         this.numeroBanios = numeroBanios;
     }
 }

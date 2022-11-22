@@ -12,17 +12,17 @@ public class Material extends Mobiliario{
         this.materialConstruccion = materialConstruccion;
     }
 
-    public Material(int numeroCuartos, int numeroBanios, String materialConstruccion) {
+    public Material(String numeroCuartos, String numeroBanios, String materialConstruccion) {
         super(numeroCuartos, numeroBanios);
         this.materialConstruccion = materialConstruccion;
     }
 
-    public Material(int numeroPisos, int numeroCuartos, int numeroBanios, String materialConstruccion) {
+    public Material(String numeroPisos, String numeroCuartos, String numeroBanios, String materialConstruccion) {
         super(numeroPisos, numeroCuartos, numeroBanios);
         this.materialConstruccion = materialConstruccion;
     }
 
-    public Material(int propietario, String direccion, int venta, int arriendo, float valorTransaccion, String area, String descripcion, int numeroPisos, int numeroCuartos, int numeroBanios, String materialConstruccion) {
+    public Material(int propietario, String direccion, int venta, int arriendo, float valorTransaccion, String area, String descripcion, String numeroPisos, String numeroCuartos, String numeroBanios, String materialConstruccion) {
         super(propietario, direccion, venta, arriendo, valorTransaccion, area, descripcion, numeroPisos, numeroCuartos, numeroBanios);
         this.materialConstruccion = materialConstruccion;
     }

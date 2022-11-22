@@ -174,9 +174,9 @@ public class ConversionBD {
                     casa.setValorTransaccion(rs2.getFloat("valor_transaccion"));
                     casa.setArea(rs2.getString("area"));
                 }
-                casa.setNumeroCuartos(rs.getInt("numero_cuartos"));
-                casa.setNumeroBanios(rs.getInt("numero_banios"));
-                casa.setNumeroPisos(rs.getInt("numero_pisos"));
+                casa.setNumeroCuartos(rs.getString("numero_cuartos"));
+                casa.setNumeroBanios(rs.getString("numero_banios"));
+                casa.setNumeroPisos(rs.getString("numero_pisos"));
                 casa.setMaterialConstruccion(rs.getString("material_construccion"));
 
 
