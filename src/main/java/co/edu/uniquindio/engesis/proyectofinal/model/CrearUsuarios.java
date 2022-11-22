@@ -1,5 +1,6 @@
 package co.edu.uniquindio.engesis.proyectofinal.model;
 
+import co.edu.uniquindio.engesis.proyectofinal.model.base.datos.Conexion;
 import co.edu.uniquindio.engesis.proyectofinal.model.base.datos.ConversionBD;
 import co.edu.uniquindio.engesis.proyectofinal.model.base.datos.UsuarioBD;
 import co.edu.uniquindio.engesis.proyectofinal.model.exceptiones.PersonaExisteException;
@@ -21,6 +22,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -83,8 +86,8 @@ public class CrearUsuarios {
     @FXML
     private TableColumn<Persona, String> tblSegundoNombre;
 
-    @FXML
-    private TableColumn<Persona, TipoDocumento> tblTipoDocumento;
+    //@FXML
+    //private TableColumn<Persona, TipoDocumento> tblTipoDocumento;
 
     @FXML
     private PasswordField txtContrasenia;
@@ -131,11 +134,10 @@ public class CrearUsuarios {
         txtPrimerApellido.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
         txtSegundoApellido.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
         txtTelefono.setTextFormatter(new TextFormatter<>(TextFormatterUtil::integerFormat));
-        txtNombreUsuario.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
-        txtContrasenia.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
         cbTipoDocumento.setItems(FXCollections.observableArrayList(TipoDocumento.values()));
         cbTipoUsuario.setItems(FXCollections.observableArrayList(TipoUsuario.ADMINISTRADOR,TipoUsuario.EMPLEADO));
     }
+
     @FXML
     void onComboBox(ActionEvent event) {
 
@@ -154,7 +156,7 @@ public class CrearUsuarios {
 
     @FXML
     void onBuscarUsuario() throws SQLException {
-        llenarTabla(
+            llenarTabla(
                 INSTANCIA.getInmobiliaria().buscar(txtNumeroDocumento.getText(), txtPrimerNombre.getText(),
                         txtSegundoNombre.getText(), txtPrimerApellido.getText(), txtSegundoApellido.getText(),
                         txtTelefono.getText(), txtCorreo.getText())
@@ -163,7 +165,25 @@ public class CrearUsuarios {
 
     @FXML
     void onEliminar(ActionEvent event) {
+        try{
+            String documento = txtNumeroDocumento.getText();
+            int cargoUsuario = 0;
+            if (cbTipoUsuario.getValue() == TipoUsuario.ADMINISTRADOR){
+                cargoUsuario=3;
+            }
+            if (cbTipoUsuario.getValue() == TipoUsuario.EMPLEADO){
+                cargoUsuario=4;
+            }
+            UsuarioBD.eliminarUsuarios(documento, cargoUsuario);
+            INSTANCIA.getInmobiliaria().removerPersona(txtNumeroDocumento.getText());
+            llenarTabla(INSTANCIA.getInmobiliaria().buscar(null, null, null, null,null, null, null));
+            limpiarCampos();
+            mostrarInformacion("Usuario eliminado correctamente");
+            tblUsuarios.refresh();
 
+        } catch (Exception e) {
+            mostrarMensaje(e.getMessage());
+        }
     }
 
     @FXML
@@ -186,8 +206,26 @@ public class CrearUsuarios {
     void onguardar(ActionEvent event) throws PersonaExisteException, valorRequeridoException, SQLException {
         try{
             Usuario usuario = new Usuario();
-            int tipoUsuario = 3;
-            int tipoDocumento = 2;
+            int tipoUsuario = 0;
+            if (cbTipoUsuario.getValue() == TipoUsuario.ADMINISTRADOR){
+                tipoUsuario=3;
+            }
+            if (cbTipoUsuario.getValue() == TipoUsuario.EMPLEADO){
+                tipoUsuario=4;
+            }
+            int tipoDocumento = 0;
+            if (cbTipoDocumento.getValue() == TipoDocumento.NIT){
+                tipoDocumento=1;
+            }
+            if (cbTipoDocumento.getValue() == TipoDocumento.CC){
+                tipoDocumento=2;
+            }
+            if (cbTipoDocumento.getValue() == TipoDocumento.CE){
+                tipoDocumento=3;
+            }
+            if (cbTipoDocumento.getValue() == TipoDocumento.PE){
+                tipoDocumento=4;
+            }
             String numeroDocumento = txtNumeroDocumento.getText();
             String primerNombre = txtPrimerNombre.getText().toUpperCase();
             String segundoNombre = txtSegundoNombre.getText().toUpperCase();
@@ -212,7 +250,13 @@ public class CrearUsuarios {
     }
 
     @FXML
-    void onCancelarRegistro(ActionEvent event) {
+    void onCancelarRegistro(ActionEvent event) throws SQLException {
+        limpiarCampos();
+        tblUsuarios.getSelectionModel().clearSelection();
+        initialize();
+    }
+    
+    private void limpiarCampos(){
         txtContrasenia.setText("");
         txtCorreo.setText("");
         txtNombreUsuario.setText("");
@@ -224,12 +268,10 @@ public class CrearUsuarios {
         txtTelefono.setText("");
         cbTipoDocumento.setValue(null);
         cbTipoUsuario.setValue(null);
+
     }
 
     private void llenarTabla(List<Persona> persona) throws SQLException {
-        List<Persona> admin = ConversionBD.getAdministradoresBD();
-        List<Persona> empleados = ConversionBD.getEmpleadosBD();
-        persona = ConversionBD.sumarListas( admin, empleados);
         tblUsuarios.setItems(FXCollections.observableArrayList(persona));
         tblUsuarios.refresh();
     }
@@ -264,7 +306,9 @@ public class CrearUsuarios {
         }
     }
 
-    private void mostrarMensaje(String mensaje) {
+
+
+    public static void mostrarMensaje(String mensaje) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Error");
         alert.setContentText(mensaje);

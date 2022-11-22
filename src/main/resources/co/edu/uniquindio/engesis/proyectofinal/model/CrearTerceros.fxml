@@ -113,16 +113,15 @@
                 <Font size="24.0" />
             </font>
         </Label>
-        <TableView layoutX="35.0" layoutY="344.0" prefHeight="237.0" prefWidth="893.0">
+        <TableView fx:id="tblTerceros" layoutX="35.0" layoutY="344.0" prefHeight="237.0" prefWidth="893.0">
             <columns>
-                <TableColumn fx:id="tblConsecutivo" prefWidth="75.0" text="Registro" />
-                <TableColumn fx:id="tblTipoDocumento" prefWidth="129.0" text="Tipo de documento" />
-                <TableColumn fx:id="tblDocumento" prefWidth="75.0" text="Documento" />
-                <TableColumn fx:id="tblPrimerNombre" prefWidth="103.0" text="Primer nombre" />
-                <TableColumn fx:id="tblSegundoNombre" prefWidth="110.0" text="Segundo nombre" />
-                <TableColumn fx:id="tblPrimerApellido" prefWidth="101.0" text="Primer apellido" />
-                <TableColumn fx:id="tblSegundoApellido" prefWidth="119.0" text="Segundo apellido" />
-                <TableColumn fx:id="tblCorreo" prefWidth="180.0" text="Correo" />
+                <TableColumn fx:id="tblDocumento" prefWidth="124.0" text="Número documento" />
+                <TableColumn fx:id="tblPrimerNombre" prefWidth="129.0" text="Primer nombre" />
+                <TableColumn fx:id="tblSegundoNombre" prefWidth="105.0" text="Segundo nombre" />
+                <TableColumn fx:id="tblPrimerApellido" prefWidth="96.0" text="Primer apellido" />
+                <TableColumn fx:id="tblSegundoApellido" prefWidth="110.0" text="Segundo apellido" />
+            <TableColumn fx:id="tblTelefono" prefWidth="123.0" text="Teléfono" />
+                <TableColumn fx:id="tblCorreo" prefWidth="205.0" text="Correo" />
             </columns>
         </TableView>
         <Button fx:id="btnAcuatlizar" layoutX="651.0" layoutY="308.0" mnemonicParsing="false" onAction="#onActualizar" text="Actualizar" />

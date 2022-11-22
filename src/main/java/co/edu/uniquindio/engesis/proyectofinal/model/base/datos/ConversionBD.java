@@ -1,6 +1,7 @@
 package co.edu.uniquindio.engesis.proyectofinal.model.base.datos;
 
 import co.edu.uniquindio.engesis.proyectofinal.model.personas.Persona;
+import co.edu.uniquindio.engesis.proyectofinal.model.propiedades.Casa;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -70,14 +71,124 @@ public class ConversionBD {
         } catch (Exception e) {
             Logger.getLogger(ConversionBD.class.getName()).log(Level.SEVERE,null,e);
         }
-        return listaEmpleados; //commit
+        return listaEmpleados;
     }
 
-    public static ArrayList<Persona> sumarListas(List<Persona> admin, List<Persona> empleados) throws SQLException {
-        admin = getAdministradoresBD();
-        empleados = getEmpleadosBD();
-        admin.addAll(empleados);
+    public static ArrayList<Persona> sumarListas(List<Persona> lista1, List<Persona> lista2) throws SQLException {
+        lista1 = getAdministradoresBD();
+        lista2 = getEmpleadosBD();
+        lista1.addAll(lista2);
 
-        return (ArrayList<Persona>) admin;
+        return (ArrayList<Persona>) lista1;
     }
+
+    public static ArrayList<Persona> sumarListasTerceros(List<Persona> lista1, List<Persona> lista2) throws SQLException {
+        lista1 = getClientesBD();
+        lista2 = getPropietariosBD();
+        lista1.addAll(lista2);
+
+        return (ArrayList<Persona>) lista1;
+    }
+
+    public static ArrayList<Persona> getPropietariosBD() throws SQLException {
+        Connection con = Conexion.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        ArrayList<Persona> listaPropietarios = new ArrayList<>();
+        try {
+            String query = "SELECT * FROM `propietarios` WHERE estado_registro=1";
+            ps = con.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Persona persona = new Persona();
+                persona.setTipoUsuario(rs.getInt("tipo_usuario"));
+                persona.setTipoDocumento(rs.getInt("tipo_documento"));
+                persona.setNumeroDocumento(rs.getString("numero_documento"));
+                persona.setPrimerNombre(rs.getString("primer_nombre"));
+                persona.setSegundoNombre(rs.getString("segundo_nombre"));
+                persona.setPrimerApellido(rs.getString("primer_apellido"));
+                persona.setSegundoApellido(rs.getString("segundo_apellido"));
+                persona.setTelefono(rs.getString("telefono"));
+                persona.setCorreo(rs.getString("correo"));
+                listaPropietarios.add(persona);
+            }
+
+
+        } catch (Exception e) {
+            Logger.getLogger(ConversionBD.class.getName()).log(Level.SEVERE,null,e);
+        }
+        return listaPropietarios;
+    }
+
+    public static ArrayList<Persona> getClientesBD() throws SQLException {
+        Connection con = Conexion.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        ArrayList<Persona> listaClientes = new ArrayList<>();
+        try {
+            String query = "SELECT * FROM `clientes` WHERE estado_registro=1";
+            ps = con.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Persona persona = new Persona();
+                persona.setTipoUsuario(rs.getInt("tipo_usuario"));
+                persona.setTipoDocumento(rs.getInt("tipo_documento"));
+                persona.setNumeroDocumento(rs.getString("numero_documento"));
+                persona.setPrimerNombre(rs.getString("primer_nombre"));
+                persona.setSegundoNombre(rs.getString("segundo_nombre"));
+                persona.setPrimerApellido(rs.getString("primer_apellido"));
+                persona.setSegundoApellido(rs.getString("segundo_apellido"));
+                persona.setTelefono(rs.getString("telefono"));
+                persona.setCorreo(rs.getString("correo"));
+                listaClientes.add(persona);
+            }
+
+
+        } catch (Exception e) {
+            Logger.getLogger(ConversionBD.class.getName()).log(Level.SEVERE,null,e);
+        }
+        return listaClientes;
+    }
+
+    public static ArrayList<Casa> getCasasBD() throws SQLException {
+        Connection con = Conexion.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        PreparedStatement ps2 = null;
+        ResultSet rs2 = null;
+        ArrayList<Casa> listaCasas = new ArrayList<>();
+        try {
+            String query = "SELECT * FROM `casas` WHERE estado_registro=1";
+            ps = con.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Casa casa = new Casa();
+                String query2 = "SELECT * FROM `propiedades` WHERE `propiedades_id` = " + rs.getInt("propiedad");
+                ps2 = con.prepareStatement(query2);
+                rs2 = ps2.executeQuery();
+                if (rs2.next()) {
+                    casa.setPropietario(rs2.getInt("propietario"));
+                    casa.setDireccion(rs2.getString("direccion"));
+                    casa.setVenta(rs2.getInt("venta"));
+                    casa.setArriendo(rs2.getInt("alquiler"));
+                    casa.setValorTransaccion(rs2.getFloat("valor_transaccion"));
+                    casa.setArea(rs2.getString("area"));
+                }
+                casa.setNumeroCuartos(rs.getInt("numero_cuartos"));
+                casa.setNumeroBanios(rs.getInt("numero_banios"));
+                casa.setNumeroPisos(rs.getInt("numero_pisos"));
+                casa.setMaterialConstruccion(rs.getString("material_construccion"));
+
+
+                listaCasas.add(casa);
+            }
+
+
+        } catch (Exception e) {
+            Logger.getLogger(ConversionBD.class.getName()).log(Level.SEVERE,null,e);
+        }
+        return listaCasas;
+    }
+
+
 }
