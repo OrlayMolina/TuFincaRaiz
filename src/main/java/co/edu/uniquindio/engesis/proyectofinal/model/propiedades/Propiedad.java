@@ -4,6 +4,7 @@ public class Propiedad {
 
     private int propietario;
     private String direccion;
+    private String tipoOferta;
     private int venta;
     private int arriendo;
     private float valorTransaccion;
@@ -16,6 +17,17 @@ public class Propiedad {
     public Propiedad(int propietario, String direccion, int venta, int arriendo, float valorTransaccion, String area, String descripcion) {
         this.propietario = propietario;
         this.direccion = direccion;
+        this.venta = venta;
+        this.arriendo = arriendo;
+        this.valorTransaccion = valorTransaccion;
+        this.area = area;
+        this.descripcion = descripcion;
+    }
+
+    public Propiedad(int propietario, String direccion, String tipoOferta, int venta, int arriendo, float valorTransaccion, String area, String descripcion) {
+        this.propietario = propietario;
+        this.direccion = direccion;
+        this.tipoOferta = tipoOferta;
         this.venta = venta;
         this.arriendo = arriendo;
         this.valorTransaccion = valorTransaccion;
@@ -77,5 +89,13 @@ public class Propiedad {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getTipoOferta() {
+        return tipoOferta;
+    }
+
+    public void setTipoOferta(String tipoOferta) {
+        this.tipoOferta = tipoOferta;
     }
 }

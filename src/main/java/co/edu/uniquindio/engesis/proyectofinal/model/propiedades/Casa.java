@@ -24,4 +24,5 @@ public class Casa extends Material{
     public Casa(int propietario, String direccion, int venta, int arriendo, float valorTransaccion, String area, int numeroPisos, int numeroCuartos, int numeroBanios, String materialConstruccion) {
         super(propietario, direccion, venta, arriendo, valorTransaccion, area, null, numeroPisos, numeroCuartos, numeroBanios, materialConstruccion);
     }
+
 }
