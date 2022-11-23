@@ -54,7 +54,7 @@
             </font>
         </Label>
         <ComboBox fx:id="cbTipoPropiedad" layoutX="704.0" layoutY="205.0" onAction="#onComboBoxTipoOfertaLote" prefHeight="25.0" prefWidth="206.0" />
-        <Label layoutX="394.0" layoutY="61.0" text="INFORME" textFill="#c6c373">
+        <Label layoutX="465.0" layoutY="61.0" text="INFORME" textFill="#c6c373">
             <font>
                 <Font size="24.0" />
             </font>
