@@ -94,25 +94,7 @@ public class Informes {
 
     }
 
-    @FXML
-    public void initialize() throws SQLException {
-        llenarTablaInforme(INSTANCIA.getInmobiliaria().buscarCasa(null, null, null));
-        tblPropietarioCasa.setCellValueFactory(new PropertyValueFactory<>("propietario"));
-        tblDireccionCasa.setCellValueFactory(new PropertyValueFactory<>("direccion"));
-        tblAreaCasa.setCellValueFactory(new PropertyValueFactory<>("area"));
-        tblValorCasa.setCellValueFactory(new PropertyValueFactory<>("valorTransaccion"));
-        tblNumeroCuartosCasa.setCellValueFactory(new PropertyValueFactory<>("numeroCuartos"));
-        tblNumeroBañosCasa.setCellValueFactory(new PropertyValueFactory<>("numeroBanios"));
-        tblNumeroPisosCasa.setCellValueFactory(new PropertyValueFactory<>("numeroPisos"));
-        tblMaterialConstruccionCasa.setCellValueFactory(new PropertyValueFactory<>("materialConstruccion"));
-        tblCasa.getSelectionModel().selectedItemProperty()
-                .addListener((observable, oldValue, newValue) -> llenarCampos((Casa) newValue));
-        txtDireccionCasa.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
-        txtAreaCasa.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
-        txtMaterialConstruccionCasa.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
-        cbTipoOfertaCasa.setItems(FXCollections.observableArrayList(TipoOferta.values()));
 
-    }
 
     private void llenarTablaInforme(List<Casa> buscarCasa) {
     }

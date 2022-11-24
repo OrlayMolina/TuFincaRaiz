@@ -25,6 +25,9 @@ public class InicioForm {
     private Button btnPropiedades;
 
     @FXML
+    private Button btnOperaciones;
+
+    @FXML
     private Button btnTerceros;
 
     @FXML
@@ -104,6 +107,21 @@ public class InicioForm {
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("Tu Finca Raíz |  Informes");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.show();
+
+    }
+
+    @FXML
+    void onOperacionesClick(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("Operaciones.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Tu Finca Raíz |  Operaciones");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.centerOnScreen();
