@@ -27,7 +27,7 @@
         </ImageView>
         <Rectangle id="btnSalir" arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="687.0" layoutX="-1.0" layoutY="-48.0" onDragDetected="#onSalirClic" opacity="0.85" stroke="BLACK" strokeType="INSIDE" width="994.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0f3e3d" height="44.0" layoutX="-8.0" stroke="BLACK" strokeType="INSIDE" width="1001.0" />
-        <Button fx:id="btnSalir" layoutX="768.0" layoutY="591.0" mnemonicParsing="false" onAction="#onSalirParqueaderoClick" text="Salir" textOverrun="LEADING_WORD_ELLIPSIS">
+        <Button fx:id="btnSalir" layoutX="860.0" layoutY="594.0" mnemonicParsing="false" onAction="#onSalirParqueaderoClick" text="Salir" textOverrun="LEADING_WORD_ELLIPSIS">
             <effect>
                 <Blend />
             </effect>
@@ -53,12 +53,12 @@
                 <Image url="@../../../../../../logob.png" />
             </image>
         </ImageView>
-        <Label layoutX="69.0" layoutY="144.0" text="Tipo de oferta:" textFill="#c6c373">
+        <Label layoutX="69.0" layoutY="197.0" text="Tipo de oferta:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <TextField fx:id="txValorParqueadero" layoutX="265.0" layoutY="200.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el valor del parqueadero" />
+        <TextField fx:id="txValorParqueadero" layoutX="265.0" layoutY="259.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el valor del parqueadero" />
         <Label layoutX="536.0" layoutY="197.0" text="Dirección:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
@@ -71,30 +71,37 @@
             </font>
         </Label>
         <TextField fx:id="txtAreaParqueadero" layoutX="665.0" layoutY="148.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el área del parqueadero" />
-        <Label layoutX="69.0" layoutY="197.0" text="Valor:" textFill="#c6c373">
+        <Label layoutX="77.0" layoutY="255.0" text="Valor:" textFill="#c6c373">
             <font>
                 <Font size="22.0" />
             </font>
         </Label>
-        <ComboBox fx:id="cbTipoOfertaParqueadero" layoutX="265.0" layoutY="148.0" onAction="#onComboBoxTipoOfertaParqueadero" prefHeight="25.0" prefWidth="206.0" />
-        <Button fx:id="btnGuardarUsuario" layoutX="471.0" layoutY="368.0" mnemonicParsing="false" onAction="#onguardar" text="Guardar" />
+        <ComboBox fx:id="cbTipoOfertaParqueadero" layoutX="265.0" layoutY="201.0" onAction="#onComboBoxTipoOfertaParqueadero" prefHeight="25.0" prefWidth="206.0" />
+        <Button fx:id="btnGuardarUsuario" layoutX="550.0" layoutY="368.0" mnemonicParsing="false" onAction="#onguardar" text="Guardar" />
         <Label layoutX="379.0" layoutY="61.0" text="Registro de Parqueadero" textFill="#c6c373">
             <font>
                 <Font size="24.0" />
             </font>
         </Label>
-        <TableView fx:id="tblParqueadero" layoutX="152.0" layoutY="403.0" prefHeight="179.0" prefWidth="662.0">
+        <TableView fx:id="tblParqueadero" layoutX="96.0" layoutY="403.0" prefHeight="179.0" prefWidth="803.0">
             <columns>
-                <TableColumn fx:id="tblTipoOfertaLote" prefWidth="108.0" text="Tipo de oferta" />
-                <TableColumn fx:id="tblValorParqueadero" prefWidth="129.0" text="Valor" />
-                <TableColumn fx:id="tblDireccionParqueadero" prefWidth="207.0" text="Dirección" />
-                <TableColumn fx:id="tblAreaParqueadero" prefWidth="217.0" text="Área" />
+            <TableColumn fx:id="tblPropietarioParqueadero" prefWidth="110.0" text="Propietario" />
+                <TableColumn fx:id="tblTipoOfertaParqueadero" prefWidth="144.0" text="Tipo de oferta" />
+                <TableColumn fx:id="tblValorParqueadero" prefWidth="162.0" text="Valor" />
+                <TableColumn fx:id="tblDireccionParqueadero" prefWidth="159.0" text="Área" />
+                <TableColumn fx:id="tblAreaParqueadero" prefWidth="232.0" text="Dirección" />
             </columns>
         </TableView>
-        <Button fx:id="btnAcuatlizar" layoutX="543.0" layoutY="368.0" mnemonicParsing="false" onAction="#onActualizar" text="Actualizar" />
-        <Button fx:id="btnBuscar" layoutX="692.0" layoutY="368.0" mnemonicParsing="false" onAction="#onBuscar" text="Buscar" />
-        <Button fx:id="btnEliminar" layoutX="753.0" layoutY="368.0" mnemonicParsing="false" onAction="#onEliminar" text="Eliminar" />
-        <Button fx:id="btnCancelar" layoutX="618.0" layoutY="368.0" mnemonicParsing="false" onAction="#onCancelarRegistro" text="Cancelar" />
+        <Button fx:id="btnAcuatlizar" layoutX="621.0" layoutY="368.0" mnemonicParsing="false" onAction="#onActualizar" text="Actualizar" />
+        <Button fx:id="btnBuscar" layoutX="777.0" layoutY="368.0" mnemonicParsing="false" onAction="#onBuscar" text="Buscar" />
+        <Button fx:id="btnEliminar" layoutX="838.0" layoutY="368.0" mnemonicParsing="false" onAction="#onEliminar" text="Eliminar" />
+        <Button fx:id="btnCancelar" layoutX="702.0" layoutY="368.0" mnemonicParsing="false" onAction="#onCancelarRegistro" text="Cancelar" />
+      <Label layoutX="69.0" layoutY="144.0" text="Propietario ID:" textFill="#c6c373">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txPropietarioParqueadero" layoutX="265.0" layoutY="148.0" prefHeight="25.0" prefWidth="206.0" promptText="Ingrese el ID del propietario" />
     </children>
 
 </AnchorPane>

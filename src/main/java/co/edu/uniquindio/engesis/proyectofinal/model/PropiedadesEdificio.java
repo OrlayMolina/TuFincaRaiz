@@ -59,6 +59,9 @@ public class PropiedadesEdificio {
     private TableColumn<?, ?> tblNumeroPisosEdificio;
 
     @FXML
+    private TableColumn<?, ?> tblPropietarioEdificio;
+
+    @FXML
     private TableColumn<?, ?> tblTipoOfertaEdificio;
 
     @FXML
@@ -66,6 +69,9 @@ public class PropiedadesEdificio {
 
     @FXML
     private TextField txValorEficio;
+
+    @FXML
+    private TextField txPropietarioEdificio;
 
     @FXML
     private TextField txtAreaEdificio;
