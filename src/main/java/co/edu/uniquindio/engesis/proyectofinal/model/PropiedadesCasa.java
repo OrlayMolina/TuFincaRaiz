@@ -138,7 +138,7 @@ public class PropiedadesCasa {
     void onBuscar(ActionEvent event) throws SQLException {
         llenarTablaCasa(
                 INSTANCIA.getInmobiliaria().buscarCasa(txtMaterialConstruccionCasa.getText(), txtAreaCasa.getText(),
-                        txtDireccionCasa.getText(), txtNumeroCuartosCasa.getText(), txtNumeroPisosCasa.getText(), txtNumeroBañosCasa.getText())
+                        txtDireccionCasa.getText(), txtNumeroCuartosCasa.getText(), txtNumeroBañosCasa.getText(), txtNumeroPisosCasa.getText())
         );
     }
 

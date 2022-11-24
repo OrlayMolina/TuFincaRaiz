@@ -4,12 +4,12 @@ import co.edu.uniquindio.engesis.proyectofinal.model.base.datos.ConversionBD;
 import co.edu.uniquindio.engesis.proyectofinal.model.exceptiones.PersonaExisteException;
 import co.edu.uniquindio.engesis.proyectofinal.model.exceptiones.PersonaNoExisteException;
 import co.edu.uniquindio.engesis.proyectofinal.model.exceptiones.valorRequeridoException;
-import co.edu.uniquindio.engesis.proyectofinal.model.personas.Cliente;
 import co.edu.uniquindio.engesis.proyectofinal.model.personas.Persona;
-import co.edu.uniquindio.engesis.proyectofinal.model.personas.Propietario;
 import co.edu.uniquindio.engesis.proyectofinal.model.propiedades.Casa;
+import co.edu.uniquindio.engesis.proyectofinal.model.propiedades.Chalet;
 import co.edu.uniquindio.engesis.proyectofinal.model.propiedades.Propiedad;
 import co.edu.uniquindio.engesis.proyectofinal.model.util.CasaUtil;
+import co.edu.uniquindio.engesis.proyectofinal.model.util.ChaletUtil;
 import co.edu.uniquindio.engesis.proyectofinal.model.util.PersonaUtil;
 
 import java.sql.SQLException;
@@ -19,7 +19,6 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import static co.edu.uniquindio.engesis.proyectofinal.model.util.CasaUtil.buscarPorDireccion;
 
 public class Inmobiliaria {
 
@@ -27,6 +26,7 @@ public class Inmobiliaria {
     private List<Persona> personas;
     private List<Persona> terceros;
     private List<Casa> casas;
+    private List<Chalet> chalets;
 
 
     //private List<Transaccion> transacciones;
@@ -41,6 +41,8 @@ public class Inmobiliaria {
         List<Persona> propietarios = ConversionBD.getPropietariosBD();
         terceros = ConversionBD.sumarListasTerceros(clientes, propietarios);
         casas = ConversionBD.getCasasBD();
+        chalets = ConversionBD.getChaletsBD();
+
 
     }
 
@@ -120,12 +122,29 @@ public class Inmobiliaria {
                 .collect(Collectors.toUnmodifiableList());
     }
 
+    public  List<Chalet> buscarChalet(String material, String area, String direccion, String numeroCuartos,
+                                  String numeroBanios, String numeroPisos) throws SQLException {
+
+
+        return chalets.stream()
+                .filter(ChaletUtil.buscarPorTodoChalets(material, area, direccion, numeroCuartos, numeroBanios, numeroPisos))
+                .collect(Collectors.toUnmodifiableList());
+    }
+
     public void adicionarCasa(Casa casa)  {
         casas.add(casa);
     }
 
     public void removerCasa(Casa casa)  {
         casas.remove(casa);
+    }
+
+    public void adicionarChalet(Chalet chalet)  {
+        chalets.add(chalet);
+    }
+
+    public void removerChalet(Chalet chalet)  {
+        chalets.remove(chalet);
     }
 
 }

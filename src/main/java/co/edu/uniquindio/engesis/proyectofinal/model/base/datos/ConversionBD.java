@@ -2,6 +2,7 @@ package co.edu.uniquindio.engesis.proyectofinal.model.base.datos;
 
 import co.edu.uniquindio.engesis.proyectofinal.model.personas.Persona;
 import co.edu.uniquindio.engesis.proyectofinal.model.propiedades.Casa;
+import co.edu.uniquindio.engesis.proyectofinal.model.propiedades.Chalet;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -188,6 +189,50 @@ public class ConversionBD {
             Logger.getLogger(ConversionBD.class.getName()).log(Level.SEVERE,null,e);
         }
         return listaCasas;
+    }
+
+    public static ArrayList<Chalet> getChaletsBD() throws SQLException {
+        Connection con = Conexion.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        PreparedStatement ps2 = null;
+        ResultSet rs2 = null;
+        ArrayList<Chalet> listaChalets = new ArrayList<>();
+        try {
+            String query = "SELECT * FROM `chalets` WHERE estado_registro=1";
+            ps = con.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Chalet chalet = new Chalet();
+                String query2 = "SELECT * FROM `propiedades` WHERE `propiedades_id` = " + rs.getInt("propiedad");
+                ps2 = con.prepareStatement(query2);
+                rs2 = ps2.executeQuery();
+                if (rs2.next()) {
+                    chalet.setPropietario(rs2.getInt("propietario"));
+                    chalet.setDireccion(rs2.getString("direccion"));
+                    chalet.setVenta(rs2.getInt("venta"));
+                    chalet.setArriendo(rs2.getInt("alquiler"));
+                    chalet.setValorTransaccion(rs2.getFloat("valor_transaccion"));
+                    chalet.setArea(rs2.getString("area"));
+                }
+                chalet.setNumeroCuartos(rs.getString("numero_cuartos"));
+                chalet.setNumeroBanios(rs.getString("numero_banios"));
+                chalet.setNumeroPisos(rs.getString("numero_pisos"));
+                chalet.setAguaPotable(rs.getString("agua_potable"));
+                chalet.setAlcantarillado(rs.getString("alcantarillado"));
+                chalet.setInternet(rs.getString("internet"));
+                chalet.setElectricidad(rs.getString("electricidad"));
+                chalet.setMaterialConstruccion(rs.getString("material_construccion"));
+
+
+                listaChalets.add(chalet);
+            }
+
+
+        } catch (Exception e) {
+            Logger.getLogger(ConversionBD.class.getName()).log(Level.SEVERE,null,e);
+        }
+        return listaChalets;
     }
 
 

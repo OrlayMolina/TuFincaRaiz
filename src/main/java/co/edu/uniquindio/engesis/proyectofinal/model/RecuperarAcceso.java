@@ -115,6 +115,7 @@ public class RecuperarAcceso {
         body = template.replace("[Primer_Nombre]", nombreConsultado).replace("[userName]",usuarioConsultado).replace("[password]",contraseniaConsultada);
         mailSend.createEmail(correo, nombreConsultado+", tenemos novedades de tu cuenta: ", new String(body.getBytes("ISO-8859-1"),"UTF-8"));
         mailSend.sendEmail();
+        AppController.showAlert(Alert.AlertType.INFORMATION, "Mensaje: ", "Correo enviado exitosamente");
     }
 
     @FXML
